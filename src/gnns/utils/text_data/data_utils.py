@@ -1,9 +1,7 @@
-import json
 import os
 import re
 import codecs
 import string
-from collections import defaultdict
 import numpy as np
 from nltk.tokenize import wordpunct_tokenize
 from sklearn import preprocessing
