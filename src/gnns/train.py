@@ -2,10 +2,10 @@ from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
 from argparse import ArgumentParser
 import pytorch_lightning as pl
+import yaml
 from gnns.bert_classifier import SimpleBERTClassifier
 from gnns.datasets import NewsGroupsGraphDataset
 from torch.utils.data import DataLoader
-import torch.nn as nn
 import os
 import sys
 import torch
@@ -14,6 +14,11 @@ import torch
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 # os.environ["USE_KEOPS"] = "True"
 
+
+def load_config(config_path):
+    with open(config_path, 'r') as f:
+        config = yaml.safe_load(f)
+    return config
 
 def collate_fn(batch):
     # NOTE: for batching
@@ -30,14 +35,7 @@ def collate_fn(batch):
     }
 
 
-def get_encoder_dim(encoder_name, use_rnn, rnn_hidden_size=None, rnn_bidirectional=False):
-    """Get the output dimension of the encoder."""
-    if use_rnn:
-        if rnn_hidden_size is None:
-            raise ValueError(
-                "Must specify rnn_hidden_size when use_rnn_encoder=True")
-        return rnn_hidden_size * (2 if rnn_bidirectional else 1)
-
+def get_encoder_dim(encoder_name):
     dim_map = {
         'distilbert-base-uncased': 768,
         'google/embeddinggemma-300m': 768,
@@ -50,34 +48,10 @@ def get_encoder_dim(encoder_name, use_rnn, rnn_hidden_size=None, rnn_bidirection
 
 
 def run_training_process(run_params):
-    encoder_dim = get_encoder_dim(
-        run_params.encoder_name,
-        run_params.use_rnn_encoder,
-        getattr(run_params, 'rnn_hidden_size', None),
-        getattr(run_params, 'rnn_bidirectional', False)
-    )
-
-    # Setup RNN encoder if needed
-    rnn_encoder = None
-    word_embeddings = None
-    if run_params.use_rnn_encoder:
-
-        from gnns.idgl.layers.common import EncoderRNN
-
-        vocab_size = 30522  # BERT vocab size for tokenizer compatibility
-        emb_dim = run_params.rnn_embedding_dim
-
-        word_embeddings = nn.Embedding(vocab_size, emb_dim)
-        rnn_encoder = EncoderRNN(
-            input_size=emb_dim,
-            hidden_size=run_params.rnn_hidden_size,
-            bidirectional=run_params.rnn_bidirectional,
-            num_layers=run_params.rnn_num_layers,
-            rnn_type=run_params.rnn_type,
-            device='cuda'
-        )
+    encoder_dim = get_encoder_dim(run_params.encoder_name)
 
     dataset_kwargs = {
+        'encoder_name': run_params.encoder_name,
         'max_length': run_params.max_length,
         'device': 'cuda',
         'use_cache': True,
@@ -85,17 +59,6 @@ def run_training_process(run_params):
         'freeze_encoder': run_params.freeze_encoder,
         'remove_punctualization': run_params.remove_punctualization,
     }
-
-    if run_params.use_rnn_encoder:
-        dataset_kwargs.update({
-            'use_rnn_encoder': True,
-            'rnn_encoder': rnn_encoder,
-            'word_embeddings': word_embeddings,
-        })
-    else:
-        dataset_kwargs.update({
-            'encoder_name': run_params.encoder_name,
-        })
 
     train_data = NewsGroupsGraphDataset(split='train', **dataset_kwargs)
     val_data = NewsGroupsGraphDataset(split='val', **dataset_kwargs)
@@ -143,8 +106,7 @@ def run_training_process(run_params):
 
     #     model = DGM_Model(args)
     #     dgm_type = "cDGM" if args.use_continuous_dgm else "dDGM"
-    #     encoder_str = "rnn" if args.use_rnn_encoder else args.encoder_name.split(
-    #         '/')[-1]
+    #     encoder_str = args.encoder_name.replace("/", "-")
     #     model_name = f"{dgm_type}_{encoder_str}_k{args.k}_{args.gfun}_{args.distance}_pool{args.pooling}"
     else:
         raise ValueError(f"Unknown model type: {args.model_type}")
@@ -189,19 +151,6 @@ if __name__ == "__main__":
     # Encoder configuration
     parser.add_argument("--encoder_name", type=str, default='distilbert-base-uncased',
                         help="Transformer encoder name (e.g., 'bert-base-uncased', 'roberta-base')")
-    parser.add_argument("--use_rnn_encoder", action='store_true',
-                        help="Use RNN encoder instead of transformer")
-    parser.add_argument("--rnn_embedding_dim", type=int, default=300,
-                        help="RNN word embedding dimension")
-    parser.add_argument("--rnn_hidden_size", type=int, default=384,
-                        help="RNN hidden size (will be doubled if bidirectional)")
-    parser.add_argument("--rnn_bidirectional", action='store_true',
-                        help="Use bidirectional RNN")
-    parser.add_argument("--rnn_num_layers", type=int, default=2,
-                        help="Number of RNN layers")
-    parser.add_argument("--rnn_type", type=str, default='lstm',
-                        choices=['lstm', 'gru'],
-                        help="RNN type")
 
     # Data configuration
     parser.add_argument("--max_length", type=int, default=512,
