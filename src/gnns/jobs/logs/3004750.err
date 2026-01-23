@@ -1,0 +1,46 @@
+GpuFreq=control_disabled
+💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+You are using a CUDA device ('NVIDIA A100-PCIE-40GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name       | Type       | Params | Mode  | FLOPs
+----------------------------------------------------------
+0 | classifier | Sequential | 530 K  | train | 0    
+----------------------------------------------------------
+530 K     Trainable params
+0         Non-trainable params
+530 K     Total params
+2.121     Total estimated model params size (MB)
+8         Modules in train mode
+0         Modules in eval mode
+0         Total Flops
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 16. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 7. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+Metric val_acc improved. New best score: 56.032
+Metric val_acc improved by 9.854 >= min_delta = 0.001. New best score: 65.886
+Metric val_acc improved by 3.712 >= min_delta = 0.001. New best score: 69.598
+Metric val_acc improved by 1.989 >= min_delta = 0.001. New best score: 71.586
+Metric val_acc improved by 1.547 >= min_delta = 0.001. New best score: 73.133
+Metric val_acc improved by 1.061 >= min_delta = 0.001. New best score: 74.194
+Metric val_acc improved by 0.309 >= min_delta = 0.001. New best score: 74.503
+Metric val_acc improved by 0.840 >= min_delta = 0.001. New best score: 75.342
+Metric val_acc improved by 0.795 >= min_delta = 0.001. New best score: 76.138
+Metric val_acc improved by 0.133 >= min_delta = 0.001. New best score: 76.270
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 76.624
+Metric val_acc improved by 0.133 >= min_delta = 0.001. New best score: 76.757
+Metric val_acc improved by 0.177 >= min_delta = 0.001. New best score: 76.933
+Metric val_acc improved by 0.044 >= min_delta = 0.001. New best score: 76.977
+Metric val_acc improved by 0.088 >= min_delta = 0.001. New best score: 77.066
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 77.419
+Metric val_acc improved by 0.309 >= min_delta = 0.001. New best score: 77.729
+Metric val_acc improved by 0.044 >= min_delta = 0.001. New best score: 77.773
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 77.994
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 78.347
+`Trainer.fit` stopped: `max_epochs=30` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 12. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
