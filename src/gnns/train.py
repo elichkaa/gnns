@@ -122,8 +122,8 @@ def run_training_process(run_params):
 
     # MODEL
     if run_params.model_type == 'baseline':
-        args.input_dim = encoder_dim  # Set input dimension
-        args.fc_layers = [64, 32, train_data.num_classes]
+        args.input_dim = encoder_dim
+        args.fc_layers = [512, 256, train_data.num_classes]
         model = SimpleBERTClassifier(args)
         model_name = f"baseline_{args.encoder_name}_pool{args.pooling}"
     # elif args.model_type == 'dgm':
@@ -257,7 +257,7 @@ if __name__ == "__main__":
     parser.add_argument("--pooling", type=str, default='mean',
                         choices=['mean', 'max', 'cls', 'sum'],
                         help="Pooling method")
-    parser.add_argument("--dropout", type=float, default=0.4,
+    parser.add_argument("--dropout", type=float, default=0.3,
                         help="Dropout rate")
     parser.add_argument("--lr", type=float, default=1e-3,
                         help="Learning rate")

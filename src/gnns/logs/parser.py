@@ -2,7 +2,7 @@ from tbparse import SummaryReader
 import matplotlib.pyplot as plt
 import os
 
-log_dir = "./baseline_poolmean/version_11"
+log_dir = "./baseline_distilbert-base-uncased_poolmean/version_5"
 reader = SummaryReader(log_dir)
 df = reader.scalars
 

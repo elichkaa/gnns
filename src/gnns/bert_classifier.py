@@ -66,7 +66,12 @@ class SimpleBERTClassifier(pl.LightningModule):
         return logits
 
     def configure_optimizers(self):
-        optimizer = torch.optim.Adam(self.parameters(), lr=self.hparams.lr)
+        optimizer = torch.optim.Adam(
+            self.parameters(), 
+            lr=self.hparams.lr,
+            # removed because very bad results with it
+            # weight_decay=self.hparams.weight_decay
+        )
         return optimizer
 
     def training_step(self, batch, batch_idx):

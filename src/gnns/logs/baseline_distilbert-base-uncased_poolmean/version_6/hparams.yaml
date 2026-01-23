@@ -1,0 +1,48 @@
+batch_size: 32
+conv_layers:
+- - 768
+  - 256
+- - 256
+  - 128
+- - 128
+  - 64
+dgm_layers:
+- - 768
+  - 256
+  - 64
+- []
+- []
+distance: euclidean
+dropout: 0.3
+encoder_name: distilbert-base-uncased
+fc_layers:
+- 512
+- 256
+- 20
+ffun: gcn
+freeze_encoder: false
+gfun: gat
+input_dim: 768
+k: 5
+lambda_connect: 0.01
+lambda_entropy: 0.01
+lambda_sparse: 0.1
+lr: 0.001
+max_epochs: 30
+max_length: 512
+model_type: baseline
+num_workers: 4
+patience: 5
+pooling: mean
+pre_fc: []
+remove_punctualization: false
+rnn_bidirectional: false
+rnn_embedding_dim: 300
+rnn_hidden_size: 384
+rnn_num_layers: 2
+rnn_type: lstm
+test_eval: 5
+use_continuous_dgm: false
+use_rnn_encoder: false
+val_split: 0.2
+weight_decay: 0.01
