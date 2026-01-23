@@ -1,0 +1,18 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 124, in __init__
+    pickle.dump({
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../train.py", line 274, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../train.py", line 101, in run_training_process
+    test_data = NewsGroupsGraphDataset(split='test', **dataset_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 123, in __init__
+    with open(cache_file, 'wb') as f:
+OSError: [Errno 5] Input/output error
+srun: error: uc2n565: task 0: Exited with exit code 1

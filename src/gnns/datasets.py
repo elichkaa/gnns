@@ -14,7 +14,7 @@ class NewsGroupsGraphDataset(torch.utils.data.Dataset):
         self,
         split: Literal['train', 'val', 'test'] = 'train',
         max_length: int = 128,
-        cache_dir: str = './data/newsgroups_cache',
+        cache_dir: str = '../data/newsgroups_cache',
         device: str = 'cpu',
         categories: Optional[list] = None,
         remove: tuple = ('headers', 'footers', 'quotes'),

@@ -15,4 +15,15 @@ export TORCH_USE_CUDA_DSA=True
 
 source /home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/bin/activate
 
-srun python ../train.py --model_type baseline --max_epochs 30
+srun python ../train.py \
+    --model_type baseline \
+    --encoder_name distilbert-base-uncased \
+    --max_epochs 10 \
+    --batch_size 32 \
+    --lr 2e-5 \
+    --dropout 0.1 \
+    --weight_decay 0.01 \
+    --patience 3 \
+    --pooling mean \
+    --max_length 512 \
+    --freeze_encoder
