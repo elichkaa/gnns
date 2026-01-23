@@ -208,5 +208,5 @@ __marimo__/
 
 # CUSTOM
 .DS_Store
-logs/**/checkpoints*/
+logs/**/checkpoints/
 data/
