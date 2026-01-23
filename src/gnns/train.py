@@ -9,10 +9,12 @@ from torch.utils.data import DataLoader
 import os
 import sys
 import torch
-# sys.path.insert(0, './keops')
+
+from gnns.dgm.model import DGM_Model
+sys.path.insert(0, './keops')
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-# os.environ["USE_KEOPS"] = "True"
+os.environ["USE_KEOPS"] = "True"
 
 
 def load_config(config_path):
@@ -90,24 +92,24 @@ def run_training_process(run_params):
         args.fc_layers = [512, 256, train_data.num_classes]
         model = SimpleBERTClassifier(args)
         model_name = f"baseline_{args.encoder_name}_pool{args.pooling}"
-    # elif args.model_type == 'dgm':
-    #     if args.pre_fc is None or len(args.pre_fc) == 0:
-    #         if len(args.dgm_layers[0]) > 0:
-    #             args.dgm_layers[0][0] = encoder_dim
-    #         args.conv_layers[0][0] = encoder_dim
-    #     else:
-    #         args.pre_fc[0] = encoder_dim
-    #         first_hidden = args.pre_fc[-1]
-    #         if len(args.dgm_layers[0]) > 0:
-    #             args.dgm_layers[0][0] = first_hidden
-    #         args.conv_layers[0][0] = first_hidden
+    elif args.model_type == 'dgm':
+        if args.pre_fc is None or len(args.pre_fc) == 0:
+            if len(args.dgm_layers[0]) > 0:
+                args.dgm_layers[0][0] = encoder_dim
+            args.conv_layers[0][0] = encoder_dim
+        else:
+            args.pre_fc[0] = encoder_dim
+            first_hidden = args.pre_fc[-1]
+            if len(args.dgm_layers[0]) > 0:
+                args.dgm_layers[0][0] = first_hidden
+            args.conv_layers[0][0] = first_hidden
 
-    #     args.fc_layers[-1] = train_data.num_classes
+        args.fc_layers[-1] = train_data.num_classes
 
-    #     model = DGM_Model(args)
-    #     dgm_type = "cDGM" if args.use_continuous_dgm else "dDGM"
-    #     encoder_str = args.encoder_name.replace("/", "-")
-    #     model_name = f"{dgm_type}_{encoder_str}_k{args.k}_{args.gfun}_{args.distance}_pool{args.pooling}"
+        model = DGM_Model(args)
+        dgm_type = "cDGM" if args.use_continuous_dgm else "dDGM"
+        encoder_str = args.encoder_name.replace("/", "-")
+        model_name = f"{dgm_type}_{encoder_str}_k{args.k}_{args.gfun}_{args.distance}_pool{args.pooling}"
     else:
         raise ValueError(f"Unknown model type: {args.model_type}")
 

@@ -23,11 +23,7 @@ class NewsGroupsGraphDataset(torch.utils.data.Dataset):
         freeze_encoder: bool = True,
         remove_punctualization: bool = False,
         encoder_name: str = 'distilbert-base-uncased',
-        encoder_class=None,
-        use_rnn_encoder: bool = False,
-        rnn_encoder=None,
-        word_embeddings=None,  # nn.Embedding or GloVe
-        tokenizer=None,  # tokenizer for RNN
+        encoder_class=None
     ):
         self.split = split
         self.max_length = max_length
@@ -36,49 +32,24 @@ class NewsGroupsGraphDataset(torch.utils.data.Dataset):
         self.use_cache = use_cache
         self.val_split = val_split
         self.remove_punctualization = remove_punctualization
-        self.use_rnn_encoder = use_rnn_encoder
-        self.encoder_name = encoder_name if not use_rnn_encoder else 'rnn_encoder'
+        self.encoder_name = encoder_name
 
         os.makedirs(cache_dir, exist_ok=True)
 
-        if use_rnn_encoder:
-            if rnn_encoder is None or word_embeddings is None:
-                raise ValueError(
-                    "Must provide both rnn_encoder and word_embeddings for RNN mode")
-
-            self.encoder = rnn_encoder
-            self.word_embeddings = word_embeddings
-            self.encoder.eval()
-            self.word_embeddings.eval()
-            self.encoder.to(device)
-            self.word_embeddings.to(device)
-
-            if tokenizer is None:
-                self.tokenizer = AutoTokenizer.from_pretrained(
-                    'bert-base-uncased')
-            else:
-                self.tokenizer = tokenizer
-
-            if freeze_encoder:
-                for param in self.encoder.parameters():
-                    param.requires_grad = False
-                for param in self.word_embeddings.parameters():
-                    param.requires_grad = False
+        if encoder_class is not None:
+            self.tokenizer = AutoTokenizer.from_pretrained(encoder_name)
+            self.encoder = encoder_class.from_pretrained(encoder_name)
         else:
-            if encoder_class is not None:
-                self.tokenizer = AutoTokenizer.from_pretrained(encoder_name)
-                self.encoder = encoder_class.from_pretrained(encoder_name)
-            else:
 
-                self.tokenizer = AutoTokenizer.from_pretrained(encoder_name)
-                self.encoder = AutoModel.from_pretrained(encoder_name)
+            self.tokenizer = AutoTokenizer.from_pretrained(encoder_name)
+            self.encoder = AutoModel.from_pretrained(encoder_name)
 
-            self.encoder.eval()
-            self.encoder.to(device)
+        self.encoder.eval()
+        self.encoder.to(device)
 
-            if freeze_encoder:
-                for param in self.encoder.parameters():
-                    param.requires_grad = False
+        if freeze_encoder:
+            for param in self.encoder.parameters():
+                param.requires_grad = False
 
         data_split = 'train' if split in ['train', 'val'] else 'test'
         print(f"Loading 20newsgroups {data_split} data...")
@@ -151,26 +122,9 @@ class NewsGroupsGraphDataset(torch.utils.data.Dataset):
                 input_ids = encoded['input_ids'].to(self.device)
                 attention_mask = encoded['attention_mask'].to(self.device)
 
-                if self.use_rnn_encoder:
-                    # RNN encoding
-                    word_embeds = self.word_embeddings(
-                        input_ids)  # [1, seq_len, emb_dim]
-
-                    lengths = attention_mask.sum(dim=1)  # [1]
-
-                    # restore_hh: [max_length, batch_size, hidden_size]
-                    # rnn_state_t: final state
-                    restore_hh, rnn_state_t = self.encoder(
-                        word_embeds, lengths)
-
-                    # transpose back to [batch_size, max_length, hidden_size]
-                    token_embeddings = restore_hh.transpose(
-                        0, 1).squeeze(0)  # [seq_len, hidden_size]
-                else:
-                    # transformer encoding
-                    outputs = self.encoder(
-                        input_ids=input_ids, attention_mask=attention_mask)
-                    token_embeddings = outputs.last_hidden_state.squeeze(0)
+                outputs = self.encoder(
+                    input_ids=input_ids, attention_mask=attention_mask)
+                token_embeddings = outputs.last_hidden_state.squeeze(0)
 
                 num_actual_tokens = attention_mask.sum().item()
 
