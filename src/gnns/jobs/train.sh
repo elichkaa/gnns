@@ -30,7 +30,7 @@ source /home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.1
 
 srun python ../train.py \
     --model_type baseline \
-    --encoder_name distilbert-base-uncased \
+    --encoder_name google/embeddinggemma-300m \
     --max_epochs 30 \
     --batch_size 32 \
     --lr 1e-3 \
@@ -38,5 +38,4 @@ srun python ../train.py \
     --weight_decay 1e-4 \
     --patience 5 \
     --pooling mean \
-    --max_length 512 \
-    --freeze_encoder
+    --max_length 512
