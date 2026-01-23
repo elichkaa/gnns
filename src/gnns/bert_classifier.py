@@ -70,7 +70,7 @@ class SimpleBERTClassifier(pl.LightningModule):
             self.parameters(), 
             lr=self.hparams.lr,
             # removed because very bad results with it
-            # weight_decay=self.hparams.weight_decay
+            weight_decay=self.hparams.weight_decay
         )
         return optimizer
 

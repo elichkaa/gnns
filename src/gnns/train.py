@@ -40,6 +40,7 @@ def get_encoder_dim(encoder_name, use_rnn, rnn_hidden_size=None, rnn_bidirection
 
     dim_map = {
         'distilbert-base-uncased': 768,
+        'google/embeddinggemma-300m': 768,
         'bert-base-uncased': 768,
         'bert-large-uncased': 1024,
         'roberta-base': 768,
@@ -160,7 +161,7 @@ def run_training_process(run_params):
     if val_data == test_data:
         callbacks = None
 
-    logger = TensorBoardLogger("../logs/", name=model_name)
+    logger = TensorBoardLogger("../logs/", name=model_name.replace("/", "-"))
     trainer = pl.Trainer(
         max_epochs=args.max_epochs,
         accelerator='gpu' if torch.cuda.is_available() else 'cpu',
