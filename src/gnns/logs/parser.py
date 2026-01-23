@@ -2,7 +2,7 @@ from tbparse import SummaryReader
 import matplotlib.pyplot as plt
 import os
 
-log_dir = "./baseline_distilbert-base-uncased_poolmean/version_5"
+log_dir = "./baseline_google-embeddinggemma-300m_poolmean/version_0"
 reader = SummaryReader(log_dir)
 df = reader.scalars
 
