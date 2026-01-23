@@ -209,4 +209,4 @@ __marimo__/
 # CUSTOM
 .DS_Store
 logs/**/checkpoints*/
-data/newsgroups_cache/
+data/
