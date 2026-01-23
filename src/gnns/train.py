@@ -160,7 +160,7 @@ def run_training_process(run_params):
     if val_data == test_data:
         callbacks = None
 
-    logger = TensorBoardLogger("../new/dgm2/logs/", name=model_name)
+    logger = TensorBoardLogger("../logs/", name=model_name)
     trainer = pl.Trainer(
         max_epochs=args.max_epochs,
         accelerator='gpu' if torch.cuda.is_available() else 'cpu',
