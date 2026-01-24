@@ -142,7 +142,8 @@ class DGM_Model(pl.LightningModule):
 
         for layer_idx, (f, g) in enumerate(zip(self.graph_f, self.node_g)):
             try:
-                graph_x, new_edges, lprobs = f(graph_x, current_edges, None)
+                graph_x, new_edges, lprobs = f(
+                    graph_x, current_edges, attention_mask)
 
                 # update edges
                 if new_edges is not None:

@@ -22,7 +22,7 @@ class DGM_d(nn.Module):
         else:
             self.distance = pairwise_poincare_distances
 
-    def forward(self, x, A, not_used=None, fixedges=None):
+    def forward(self, x, A, attention_mask=None, fixedges=None):
         # A: [2, num_edges] (edge list)
         b, n, d = x.shape  # [batch_size, num_nodes, hidden_dim]
         device = x.device
@@ -50,6 +50,7 @@ class DGM_d(nn.Module):
 
             # distance matrix per document
             D, _x = self.distance(x)
+            self.attention_mask = attention_mask
             edges_hat, logprobs = self.sample_without_replacement(D, b, n)
 
         else:
@@ -59,6 +60,7 @@ class DGM_d(nn.Module):
                         b, n, self.k, dtype=torch.float, device=device
                     )
                 D, _x = self.distance(x)  # D: [b, n, n]
+                self.attention_mask = attention_mask
                 edges_hat, logprobs = self.sample_without_replacement(D, b, n)
 
         if self.debug:
@@ -75,6 +77,12 @@ class DGM_d(nn.Module):
 
         q = torch.rand_like(logits) + 1e-8
         lq = (logits - torch.log(-torch.log(q)))
+
+        if hasattr(self, 'attention_mask') and self.attention_mask is not None:
+            mask_2d = self.attention_mask.unsqueeze(
+                1) * self.attention_mask.unsqueeze(2)
+            lq = lq + (1 - mask_2d.float()) * 1e10
+
         # indices: [batch_size, num_nodes, k] - k nearest neighbors for each node (local indices 0 to n-1)
         logprobs, indices = torch.topk(-lq, self.k, dim=-1)  # [b, n, k]
 

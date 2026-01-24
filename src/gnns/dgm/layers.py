@@ -47,7 +47,7 @@ class DGM_d(nn.Module):
 
         self.debug = False
 
-    def forward(self, x, A, not_used=None, fixedges=None):
+    def forward(self, x, A, attention_mask=None, fixedges=None):
         # NOTE: b is batch_size
         b, n, d = x.shape
         device = x.device
@@ -88,6 +88,7 @@ class DGM_d(nn.Module):
             if fixedges is not None:
                 return x, fixedges, torch.zeros(b, n, self.k, dtype=torch.float, device=device)
             # sampling here
+            self.attention_mask = attention_mask
             edges_hat, logprobs = self.sample_without_replacement(x)
 
         else:
@@ -119,9 +120,15 @@ class DGM_d(nn.Module):
             X_j = LazyTensor(x[:, None, :, :])    # (b, 1, n, d)
 
             mD = ((G_i - X_j) ** 2).sum(-1)
-
             # argKmin already add gumbel noise
             lq = mD * torch.exp(torch.clamp(self.temperature, -5, 5))
+
+            if hasattr(self, 'attention_mask') and self.attention_mask is not None:
+                mask_2d = self.attention_mask.unsqueeze(
+                    1) * self.attention_mask.unsqueeze(2)
+                # Set padded positions to very large value so they won't be selected
+                lq = lq + (1 - mask_2d.float()) * 1e10
+
             indices = lq.argKmin(self.k, dim=2)  # [b, n, k]
 
             x1 = torch.gather(
@@ -148,6 +155,12 @@ class DGM_d(nn.Module):
             mD = (XX+(XX**2-1).sqrt()).log()**2
 
             lq = mD * torch.exp(torch.clamp(self.temperature, -5, 5))
+
+            if self.attention_mask is not None:
+                mask_2d = self.attention_mask.unsqueeze(
+                    1) * self.attention_mask.unsqueeze(2)
+                lq = lq + (1 - mask_2d.float()) * 1e10
+
             indices = lq.argKmin(self.k, dim=2)  # [b, n, k]
 
             x1 = torch.gather(
@@ -201,8 +214,7 @@ class DGM_c(nn.Module):
         self.centroid = nn.Parameter(torch.zeros(
             (1, 1, DGM_c.input_dim)).float(), requires_grad=False)
 
-    def forward(self, x, A, not_used=None, fixedges=None):
-
+    def forward(self, x, A, attention_mask=None, fixedges=None):
         x = self.embed_f(x, A)
 
         # estimate normalization parameters
@@ -214,6 +226,10 @@ class DGM_c(nn.Module):
             D, _x = pairwise_poincare_distances((x-self.centroid)*self.scale)
         else:
             D, _x = pairwise_euclidean_distances((x-self.centroid)*self.scale)
+
+        if attention_mask is not None:
+            mask_2d = attention_mask.unsqueeze(1) * attention_mask.unsqueeze(2)
+            D = D.masked_fill(mask_2d == 0, 1e10)
 
         A = torch.sigmoid(self.temperature*(self.threshold.abs()-D))
 
