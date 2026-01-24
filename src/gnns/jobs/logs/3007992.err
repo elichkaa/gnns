@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../train.py", line 8, in <module>
+    from gnns.dgm.model import DGM_Model
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/model.py", line 208
+    graph_x = torch.cat([graph_x, x.detach()], -1)
+SyntaxError: expected 'except' or 'finally' block
+srun: error: uc2n566: task 0: Exited with exit code 1
+/var/spool/slurmd/job3007992/slurm_script: line 25: --patience: command not found

@@ -1,0 +1,28 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_train_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_val_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]Graph 0: x_graph.shape=torch.Size([512, 768]), edges.shape=torch.Size([512, 16])
+Edge range: [0, 1]
+Unique nodes in edges: 2
+x_flat shape: torch.Size([8192, 768])
+edges shape: torch.Size([512, 16])
+edges min/max: 0/1
+                                                                   
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n564
+Job ID: 3008180
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 127)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:11
+CPU Efficiency: 3.76% of 00:31:28 core-walltime
+Job Wall-clock time: 00:01:58
+Memory Utilized: 39.72 GB
+Memory Efficiency: 31.90% of 124.51 GB (124.51 GB/node)

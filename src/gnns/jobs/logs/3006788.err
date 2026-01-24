@@ -1,0 +1,8 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../train.py", line 8, in <module>
+    from gnns.dgm.model import DGM_Model
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/model.py", line 4, in <module>
+    from torch_geometric.nn import EdgeConv, DenseGCNConv, DenseGATConv, GCNConv, GATConv
+ModuleNotFoundError: No module named 'torch_geometric'
+srun: error: uc2n561: task 0: Exited with exit code 1
