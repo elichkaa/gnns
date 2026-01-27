@@ -1,0 +1,161 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_distilbert-base-uncased.pkl
+I am a little confused on all of the models of the 88-89 bonnevilles.
+I have heard of the LE SE LSE SSE SSEI. Could someone tell me the
+differences are far as features or performance. I am also curious to
+know what the book value is for prefereably the 89 model. And how much
+less than book value can you usually get them for. In other words how
+much are they in demand this time of year. I have heard that the mid-spring
+early summer is the best time to buy.
+
+=== Sample 0 ===
+True: rec.autos | Pred: sci.space
+Graph stats: 30 nodes, 10 edges
+Top hubs: [('I', 4), ('▁am', 4), ('▁a', 4), ('▁little', 4), ('▁confused', 4), ('<bos>', 0), ('▁on', 0), ('▁all', 0), ('▁of', 0), ('▁the', 0), ('▁models', 0), ('▁of', 0), ('▁the', 0), ('▁', 0), ('8', 0), ('8', 0), ('-', 0), ('8', 0), ('9', 0), ('▁bonne', 0), ('v', 0), ('illes', 0), ('.', 0), ('\n', 0), ('I', 0), ('▁have', 0), ('▁heard', 0), ('▁of', 0), ('▁the', 0), ('▁LE', 0)]
+Strongest edges: ['I↔▁am (1.000)', 'I↔▁a (1.000)', 'I↔▁little (1.000)', 'I↔▁confused (1.000)', '▁am↔▁a (1.000)', '▁am↔▁little (1.000)', '▁am↔▁confused (1.000)', '▁a↔▁little (1.000)', '▁a↔▁confused (1.000)', '▁little↔▁confused (1.000)']
+I'm not familiar at all with the format of these "X-Face:" thingies, but
+after seeing them in some folks' headers, I've *got* to *see* them (and
+maybe make one of my own)!
+
+I've got "dpg-view" on my Linux box (which displays "uncompressed X-Faces")
+and I've managed to compile [un]compface too... but now that I'm *looking*
+for them, I can't seem to find any X-Face:'s in anyones news headers!  :-(
+
+Could you, would you, please send me your "X-Face:" header?
+
+I *know* I'll probably get a little swamped, but I can handle it.
+
+	...I hope.
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: sci.space
+Graph stats: 30 nodes, 10 edges
+Top hubs: [('I', 4), ("'", 4), ('m', 4), ('▁not', 4), ('▁familiar', 4), ('<bos>', 0), ('▁at', 0), ('▁all', 0), ('▁with', 0), ('▁the', 0), ('▁format', 0), ('▁of', 0), ('▁these', 0), ('▁"', 0), ('X', 0), ('-', 0), ('Face', 0), (':"', 0), ('▁thing', 0), ('ies', 0), (',', 0), ('▁but', 0), ('\n', 0), ('after', 0), ('▁seeing', 0), ('▁them', 0), ('▁in', 0), ('▁some', 0), ('▁folks', 0), ("'", 0)]
+Strongest edges: ["I↔' (1.000)", 'I↔m (1.000)', 'I↔▁not (1.000)', 'I↔▁familiar (1.000)', "'↔m (1.000)", "'↔▁not (1.000)", "'↔▁familiar (1.000)", 'm↔▁not (1.000)', 'm↔▁familiar (1.000)', '▁not↔▁familiar (1.000)']
+
+In a word, yes.
+
+
+=== Sample 2 ===
+True: alt.atheism | Pred: sci.space
+Graph stats: 8 nodes, 10 edges
+Top hubs: [('\n', 4), ('In', 4), ('▁a', 4), ('▁word', 4), (',', 4), ('<bos>', 0), ('▁yes', 0), ('.', 0)]
+Strongest edges: ['\n↔In (1.000)', '\n↔▁a (1.000)', '\n↔▁word (1.000)', '\n↔, (1.000)', 'In↔▁a (1.000)', 'In↔▁word (1.000)', 'In↔, (1.000)', '▁a↔▁word (1.000)', '▁a↔, (1.000)', '▁word↔, (1.000)']
+
+They were attacking the Iraqis to drive them out of Kuwait,
+a country whose citizens have close blood and business ties
+to Saudi citizens.  And me thinks if the US had not helped out
+the Iraqis would have swallowed Saudi Arabia, too (or at 
+least the eastern oilfields).  And no Muslim country was doing
+much of anything to help liberate Kuwait and protect Saudi
+Arabia; indeed, in some masses of citizens were demonstrating
+in favor of that butcher Saddam (who killed lotsa Muslims),
+just because he was killing, raping, and looting relatively
+rich Muslims and also thumbing his nose at the West.
+
+So how would have *you* defended Saudi Arabia and rolled
+back the Iraqi invasion, were you in charge of Saudi Arabia???
+
+
+I think that it is a very good idea to not have governments have an
+official religion (de facto or de jure), because with human nature
+like it is, the ambitious and not the pious will always be the
+ones who rise to power.  There are just too many people in this
+world (or any country) for the citizens to really know if a 
+leader is really devout or if he is just a slick operator.
+
+
+You make it sound like these guys are angels, Ilyess.  (In your
+clarinet posting you edited out some stuff; was it the following???)
+Friday's New York Times reported that this group definitely is
+more conservative than even Sheikh Baz and his followers (who
+think that the House of Saud does not rule the country conservatively
+enough).  The NYT reported that, besides complaining that the
+government was not conservative enough, they have:
+
+	- asserted that the (approx. 500,000) Shiites in the Kingdom
+	  are apostates, a charge that under Saudi (and Islamic) law
+	  brings the death penalty.  
+
+	  Diplomatic guy (Sheikh bin Jibrin), isn't he Ilyess?
+
+	- called for severe punishment of the 40 or so women who
+	  drove in public a while back to protest the ban on
+	  women driving.  The guy from the group who said this,
+	  Abdelhamoud al-Toweijri, said that these women should
+	  be fired from their jobs, jailed, and branded as
+	  prostitutes.
+
+	  Is this what you want to see happen, Ilyess?  I've
+	  heard many Muslims say that the ban on women driving
+	  has no basis in the Qur'an, the ahadith, etc.
+	  Yet these folks not only like the ban, they want
+	  these women falsely called prostitutes?  
+
+	  If I were you, I'd choose my heroes wisely,
+	  Ilyess, not just reflexively rally behind
+	  anyone who hates anyone you hate.
+
+	- say that women should not be allowed to work.
+
+	- say that TV and radio are too immoral in the Kingdom.
+
+Now, the House of Saud is neither my least nor my most favorite government
+on earth; I think they restrict religious and political reedom a lot, among
+other things.  I just think that the most likely replacements
+for them are going to be a lot worse for the citizens of the country.
+But I think the House of Saud is feeling the heat lately.  In the
+last six months or so I've read there have been stepped up harassing
+by the muttawain (religious police---*not* government) of Western women
+not fully veiled (something stupid for women to do, IMO, because it
+sends the wrong signals about your morality).  And I've read that
+they've cracked down on the few, home-based expartiate religious
+gatherings, and even posted rewards in (government-owned) newspapers
+offering money for anyone who turns in a group of expartiates who
+dare worship in their homes or any other secret place. So the
+government has grown even more intolerant to try to take some of
+the wind out of the sails of the more-conservative opposition.
+As unislamic as some of these things are, they're just a small
+taste of what would happen if these guys overthrow the House of
+Saud, like they're trying to in the long run.
+
+Is this really what you (and Rached and others in the general
+west-is-evil-zionists-rule-hate-west-or-you-are-a-puppet crowd)
+want, Ilyess?
+
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: sci.space
+Graph stats: 30 nodes, 10 edges
+Top hubs: [('\n', 4), ('They', 4), ('▁were', 4), ('▁attacking', 4), ('▁the', 4), ('<bos>', 0), ('▁Iraq', 0), ('is', 0), ('▁to', 0), ('▁drive', 0), ('▁them', 0), ('▁out', 0), ('▁of', 0), ('▁Kuwait', 0), (',', 0), ('\n', 0), ('a', 0), ('▁country', 0), ('▁whose', 0), ('▁citizens', 0), ('▁have', 0), ('▁close', 0), ('▁blood', 0), ('▁and', 0), ('▁business', 0), ('▁ties', 0), ('\n', 0), ('to', 0), ('▁Saudi', 0), ('▁citizens', 0)]
+Strongest edges: ['\n↔They (1.000)', '\n↔▁were (1.000)', '\n↔▁attacking (1.000)', '\n↔▁the (1.000)', 'They↔▁were (1.000)', 'They↔▁attacking (1.000)', 'They↔▁the (1.000)', '▁were↔▁attacking (1.000)', '▁were↔▁the (1.000)', '▁attacking↔▁the (1.000)']
+
+I've just spent two solid months arguing that no such thing as an
+objective moral system exists.
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: rec.sport.hockey
+Graph stats: 22 nodes, 10 edges
+Top hubs: [('\n', 4), ('I', 4), ("'", 4), ('ve', 4), ('▁just', 4), ('<bos>', 0), ('▁spent', 0), ('▁two', 0), ('▁solid', 0), ('▁months', 0), ('▁arguing', 0), ('▁that', 0), ('▁no', 0), ('▁such', 0), ('▁thing', 0), ('▁as', 0), ('▁an', 0), ('\n', 0), ('objective', 0), ('▁moral', 0), ('▁system', 0), ('▁exists', 0)]
+Strongest edges: ['\n↔I (1.000)', "\n↔' (1.000)", '\n↔ve (1.000)', '\n↔▁just (1.000)', "I↔' (1.000)", 'I↔ve (1.000)', 'I↔▁just (1.000)', "'↔ve (1.000)", "'↔▁just (1.000)", 've↔▁just (1.000)']
+Sample 0 top tokens: ['8', '▁you', '▁other', 'ably', '▁are']
+Sample 1 top tokens: ['▁in', '▁all', '\n\n', '▁I', '-']
+Sample 2 top tokens: ['<bos>', '▁yes', '.', 'In', '▁a']
+Sample 3 top tokens: ['▁that', '▁severe', '▁called', '▁the', '▁punishment']
+Sample 4 top tokens: ['▁exists', '▁arguing', '▁thing', '▁moral', '▁no']
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n562
+Job ID: 3012013
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:38
+CPU Efficiency: 4.09% of 00:15:28 core-walltime
+Job Wall-clock time: 00:00:58
+Memory Utilized: 25.40 GB
+Memory Efficiency: 20.40% of 124.51 GB (124.51 GB/node)

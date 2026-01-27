@@ -1,0 +1,51 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_distilbert-base-uncased.pkl
+
+=== Sample 0 ===
+True: rec.autos | Pred: comp.os.ms-windows.misc
+Graph stats: 30 nodes, 10 edges
+Top hubs: [('<bos>', 4), ('I', 4), ('▁am', 4), ('▁a', 4), ('▁little', 4)]
+Strongest edges: ['<bos>↔I (1.000)', '<bos>↔▁am (1.000)', '<bos>↔▁a (1.000)', '<bos>↔▁little (1.000)', 'I↔▁am (1.000)']
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.os.ms-windows.misc
+Graph stats: 30 nodes, 10 edges
+Top hubs: [('<bos>', 4), ('I', 4), ("'", 4), ('m', 4), ('▁not', 4)]
+Strongest edges: ['<bos>↔I (1.000)', "<bos>↔' (1.000)", '<bos>↔m (1.000)', '<bos>↔▁not (1.000)', "I↔' (1.000)"]
+
+=== Sample 2 ===
+True: alt.atheism | Pred: comp.os.ms-windows.misc
+Graph stats: 8 nodes, 0 edges
+Top hubs: [('<bos>', 0), ('\n', 0), ('In', 0), ('▁a', 0), ('▁word', 0)]
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: sci.crypt
+Graph stats: 30 nodes, 10 edges
+Top hubs: [('<bos>', 4), ('\n', 4), ('They', 4), ('▁were', 4), ('▁attacking', 4)]
+Strongest edges: ['<bos>↔\n (1.000)', '<bos>↔They (1.000)', '<bos>↔▁were (1.000)', '<bos>↔▁attacking (1.000)', '\n↔They (1.000)']
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: comp.os.ms-windows.misc
+Graph stats: 22 nodes, 0 edges
+Top hubs: [('<bos>', 0), ('\n', 0), ('I', 0), ("'", 0), ('ve', 0)]
+Sample 0 top tokens: ['of', 'is', 'words', '.', 'time']
+Sample 1 top tokens: [',', ',', ',', '##s', ',']
+Sample 2 top tokens: ['.', '[SEP]', 'yes', 'in', ',']
+Sample 3 top tokens: ["'", '##ham', 'al', '##j', 'of']
+Sample 4 top tokens: ['exists', '[SEP]', '.', 'two', 'such']
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n565
+Job ID: 3011240
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:40
+CPU Efficiency: 2.21% of 00:30:08 core-walltime
+Job Wall-clock time: 00:01:53
+Memory Utilized: 25.37 GB
+Memory Efficiency: 20.38% of 124.51 GB (124.51 GB/node)

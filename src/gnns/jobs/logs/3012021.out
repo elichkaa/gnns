@@ -1,0 +1,29 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_distilbert-base-uncased.pkl
+
+=== Sample 0 ===
+True: rec.autos | Pred: sci.space
+Num nodes: 112, Total edges in adj: 277
+Graph stats: 112 nodes, 10 edges
+Top 10 hubs: [('I', 4), ('▁am', 4), ('▁a', 4), ('▁little', 4), ('▁confused', 4), ('<bos>', 0), ('▁on', 0), ('▁all', 0), ('▁of', 0), ('▁the', 0)]
+Top 10 edges: ['I↔▁am (1.000)', 'I↔▁a (1.000)', 'I↔▁little (1.000)', 'I↔▁confused (1.000)', '▁am↔▁a (1.000)', '▁am↔▁little (1.000)', '▁am↔▁confused (1.000)', '▁a↔▁little (1.000)', '▁a↔▁confused (1.000)', '▁little↔▁confused (1.000)']
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: sci.space
+Num nodes: 179, Total edges in adj: 445
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n562
+Job ID: 3012021
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:31
+CPU Efficiency: 3.88% of 00:13:20 core-walltime
+Job Wall-clock time: 00:00:50
+Memory Utilized: 20.94 GB
+Memory Efficiency: 16.82% of 124.51 GB (124.51 GB/node)

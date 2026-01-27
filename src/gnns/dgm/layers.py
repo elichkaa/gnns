@@ -9,7 +9,6 @@ def pairwise_euclidean_distances(x, dim=-1):
 
 
 def pairwise_poincare_distances(x, dim=-1):
-    # Poincarè disk distance r=1 (Hyperbolic)
     x_norm = (x**2).sum(dim, keepdim=True)
     x_norm = (x_norm.sqrt()-1).relu() + 1
     x = x/(x_norm*(1+1e-2))
@@ -53,14 +52,9 @@ class DGM_d(nn.Module):
         device = x.device
 
         if A is None or (isinstance(A, list) and (len(A) == 0 or A[0] is None)):
-            # TODO: write why
-            batch_offset = torch.arange(b, device=device).view(b, 1) * n
-            node_ids = torch.arange(n, device=device).view(1, n)
-            global_node_ids = (batch_offset + node_ids).flatten()
+            A = None
 
-            A = torch.stack([global_node_ids, global_node_ids], dim=0)
-
-        # apply embedding function to each document separately
+        # NOTE: apply embedding function to each document separately
         if isinstance(self.embed_f, nn.Module) and hasattr(self.embed_f, 'weight'):
             # MLP can process all at once
             x_flat = x.view(b * n, d)
@@ -70,9 +64,8 @@ class DGM_d(nn.Module):
             # GNN processes each document separately
             x_list = []
             for i in range(b):
-                # starting from this doc
                 doc_edges = A[:, A[0] >= i*n]
-                # encding in this doc
+                # encoding
                 doc_edges = doc_edges[:, doc_edges[0] <
                                       (i+1)*n]
                 # renormalize [0, n)
@@ -87,14 +80,12 @@ class DGM_d(nn.Module):
         if self.training:
             if fixedges is not None:
                 return x, fixedges, torch.zeros(b, n, self.k, dtype=torch.float, device=device)
-            # sampling here
             edges_hat, logprobs = self.sample_without_replacement(x)
 
         else:
             with torch.no_grad():
                 if fixedges is not None:
                     return x, fixedges, torch.zeros(b, n, self.k, dtype=torch.float, device=device)
-                # sampling here
                 edges_hat, logprobs = self.sample_without_replacement(x)
 
         if self.debug:
@@ -120,7 +111,6 @@ class DGM_d(nn.Module):
 
             mD = ((G_i - X_j) ** 2).sum(-1)
 
-            # argKmin already add gumbel noise
             lq = mD * torch.exp(torch.clamp(self.temperature, -5, 5))
             indices = lq.argKmin(self.k, dim=2)  # [b, n, k]
 
@@ -133,7 +123,7 @@ class DGM_d(nn.Module):
         if self.distance == "hyperbolic":
             x_norm = (x**2).sum(-1, keepdim=True)
             x_norm = (x_norm.sqrt()-1).relu() + 1
-            x = x/(x_norm*(1+1e-2))  # safe distance to the margin
+            x = x/(x_norm*(1+1e-2))
             x_norm = (x**2).sum(-1, keepdim=True)
 
             G_i = LazyTensor(x[:, :, None, :])    # (M**2, 1, 2)
@@ -205,7 +195,6 @@ class DGM_c(nn.Module):
 
         x = self.embed_f(x, A)
 
-        # estimate normalization parameters
         if self.scale < 0:
             self.centroid.data = x.mean(-2, keepdim=True).detach()
             self.scale.data = (0.9/(x-self.centroid).abs().max()).detach()

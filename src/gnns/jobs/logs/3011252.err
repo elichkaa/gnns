@@ -1,0 +1,12 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 176, in <module>
+    visualize_dgm_token_importance(test_data, dgm_model, num_samples=5)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 155, in visualize_dgm_token_importance
+    ax.set_yticklabels([tokens[i] for i in top_indices], fontsize=10)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 155, in <listcomp>
+    ax.set_yticklabels([tokens[i] for i in top_indices], fontsize=10)
+                        ~~~~~~^^^
+IndexError: list index out of range
+srun: error: uc2n564: task 0: Exited with exit code 1

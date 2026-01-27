@@ -1,0 +1,24 @@
+GpuFreq=control_disabled
+💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 233, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 148, in run_training_process
+    trainer.fit(model, datamodule=MyDataModule())
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1027, in _run
+    _verify_loop_configurations(self)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/trainer/configuration_validator.py", line 37, in _verify_loop_configurations
+    __verify_manual_optimization_support(trainer, model)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/trainer/configuration_validator.py", line 123, in __verify_manual_optimization_support
+    raise MisconfigurationException(
+lightning_fabric.utilities.exceptions.MisconfigurationException: Automatic gradient clipping is not supported for manual optimization. Remove `Trainer(gradient_clip_val=1.0)` or switch to automatic optimization.
+srun: error: uc2n564: task 0: Exited with exit code 1

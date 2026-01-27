@@ -1,0 +1,11 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 13, in <module>
+    from gnns.dgm.model import DGM_Model
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/model.py", line 10, in <module>
+    from gnns.dgm.layers_dense import *
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/layers_dense.py", line 2, in <module>
+    class DGM_d(nn.Module):
+                ^^
+NameError: name 'nn' is not defined
+srun: error: uc3n082: task 0: Exited with exit code 1

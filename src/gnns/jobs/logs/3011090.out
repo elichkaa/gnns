@@ -1,0 +1,25 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_train_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_val_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+WARNING: gcn not supported for dDGM, using MLP
+Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s][KeOps] Generating code for ArgKMin_Reduction reduction (with parameters 0) of formula Sum((a-b)**2)*c with a=Var(0,64,0), b=Var(1,64,1), c=Var(2,1,2) ... OK
+[pyKeOps] Compiling pykeops cpp bf8304e6d2 module ... OK
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n562
+Job ID: 3011090
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 127)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:08
+CPU Efficiency: 3.48% of 00:32:32 core-walltime
+Job Wall-clock time: 00:02:02
+Memory Utilized: 41.23 GB
+Memory Efficiency: 33.11% of 124.51 GB (124.51 GB/node)

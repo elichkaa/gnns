@@ -1,0 +1,88 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_distilbert-base-uncased.pkl
+
+=== Sample 0 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 112, Total edges in adj: 168
+Graph stats: 112 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('i', 2), ('am', 2), ('a', 0), ('little', 0), ('confused', 0), ('on', 0), ('all', 0), ('of', 0), ('the', 0)]
+Top 10 edges: ['[CLS]↔i (1.000)', '[CLS]↔am (1.000)', 'i↔am (1.000)']
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 179, Total edges in adj: 268
+Graph stats: 179 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('i', 2), ("'", 2), ('m', 0), ('not', 0), ('familiar', 0), ('at', 0), ('all', 0), ('with', 0), ('the', 0)]
+Top 10 edges: ['[CLS]↔i (1.000)', "[CLS]↔' (1.000)", "i↔' (1.000)"]
+
+=== Sample 2 ===
+True: alt.atheism | Pred: soc.religion.christian
+Num nodes: 8, Total edges in adj: 12
+Graph stats: 8 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('in', 2), ('a', 2), ('word', 0), (',', 0), ('yes', 0), ('.', 0), ('[SEP]', 0)]
+Top 10 edges: ['[CLS]↔in (1.000)', '[CLS]↔a (1.000)', 'in↔a (1.000)']
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: talk.politics.guns
+Num nodes: 512, Total edges in adj: 768
+Graph stats: 512 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('they', 2), ('were', 2), ('attacking', 0), ('the', 0), ('iraqi', 0), ('##s', 0), ('to', 0), ('drive', 0), ('them', 0)]
+Top 10 edges: ['[CLS]↔they (1.000)', '[CLS]↔were (1.000)', 'they↔were (1.000)']
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 22, Total edges in adj: 33
+Graph stats: 22 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('i', 2), ("'", 2), ('ve', 0), ('just', 0), ('spent', 0), ('two', 0), ('solid', 0), ('months', 0), ('arguing', 0)]
+Top 10 edges: ['[CLS]↔i (1.000)', "[CLS]↔' (1.000)", "i↔' (1.000)"]
+
+=== Sample 5 ===
+True: sci.med | Pred: sci.med
+Num nodes: 512, Total edges in adj: 768
+Graph stats: 512 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('elisabeth', 2), (',', 2), ('let', 0), ("'", 0), ('s', 0), ('set', 0), ('the', 0), ('record', 0), ('straight', 0)]
+Top 10 edges: ['[CLS]↔elisabeth (1.000)', '[CLS]↔, (1.000)', 'elisabeth↔, (1.000)']
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 29, Total edges in adj: 43
+Graph stats: 29 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('dish', 2), ('##ones', 2), ('##t', 0), ('money', 0), ('d', 0), ('##wind', 0), ('##les', 0), ('away', 0), (',', 0)]
+Top 10 edges: ['[CLS]↔dish (1.000)', '[CLS]↔##ones (1.000)', 'dish↔##ones (1.000)']
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: comp.os.ms-windows.misc
+Num nodes: 128, Total edges in adj: 192
+Graph stats: 128 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('a', 2), ('friend', 2), ('of', 0), ('mine', 0), ('managed', 0), ('to', 0), ('get', 0), ('a', 0), ('copy', 0)]
+Top 10 edges: ['[CLS]↔a (1.000)', '[CLS]↔friend (1.000)', 'a↔friend (1.000)']
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 58, Total edges in adj: 87
+Graph stats: 58 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), ('hi', 2), (',', 2), ('we', 0), ('have', 0), ('a', 0), ('requirement', 0), ('for', 0), ('dynamic', 0), ('##ally', 0)]
+Top 10 edges: ['[CLS]↔hi (1.000)', '[CLS]↔, (1.000)', 'hi↔, (1.000)']
+
+=== Sample 9 ===
+True: comp.graphics | Pred: comp.graphics
+Num nodes: 143, Total edges in adj: 214
+Graph stats: 143 nodes, 3 edges
+Top 10 hubs: [('[CLS]', 2), (':', 2), (':', 2), ('well', 0), (',', 0), ('i', 0), ('have', 0), ('lots', 0), ('of', 0), ('experience', 0)]
+Top 10 edges: ['[CLS]↔: (1.000)', '[CLS]↔: (1.000)', ':↔: (1.000)']
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n566
+Job ID: 3028166
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:50
+CPU Efficiency: 2.25% of 00:37:04 core-walltime
+Job Wall-clock time: 00:02:19
+Memory Utilized: 25.38 GB
+Memory Efficiency: 20.38% of 124.51 GB (124.51 GB/node)

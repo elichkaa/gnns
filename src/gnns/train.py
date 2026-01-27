@@ -16,6 +16,7 @@ sys.path.insert(0, './keops')
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ["USE_KEOPS"] = "True"
 
+TEST_ONLY: bool = False
 
 def load_config(config_path):
     with open(config_path, 'r') as f:
@@ -23,7 +24,6 @@ def load_config(config_path):
     return config
 
 def collate_fn(batch):
-    # NOTE: for batching
     node_features = torch.stack([b['node_features'] for b in batch])
     attention_mask = torch.stack([b['attention_mask'] for b in batch])
     labels = torch.stack([b['label'] for b in batch])
@@ -124,21 +124,29 @@ def run_training_process(run_params):
 
     if val_data == test_data:
         callbacks = None
-
-    logger = TensorBoardLogger("../logs/", name=model_name.replace("/", "-"))
+    print("LOGGING")
+    logger = TensorBoardLogger("./logs/", name=model_name.replace("/", "-"))
+    if TEST_ONLY:
+        prefix_dir = "../logs/dDGM_google-embeddinggemma-300m_k10_gat_euclidean_poolmean/"
+        version = "version_2"
+        model = DGM_Model.load_from_checkpoint(f'{prefix_dir}{version}/checkpoints/epoch=49-step=28300.ckpt')
+        
     trainer = pl.Trainer(
         max_epochs=args.max_epochs,
         accelerator='gpu' if torch.cuda.is_available() else 'cpu',
         devices=1,
         logger=logger,
         callbacks=callbacks,
-        log_every_n_steps=50,
+        log_every_n_steps=10,
         check_val_every_n_epoch=1,
         deterministic=False,
-        enable_progress_bar=True
+        enable_progress_bar=True,
     )
 
-    trainer.fit(model, datamodule=MyDataModule())
+    if args.resume_from_checkpoint:
+        trainer.fit(model, datamodule=MyDataModule(), ckpt_path=args.resume_from_checkpoint)
+    else:
+        trainer.fit(model, datamodule=MyDataModule())
     trainer.test(model, datamodule=MyDataModule())
 
 
@@ -220,6 +228,7 @@ if __name__ == "__main__":
     parser.add_argument("--test_eval", type=int, default=5,
                         help="Number of forward passes for test ensemble")
     parser.add_argument("--weight_decay", type=float, default=0.01)
+    parser.add_argument("--resume_from_checkpoint", type=str, default=None, help="Path to checkpoint to resume training from")
 
     args = parser.parse_args()
 

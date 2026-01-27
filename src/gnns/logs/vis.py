@@ -8,106 +8,106 @@ from gnns.datasets import NewsGroupsGraphDataset
 import os
 from transformers import AutoTokenizer, AutoModel
 
-prefix_dir = "../new/dgm2/logs/baseline_google-embeddinggemma-300m_poolmean/"
+prefix_dir = "../logs/dDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/"
 save_dir = f"{prefix_dir}visualizations"
 version = "version_1"
-encoder_name = 'google/embeddinggemma-300m'
-
+encoder_name = 'distilbert-base-uncased'
+# encoder_name = 'google/embeddinggemma-300m'
+checkpoint = 'epoch=30-step=35092.ckpt'
+# checkpoint = 'epoch=29-step=16980.ckpt'
+# checkpoint = "epoch=49-step=28300.ckpt"
 
 def visualize_dgm_graphs(dataset, model, num_samples=5, save_dir=save_dir):
     os.makedirs(save_dir, exist_ok=True)
-
     device = next(model.parameters()).device
     tokenizer = AutoTokenizer.from_pretrained(encoder_name)
     model.eval()
-
+    
     for idx in range(min(num_samples, len(dataset))):
         sample = dataset[idx]
         text = sample['text']
         true_label = sample['label'].item()
-
+        
         node_features = sample['node_features'].unsqueeze(0).to(device)
         attention_mask = sample['attention_mask'].unsqueeze(0).to(device)
         num_nodes = sample['num_nodes']
-
+        
         with torch.no_grad():
             logits, adj_matrix = model(
                 node_features, attention_mask, return_adj=True)
             pred_label = logits.argmax(-1).item()
-
+        
         encoded = tokenizer(
             text, max_length=dataset.max_length, truncation=True)
         tokens = tokenizer.convert_ids_to_tokens(encoded['input_ids'])
-
+        
         adj = adj_matrix[0, :num_nodes, :num_nodes].cpu().numpy()
-
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
-
-        im = ax1.imshow(adj, cmap='viridis', aspect='auto')
-        ax1.set_xticks(range(min(30, num_nodes)))
-        ax1.set_yticks(range(min(30, num_nodes)))
-        ax1.set_xticklabels(
-            tokens[:min(30, num_nodes)], rotation=90, fontsize=8)
-        ax1.set_yticklabels(tokens[:min(30, num_nodes)], fontsize=8)
-        ax1.set_title('Learned Adjacency Matrix (first 30 tokens)')
-        plt.colorbar(im, ax=ax1)
-
-        G = nx.Graph()
-
-        for i in range(min(30, num_nodes)):
-            G.add_node(i, label=tokens[i])
-
-        threshold = np.percentile(adj.flatten(), 95)
-        for i in range(min(30, num_nodes)):
-            for j in range(i+1, min(30, num_nodes)):
-                if adj[i, j] > threshold:
-                    G.add_edge(i, j, weight=adj[i, j])
-
-        pos = nx.spring_layout(G, k=2, iterations=50)
-        node_labels = {i: tokens[i] for i in G.nodes()}
-
-        nx.draw_networkx_nodes(G, pos, node_size=300,
-                               node_color='lightblue', ax=ax2)
-        nx.draw_networkx_labels(G, pos, node_labels, font_size=8, ax=ax2)
-
-        edges = G.edges()
-        weights = [G[u][v]['weight'] for u, v in edges]
-        nx.draw_networkx_edges(G, pos, width=[w*3 for w in weights],
-                               alpha=0.6, edge_color='gray', ax=ax2)
-
-        ax2.set_title(
-            f'Learned Graph (top 5% edges)\nTrue: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}')
-        ax2.axis('off')
-
-        plt.tight_layout()
-        plt.savefig(f'{save_dir}/graph_sample{idx}.png',
-                    dpi=150, bbox_inches='tight')
-        plt.close()
-
+        
         print(f"\n=== Sample {idx} ===")
-        print(
-            f"True: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}")
-        print(
-            f"Graph stats: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
-
+        print(f"True: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}")
+        print(f"Num nodes: {num_nodes}, Total edges in adj: {(adj > 0).sum() // 2}")
+        
+        G = nx.Graph()
+        for i in range(min(num_nodes, len(tokens))):
+            G.add_node(i, label=tokens[i])
+        
+        for i in range(num_nodes):
+            for j in range(i+1, num_nodes):
+                if adj[i, j] > 0:
+                    G.add_edge(i, j, weight=adj[i, j])
+        
+        print(f"Graph stats: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+        
         degrees = dict(G.degree())
         if degrees:
-            top_hubs = sorted(
-                degrees.items(), key=lambda x: x[1], reverse=True)[:5]
-            print(f"Top hubs: {[(tokens[i], deg) for i, deg in top_hubs]}")
-
+            top_hubs = sorted(degrees.items(), key=lambda x: x[1], reverse=True)[:10]
+            print(f"Top 10 hubs: {[(tokens[i], deg) for i, deg in top_hubs]}")
+        
+        edges = list(G.edges())
         if edges:
-            top_edges = sorted(zip(edges, weights),
-                               key=lambda x: x[1], reverse=True)[:5]
-            print(f"Strongest edges: {[f'{tokens[u]}↔{tokens[v]} ({w:.3f})' for (
-                u, v), w in top_edges]}")
+            weights = [G[u][v]['weight'] for u, v in edges]
+            top_edges = sorted(zip(edges, weights), key=lambda x: x[1], reverse=True)[:10]
+            print(f"Top 10 edges: {[f'{tokens[u]}↔{tokens[v]} ({w:.3f})' for (u, v), w in top_edges]}")
+        
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
+        
+        viz_size = min(50, num_nodes)
+        im = ax1.imshow(adj[:viz_size, :viz_size], cmap='viridis', aspect='auto')
+        ax1.set_xticks(range(0, viz_size, 5))
+        ax1.set_yticks(range(0, viz_size, 5))
+        ax1.set_xticklabels(tokens[:viz_size:5], rotation=90, fontsize=6)
+        ax1.set_yticklabels(tokens[:viz_size:5], fontsize=6)
+        ax1.set_title(f'Adjacency Matrix (first {viz_size} tokens)')
+        plt.colorbar(im, ax=ax1)
+        
+        top_node_ids = [i for i, _ in top_hubs[:30]]
+        G_sub = G.subgraph(top_node_ids)
+        
+        pos = nx.spring_layout(G_sub, k=2, iterations=50)
+        node_labels = {i: tokens[i] for i in G_sub.nodes()}
+        
+        nx.draw_networkx_nodes(G_sub, pos, node_size=300, node_color='lightblue', ax=ax2)
+        nx.draw_networkx_labels(G_sub, pos, node_labels, font_size=6, ax=ax2)
+        
+        edges_sub = G_sub.edges()
+        if edges_sub:
+            weights_sub = [G_sub[u][v]['weight'] for u, v in edges_sub]
+            nx.draw_networkx_edges(G_sub, pos, width=[w*2 for w in weights_sub],
+                                   alpha=0.6, edge_color='gray', ax=ax2)
+        
+        ax2.set_title(f'Subgraph (top 30 hubs)\nTrue: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}')
+        ax2.axis('off')
+        
+        plt.tight_layout()
+        plt.savefig(f'{save_dir}/graph_sample{idx}.png', dpi=150, bbox_inches='tight')
+        plt.close()
 
 
 def visualize_dgm_token_importance(dataset, model, num_samples=5, save_dir=save_dir):
     os.makedirs(save_dir, exist_ok=True)
 
     device = next(model.parameters()).device
-    tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
+    tokenizer = AutoTokenizer.from_pretrained(encoder_name)
     model.eval()
 
     for idx in range(min(num_samples, len(dataset))):
@@ -166,12 +166,11 @@ def visualize_dgm_token_importance(dataset, model, num_samples=5, save_dir=save_
         print(
             f"Sample {idx} top tokens: {[tokens[i] for i in top_indices[:5]]}")
 
-
 dgm_model = DGM_Model.load_from_checkpoint(
-    f'{prefix_dir}{version}/checkpoints/epoch=29-step=8490.ckpt')
+    f'{prefix_dir}{version}/checkpoints/{checkpoint}')
 
 test_data = NewsGroupsGraphDataset(
     split='test', max_length=512, device='cuda', use_cache=True)
 
-visualize_dgm_graphs(test_data, dgm_model, num_samples=5)
-visualize_dgm_token_importance(test_data, dgm_model, num_samples=5)
+visualize_dgm_graphs(test_data, dgm_model, num_samples=10)
+# visualize_dgm_token_importance(test_data, dgm_model, num_samples=5)

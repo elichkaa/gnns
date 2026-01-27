@@ -1,0 +1,22 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_train_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_val_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n564
+Job ID: 3011446
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:14
+CPU Efficiency: 3.15% of 00:39:12 core-walltime
+Job Wall-clock time: 00:02:27
+Memory Utilized: 37.33 GB
+Memory Efficiency: 29.98% of 124.51 GB (124.51 GB/node)

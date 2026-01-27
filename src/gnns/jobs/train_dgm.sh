@@ -14,24 +14,23 @@ export USE_KEOPS=True
 
 source /home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/bin/activate
 
-srun python ../train.py \
+cd ~/project/gnns/src/gnns
+
+srun python train.py \
     --model_type dgm \
-    --encoder_name google/embeddinggemma-300m \
+    --encoder_name distilbert-base-uncased \
     --max_epochs 30 \
-    --batch_size 16 \
-    --lr 1e-4 \
-    --dropout 0.5 \
-    --weight_decay 0.001
-    --patience 7 \
+    --batch_size 8 \
+    --lr 1e-3 \
+    --dropout 0.3 \
+    --weight_decay 0.001 \
+    --patience 10 \
     --pooling mean \
     --max_length 512 \
-    --k 10 \
+    --k 5 \
     --distance euclidean \
     --gfun gat \
     --ffun gcn \
-    # -- 
-    #--conv_layers "[[768, 384], [384, 192], [192, 96]]" \
-    #--fc_layers "[96, 48, 20]" \
-    --pre_fc "[]" \
-    --lambda_sparse 0.2 \
-    --lambda_entropy 0.05 \
+    --test_eval 5 \
+    --resume_from_checkpoint "logs/dDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_0/checkpoints/epoch=14-step=16980.ckpt" \
+    --freeze_encoder

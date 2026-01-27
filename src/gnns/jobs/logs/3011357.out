@@ -1,0 +1,50 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_distilbert-base-uncased.pkl
+
+=== Sample 0 ===
+True: rec.autos | Pred: comp.graphics
+Graph stats: 30 nodes, 0 edges
+Top hubs: [('<bos>', 0), ('I', 0), ('▁am', 0), ('▁a', 0), ('▁little', 0)]
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.graphics
+Graph stats: 30 nodes, 36 edges
+Top hubs: [('I', 8), ("'", 8), ('m', 8), ('▁not', 8), ('▁familiar', 8)]
+Strongest edges: ["I↔' (1.000)", 'I↔m (1.000)', 'I↔▁not (1.000)', 'I↔▁familiar (1.000)', 'I↔▁at (1.000)']
+
+=== Sample 2 ===
+True: alt.atheism | Pred: comp.graphics
+Graph stats: 8 nodes, 0 edges
+Top hubs: [('<bos>', 0), ('\n', 0), ('In', 0), ('▁a', 0), ('▁word', 0)]
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: comp.graphics
+Graph stats: 30 nodes, 36 edges
+Top hubs: [('\n', 8), ('They', 8), ('▁were', 8), ('▁attacking', 8), ('▁the', 8)]
+Strongest edges: ['\n↔They (1.000)', '\n↔▁were (1.000)', '\n↔▁attacking (1.000)', '\n↔▁the (1.000)', '\n↔▁Iraq (1.000)']
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: comp.graphics
+Graph stats: 22 nodes, 0 edges
+Top hubs: [('<bos>', 0), ('\n', 0), ('I', 0), ("'", 0), ('ve', 0)]
+Sample 0 top tokens: ['▁', '▁other', '▁words', '8', '▁far']
+Sample 1 top tokens: ['\n', '▁find', '▁I', '▁that', '▁little']
+Sample 2 top tokens: ['<bos>', '.', '▁yes', 'In', '▁a']
+Sample 3 top tokens: ['d', 'leader', '▁▁', ',', '▁that']
+Sample 4 top tokens: ['▁system', '▁exists', '▁no', '▁that', '▁moral']
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n561
+Job ID: 3011357
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:40
+CPU Efficiency: 4.17% of 00:16:00 core-walltime
+Job Wall-clock time: 00:01:00
+Memory Utilized: 25.42 GB
+Memory Efficiency: 20.41% of 124.51 GB (124.51 GB/node)

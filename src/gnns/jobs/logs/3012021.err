@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 177, in <module>
+    visualize_dgm_graphs(test_data, dgm_model, num_samples=5)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 50, in visualize_dgm_graphs
+    G.add_node(i, label=tokens[i])
+                        ~~~~~~^^^
+IndexError: list index out of range
+srun: error: uc2n562: task 0: Exited with exit code 1

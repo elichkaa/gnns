@@ -1,0 +1,25 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_train_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_val_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]ERROR in DGM layer 0: 'dict' object has no attribute 'append'
+graph_x shape: torch.Size([16, 512, 64])
+current_edges: None
+                                                                   
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n564
+Job ID: 3011134
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 127)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:09
+CPU Efficiency: 4.11% of 00:28:00 core-walltime
+Job Wall-clock time: 00:01:45
+Memory Utilized: 41.26 GB
+Memory Efficiency: 33.14% of 124.51 GB (124.51 GB/node)

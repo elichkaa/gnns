@@ -1,0 +1,88 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_distilbert-base-uncased.pkl
+
+=== Sample 0 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 112, Total edges in adj: 132
+Graph stats: 112 nodes, 107 edges
+Top 10 hubs: [('usually', 6), ('time', 6), ('mid', 6), ('model', 5), ('are', 5), ('time', 5), ('bonn', 4), ('le', 4), ('the', 4), ('am', 4)]
+Top 10 edges: ['i↔i (1.000)', 'i↔i (1.000)', 'am↔am (1.000)', 'am↔also (1.000)', 'a↔am (1.000)', 'a↔also (1.000)', 'little↔tell (1.000)', 'little↔usually (1.000)', 'little↔in (1.000)', 'confused↔curious (1.000)']
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 179, Total edges in adj: 227
+Graph stats: 179 nodes, 198 edges
+Top 10 hubs: [('t', 6), ('seem', 6), ('face', 6), (')', 5), ("'", 5), ('any', 5), ('face', 5), ('"', 5), ('know', 5), ('"', 4)]
+Top 10 edges: ['i↔i (1.000)', 'i↔i (1.000)', "'↔' (1.000)", "'↔) (1.000)", 'm↔and (1.000)', 'm↔m (1.000)', 'not↔some (1.000)', 'not↔but (1.000)', 'at↔all (1.000)', 'at↔to (1.000)']
+
+=== Sample 2 ===
+True: alt.atheism | Pred: talk.politics.misc
+Num nodes: 8, Total edges in adj: 5
+Graph stats: 8 nodes, 2 edges
+Top 10 hubs: [('yes', 2), ('a', 1), (',', 1), ('[CLS]', 0), ('in', 0), ('word', 0), ('.', 0), ('[SEP]', 0)]
+Top 10 edges: ['a↔yes (1.000)', ',↔yes (1.000)']
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 512, Total edges in adj: 768
+Graph stats: 512 nodes, 641 edges
+Top 10 hubs: [('yet', 12), ('world', 9), ('that', 8), ('was', 8), ('they', 8), ('no', 8), ('in', 8), ('human', 7), ('country', 7), ('you', 7)]
+Top 10 edges: ['[CLS]↔defended (1.000)', '[CLS]↔clarinet (1.000)', '[CLS]↔tow (1.000)', 'they↔not (1.000)', 'they↔group (1.000)', 'were↔are (1.000)', 'were↔the (1.000)', 'were↔as (1.000)', 'attacking↔west (1.000)', 'attacking↔friday (1.000)']
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 22, Total edges in adj: 24
+Graph stats: 22 nodes, 18 edges
+Top 10 hubs: [('just', 4), ('spent', 4), ('no', 4), ('months', 3), ("'", 2), ('ve', 2), ('two', 2), ('solid', 2), ('such', 2), ('thing', 2)]
+Top 10 edges: ['i↔spent (1.000)', "'↔two (1.000)", "'↔. (1.000)", 've↔just (1.000)', 've↔months (1.000)', 'just↔spent (1.000)', 'just↔months (1.000)', 'just↔no (1.000)', 'spent↔two (1.000)', 'spent↔solid (1.000)']
+
+=== Sample 5 ===
+True: sci.med | Pred: sci.med
+Num nodes: 512, Total edges in adj: 768
+Graph stats: 512 nodes, 649 edges
+Top 10 hubs: [('posted', 8), ('as', 8), ('anti', 7), ('class', 7), ('##ife', 7), ('a', 6), ('sick', 6), ('candi', 6), ('"', 6), ('of', 6)]
+Top 10 edges: ['[CLS]↔addressing (1.000)', '[CLS]↔steve (1.000)', '[CLS]↔greek (1.000)', 'elisabeth↔sick (1.000)', 'elisabeth↔noticed (1.000)', 'elisabeth↔elisabeth (1.000)', ',↔, (1.000)', ',↔( (1.000)', 'let↔it (1.000)', 'let↔you (1.000)']
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 29, Total edges in adj: 29
+Graph stats: 29 nodes, 15 edges
+Top 10 hubs: [('little', 4), ('away', 3), ('prove', 3), ('##t', 2), ('d', 2), ('##les', 2), ('little', 2), ('by', 2), ('it', 2), ('##rb', 2)]
+Top 10 edges: ['##t↔little (1.000)', '##t↔little (1.000)', 'd↔money (1.000)', 'd↔it (1.000)', '##les↔away (1.000)', '##les↔he (1.000)', 'away↔who (1.000)', 'away↔little (1.000)', ',↔. (1.000)', 'little↔prove (1.000)']
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: comp.os.ms-windows.misc
+Num nodes: 128, Total edges in adj: 158
+Graph stats: 128 nodes, 118 edges
+Top 10 hubs: [('south', 6), ('word', 5), ('"', 4), ('it', 4), ('some', 4), ('the', 4), ('tell', 4), ('could', 4), ('address', 4), ('@', 4)]
+Top 10 edges: ['a↔friend (1.000)', 'a↔me (1.000)', 'friend↔one (1.000)', 'friend↔could (1.000)', 'of↔that (1.000)', 'of↔[SEP] (1.000)', 'mine↔my (1.000)', 'managed↔she (1.000)', 'managed↔able (1.000)', 'managed↔no (1.000)']
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 58, Total edges in adj: 64
+Graph stats: 58 nodes, 55 edges
+Top 10 hubs: [('time', 6), ('done', 6), ('we', 4), ('a', 4), ('for', 4), ('in', 4), ('any', 4), ('only', 4), ('##ming', 4), ('display', 3)]
+Top 10 edges: [',↔we (1.000)', ',↔is (1.000)', 'we↔a (1.000)', 'we↔for (1.000)', 'we↔time (1.000)', 'have↔a (1.000)', 'have↔for (1.000)', 'a↔time (1.000)', 'a↔the (1.000)', 'for↔done (1.000)']
+
+=== Sample 9 ===
+True: comp.graphics | Pred: comp.graphics
+Num nodes: 143, Total edges in adj: 181
+Graph stats: 143 nodes, 138 edges
+Top 10 hubs: [('really', 5), ('colour', 5), ('black', 5), (':', 4), ('and', 4), ('a', 4), ('.', 4), ("'", 4), ('it', 4), ('i', 4)]
+Top 10 edges: [':↔as (1.000)', ':↔: (1.000)', ':↔: (1.000)', ':↔: (1.000)', ':↔: (1.000)', 'well↔lots (1.000)', 'well↔is (1.000)', 'well↔( (1.000)', ',↔) (1.000)', ',↔and (1.000)']
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n574
+Job ID: 3028558
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:37
+CPU Efficiency: 2.05% of 00:30:08 core-walltime
+Job Wall-clock time: 00:01:53
+Memory Utilized: 25.17 GB
+Memory Efficiency: 20.22% of 124.51 GB (124.51 GB/node)

@@ -1,0 +1,6 @@
+GpuFreq=control_disabled
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 102
+    print(f"Strongest edges: {[f'{tokens[u]}↔{tokens[v]} ({w:.3f})' for (
+          ^
+SyntaxError: unterminated string literal (detected at line 102)
+srun: error: uc2n562: task 0: Exited with exit code 1

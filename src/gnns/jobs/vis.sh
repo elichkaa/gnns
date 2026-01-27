@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=graph_gnn
+#SBATCH --job-name=vis
 #SBATCH --partition=gpu_a100_short
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=16
