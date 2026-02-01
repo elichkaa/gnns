@@ -1,0 +1,3 @@
+GpuFreq=control_disabled
+/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py:125: UserWarning: Glyph 9 (	) missing from font(s) DejaVu Sans.
+  plt.savefig(f'{save_dir}/graph_sample{idx}.png', dpi=150, bbox_inches='tight')

@@ -1,0 +1,65 @@
+GpuFreq=control_disabled
+💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+You are using a CUDA device ('NVIDIA H100') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name    | Type       | Params | Mode  | FLOPs
+-------------------------------------------------------
+0 | pre_fc  | MLP        | 196 K  | train | 0    
+1 | graph_f | ModuleList | 41.2 K | train | 0    
+2 | node_g  | ModuleList | 33.2 K | train | 0    
+3 | fc      | MLP        | 9.6 K  | train | 0    
+-------------------------------------------------------
+280 K     Trainable params
+0         Non-trainable params
+280 K     Total params
+1.123     Total estimated model params size (MB)
+20        Modules in train mode
+0         Modules in eval mode
+0         Total Flops
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 16. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 7. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+Metric val_acc improved. New best score: 14.582
+Metric val_acc improved by 11.798 >= min_delta = 0.001. New best score: 26.381
+Metric val_acc improved by 8.970 >= min_delta = 0.001. New best score: 35.351
+Metric val_acc improved by 6.894 >= min_delta = 0.001. New best score: 42.245
+Metric val_acc improved by 6.452 >= min_delta = 0.001. New best score: 48.696
+Metric val_acc improved by 3.668 >= min_delta = 0.001. New best score: 52.364
+Metric val_acc improved by 7.556 >= min_delta = 0.001. New best score: 59.920
+Metric val_acc improved by 2.607 >= min_delta = 0.001. New best score: 62.528
+Metric val_acc improved by 2.209 >= min_delta = 0.001. New best score: 64.737
+Metric val_acc improved by 1.105 >= min_delta = 0.001. New best score: 65.842
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 66.195
+Metric val_acc improved by 0.795 >= min_delta = 0.001. New best score: 66.991
+Metric val_acc improved by 0.795 >= min_delta = 0.001. New best score: 67.786
+Metric val_acc improved by 1.326 >= min_delta = 0.001. New best score: 69.112
+Metric val_acc improved by 0.088 >= min_delta = 0.001. New best score: 69.200
+Metric val_acc improved by 1.061 >= min_delta = 0.001. New best score: 70.261
+Metric val_acc improved by 0.442 >= min_delta = 0.001. New best score: 70.703
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 71.056
+Metric val_acc improved by 0.309 >= min_delta = 0.001. New best score: 71.365
+Metric val_acc improved by 0.442 >= min_delta = 0.001. New best score: 71.807
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 72.028
+Metric val_acc improved by 0.044 >= min_delta = 0.001. New best score: 72.072
+Metric val_acc improved by 0.044 >= min_delta = 0.001. New best score: 72.117
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 72.470
+Metric val_acc improved by 0.619 >= min_delta = 0.001. New best score: 73.089
+Metric val_acc improved by 0.044 >= min_delta = 0.001. New best score: 73.133
+Metric val_acc improved by 0.177 >= min_delta = 0.001. New best score: 73.310
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 73.531
+Metric val_acc improved by 0.133 >= min_delta = 0.001. New best score: 73.663
+Metric val_acc improved by 0.398 >= min_delta = 0.001. New best score: 74.061
+Metric val_acc improved by 0.486 >= min_delta = 0.001. New best score: 74.547
+Metric val_acc improved by 0.486 >= min_delta = 0.001. New best score: 75.033
+Metric val_acc improved by 0.442 >= min_delta = 0.001. New best score: 75.475
+Metric val_acc improved by 0.398 >= min_delta = 0.001. New best score: 75.873
+Metric val_acc improved by 0.265 >= min_delta = 0.001. New best score: 76.138
+Metric val_acc improved by 0.133 >= min_delta = 0.001. New best score: 76.270
+`Trainer.fit` stopped: `max_epochs=100` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 12. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.

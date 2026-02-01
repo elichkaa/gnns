@@ -2,7 +2,10 @@ from tbparse import SummaryReader
 import matplotlib.pyplot as plt
 import os
 
-log_dir = "../logs/dDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_1"
+# log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolmean/version_6"
+# log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolcls/version_0"
+# log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolmean/version_4"
+log_dir = "../logs_mrd/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0"
 reader = SummaryReader(log_dir)
 df = reader.scalars
 
@@ -103,9 +106,6 @@ plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'comparison.png'), dpi=150)
 plt.close()
 
-print(f'\n✓ All plots saved to: {output_dir}')
-
-print('\n=== SUMMARY ===')
 for metric in ['train_loss', 'train_acc', 'val_loss', 'val_acc', 'test_loss', 'test_acc', 'test_edge_prob_mean', 'train_edge_prob_mean']:
     metric_df = df[df['tag'] == metric]
     if len(metric_df) > 0:

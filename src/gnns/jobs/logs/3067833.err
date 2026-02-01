@@ -1,0 +1,32 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 260, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 59, in run_training_process
+    train_data = MRDGraphDataset(split='train', **dataset_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 231, in __init__
+    self._preprocess_all_documents()
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 315, in _preprocess_all_documents
+    outputs = self.encoder(
+              ^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib64/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib64/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/transformers/models/distilbert/modeling_distilbert.py", line 711, in forward
+    embeddings = self.embeddings(input_ids, inputs_embeds)  # (bs, seq_length, dim)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib64/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib64/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/transformers/models/distilbert/modeling_distilbert.py", line 125, in forward
+    embeddings = input_embeds + position_embeddings  # (bs, max_seq_length, dim)
+                 ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+RuntimeError: The size of tensor a (1000) must match the size of tensor b (512) at non-singleton dimension 1
+srun: error: uc3n082: task 0: Exited with exit code 1

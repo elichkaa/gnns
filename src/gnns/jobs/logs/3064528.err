@@ -1,0 +1,59 @@
+GpuFreq=control_disabled
+💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+You are using a CUDA device ('NVIDIA H100') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Restoring states from the checkpoint path at logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/checkpoints/epoch=49-step=14150.ckpt
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:566: The dirpath has changed from './logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/checkpoints' to './logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_10/checkpoints', therefore `best_model_score`, `kth_best_model_path`, `kth_value`, `last_model_path` and `best_k_models` won't be reloaded. Only `best_model_path` will be reloaded.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name              | Type             | Params | Mode  | FLOPs
+-----------------------------------------------------------------------
+0 | dropout           | Dropout          | 0      | train | 0    
+1 | graph_modules     | ModuleList       | 106 K  | train | 0    
+2 | diffusion_modules | ModuleList       | 20.7 K | train | 0    
+3 | classifier        | Sequential       | 10.9 K | train | 0    
+4 | criterion         | CrossEntropyLoss | 0      | train | 0    
+-----------------------------------------------------------------------
+138 K     Trainable params
+0         Non-trainable params
+138 K     Total params
+0.553     Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+0         Total Flops
+Restored all states from the checkpoint at logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/checkpoints/epoch=49-step=14150.ckpt
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 32. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 23. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+Metric val_acc improved by 0.574 >= min_delta = 0.001. New best score: 63.721
+Metric val_acc improved by 0.486 >= min_delta = 0.001. New best score: 64.207
+Metric val_acc improved by 0.133 >= min_delta = 0.001. New best score: 64.339
+Metric val_acc improved by 0.044 >= min_delta = 0.001. New best score: 64.384
+Metric val_acc improved by 0.088 >= min_delta = 0.001. New best score: 64.472
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 64.693
+Metric val_acc improved by 0.928 >= min_delta = 0.001. New best score: 65.621
+Metric val_acc improved by 0.265 >= min_delta = 0.001. New best score: 65.886
+Metric val_acc improved by 0.751 >= min_delta = 0.001. New best score: 66.637
+Metric val_acc improved by 0.265 >= min_delta = 0.001. New best score: 66.902
+Metric val_acc improved by 0.265 >= min_delta = 0.001. New best score: 67.167
+Metric val_acc improved by 0.707 >= min_delta = 0.001. New best score: 67.875
+Metric val_acc improved by 0.133 >= min_delta = 0.001. New best score: 68.007
+Metric val_acc improved by 0.619 >= min_delta = 0.001. New best score: 68.626
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 68.847
+Metric val_acc improved by 0.133 >= min_delta = 0.001. New best score: 68.979
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 69.200
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 69.421
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 69.775
+Metric val_acc improved by 0.088 >= min_delta = 0.001. New best score: 69.863
+Metric val_acc improved by 0.044 >= min_delta = 0.001. New best score: 69.907
+Metric val_acc improved by 0.442 >= min_delta = 0.001. New best score: 70.349
+Metric val_acc improved by 0.088 >= min_delta = 0.001. New best score: 70.437
+Metric val_acc improved by 0.486 >= min_delta = 0.001. New best score: 70.924
+Metric val_acc improved by 0.088 >= min_delta = 0.001. New best score: 71.012
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 3064528 ON uc3n082 CANCELLED AT 2026-01-31T20:35:49 ***
+slurmstepd: error: *** STEP 3064528.0 ON uc3n082 CANCELLED AT 2026-01-31T20:35:49 ***
+[rank: 0] Received SIGTERM: 15
+Bypassing SIGTERM: 15

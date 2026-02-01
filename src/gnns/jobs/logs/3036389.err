@@ -1,0 +1,12 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 175, in <module>
+    visualize_dgm_graphs(test_data, dgm_model, num_samples=10)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 64, in visualize_dgm_graphs
+    print(f"Top 10 hubs: {[(tokens[i], deg) for i, deg in top_hubs]}")
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 64, in <listcomp>
+    print(f"Top 10 hubs: {[(tokens[i], deg) for i, deg in top_hubs]}")
+                            ~~~~~~^^^
+IndexError: list index out of range
+srun: error: uc2n562: task 0: Exited with exit code 1

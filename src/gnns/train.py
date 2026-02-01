@@ -9,6 +9,8 @@ from torch.utils.data import DataLoader
 import os
 import sys
 import torch
+import numpy as np
+from gnns.dgm.cdgm import cDGM_GNN
 
 from gnns.dgm.model import DGM_Model
 sys.path.insert(0, './keops')
@@ -95,8 +97,8 @@ def run_training_process(run_params):
     elif args.model_type == 'dgm':
         if args.pre_fc is None or len(args.pre_fc) == 0:
             if len(args.dgm_layers[0]) > 0:
-                args.dgm_layers[0][0] = encoder_dim
-            args.conv_layers[0][0] = encoder_dim
+                args.dgm_layers[0] = [encoder_dim] + args.dgm_layers[0][1:]
+            args.conv_layers[0] = [encoder_dim] + args.conv_layers[0][1:]
         else:
             args.pre_fc[0] = encoder_dim
             first_hidden = args.pre_fc[-1]
@@ -110,6 +112,10 @@ def run_training_process(run_params):
         dgm_type = "cDGM" if args.use_continuous_dgm else "dDGM"
         encoder_str = args.encoder_name.replace("/", "-")
         model_name = f"{dgm_type}_{encoder_str}_k{args.k}_{args.gfun}_{args.distance}_pool{args.pooling}"
+    elif args.model_type == "cdgm":
+        model = cDGM_GNN(args)
+        encoder_str = args.encoder_name.replace("/", "-")
+        model_name = f"cdgm_{encoder_str}_k{args.k}_{args.gfun}_{args.distance}_pool{args.pooling}"
     else:
         raise ValueError(f"Unknown model type: {args.model_type}")
 
@@ -127,9 +133,9 @@ def run_training_process(run_params):
     print("LOGGING")
     logger = TensorBoardLogger("./logs/", name=model_name.replace("/", "-"))
     if TEST_ONLY:
-        prefix_dir = "../logs/dDGM_google-embeddinggemma-300m_k10_gat_euclidean_poolmean/"
-        version = "version_2"
-        model = DGM_Model.load_from_checkpoint(f'{prefix_dir}{version}/checkpoints/epoch=49-step=28300.ckpt')
+        prefix_dir = "./logs/dDGM_google-embeddinggemma-300m_k15_gat_euclidean_poolmean/"
+        version = "version_3"
+        model = DGM_Model.load_from_checkpoint(f'{prefix_dir}{version}/checkpoints/epoch=49-step=14150.ckpt')
         
     trainer = pl.Trainer(
         max_epochs=args.max_epochs,
@@ -143,10 +149,12 @@ def run_training_process(run_params):
         enable_progress_bar=True,
     )
 
-    if args.resume_from_checkpoint:
-        trainer.fit(model, datamodule=MyDataModule(), ckpt_path=args.resume_from_checkpoint)
-    else:
-        trainer.fit(model, datamodule=MyDataModule())
+    if not TEST_ONLY:
+        if args.resume_from_checkpoint:
+            trainer.fit(model, datamodule=MyDataModule(), ckpt_path=args.resume_from_checkpoint)
+        else:
+            trainer.fit(model, datamodule=MyDataModule())
+
     trainer.test(model, datamodule=MyDataModule())
 
 
@@ -155,7 +163,7 @@ if __name__ == "__main__":
 
     # Model type
     parser.add_argument("--model_type", type=str, default='dgm',
-                        choices=['baseline', 'dgm'],
+                        choices=['baseline', 'dgm', 'cdgm'],
                         help="Model type: 'baseline' (BERT only) or 'dgm' (with graph learning)")
 
     # Encoder configuration
@@ -206,12 +214,14 @@ if __name__ == "__main__":
                         help="DGM encoder function")
 
     # Regularization
-    parser.add_argument("--lambda_sparse", type=float, default=0.1,
-                        help="Sparsity regularization weight")
-    parser.add_argument("--lambda_connect", type=float, default=0.01,
+    parser.add_argument("--lambda_sparse", type=float, default=0.01,
+                    help="Sparsity regularization weight")
+    parser.add_argument("--lambda_connect", type=float, default=0.001,
                         help="Connectivity regularization weight")
-    parser.add_argument("--lambda_entropy", type=float, default=0.01,
+    parser.add_argument("--lambda_entropy", type=float, default=0.001,
                         help="Edge entropy regularization weight")
+    parser.add_argument("--lambda_locality", type=float, default=0.01,
+                        help="Locality regularization weight")
 
     # Training
     parser.add_argument("--pooling", type=str, default='mean',
@@ -225,7 +235,7 @@ if __name__ == "__main__":
                         help="Maximum training epochs")
     parser.add_argument("--patience", type=int, default=10,
                         help="Early stopping patience")
-    parser.add_argument("--test_eval", type=int, default=5,
+    parser.add_argument("--test_eval", type=int, default=10,
                         help="Number of forward passes for test ensemble")
     parser.add_argument("--weight_decay", type=float, default=0.01)
     parser.add_argument("--resume_from_checkpoint", type=str, default=None, help="Path to checkpoint to resume training from")

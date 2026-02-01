@@ -1,0 +1,8 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 13, in <module>
+    from gnns.dgm.model import DGM_Model
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/model.py", line 310
+    corr_pred = (pred.argmax(-1) == y).float().detach()
+IndentationError: unexpected indent
+srun: error: uc2n562: task 0: Exited with exit code 1

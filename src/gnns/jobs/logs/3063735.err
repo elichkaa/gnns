@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 244, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 115, in run_training_process
+    model = cDGM_GNN(run_params)
+            ^^^^^^^^
+NameError: name 'cDGM_GNN' is not defined
+srun: error: uc2n564: task 0: Exited with exit code 1

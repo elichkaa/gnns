@@ -1,0 +1,23 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_train_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_val_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+LOGGING
+Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]Sanity Checking DataLoader 0:  50%|█████     | 1/2 [00:00<00:00,  1.48it/s]Sanity Checking DataLoader 0: 100%|██████████| 2/2 [00:00<00:00,  2.18it/s]                                                                           Training: |          | 0/? [00:00<?, ?it/s]Training: |          | 0/? [00:00<?, ?it/s]Epoch 0:   0%|          | 0/566 [00:00<?, ?it/s]Epoch 0:   0%|          | 1/566 [00:00<02:33,  3.67it/s]Epoch 0:   0%|          | 1/566 [00:00<02:34,  3.66it/s, v_num=9, train_acc=0.000, train_loss=3.020]Epoch 0:   0%|          | 1/566 [00:01<15:53,  0.59it/s, v_num=9, train_acc=0.000, train_loss=3.020]
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n562
+Job ID: 3040492
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 127)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:07
+CPU Efficiency: 4.87% of 00:22:56 core-walltime
+Job Wall-clock time: 00:01:26
+Memory Utilized: 43.72 GB
+Memory Efficiency: 35.11% of 124.51 GB (124.51 GB/node)

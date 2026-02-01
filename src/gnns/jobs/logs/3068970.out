@@ -1,0 +1,22 @@
+Loading MRD test data...
+[ Max seq length: 2603 ]
+[ Min seq length: 9 ]
+[ Mean seq length: 429 ]
+[ Train: 3003, Dev: 1001, Test: 1002 ]
+Loaded 1002 test instances
+Processing document 0/1002...
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n082
+Job ID: 3068970
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:12
+CPU Efficiency: 2.21% of 00:09:04 core-walltime
+Job Wall-clock time: 00:00:34
+Memory Utilized: 790.83 MB
+Memory Efficiency: 0.62% of 124.51 GB (124.51 GB/node)

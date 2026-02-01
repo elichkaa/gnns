@@ -1,0 +1,78 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+
+=== Sample 0 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 123, Total edges in adj: 827
+Graph stats: 123 nodes, 869 edges
+Top 10 hubs: [('early', 30), ('▁that', 28), ('▁SE', 24), ('▁the', 24), ('▁usually', 24), ('\n', 23), ('<bos>', 22), ('▁them', 22), ('▁me', 21), ('▁pref', 21)]
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 174, Total edges in adj: 1569
+Graph stats: 174 nodes, 1604 edges
+Top 10 hubs: [('▁*', 34), ('▁folks', 33), ('▁would', 33), ('▁probably', 33), ('▁can', 33), (']', 32), ('.', 32), ('?', 31), ('▁I', 31), (',', 30)]
+
+=== Sample 2 ===
+True: alt.atheism | Pred: alt.atheism
+Num nodes: 10, Total edges in adj: 18
+Graph stats: 10 nodes, 10 edges
+Top 10 hubs: [('.', 5), ('▁a', 4), ('\n', 3), (',', 3), ('<bos>', 2), ('In', 2), ('▁word', 1), ('▁yes', 0), ('\n', 0), ('<eos>', 0)]
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 512, Total edges in adj: 11249
+Graph stats: 512 nodes, 11061 edges
+Top 10 hubs: [('oud', 85), ('▁the', 82), ('rings', 79), (':', 77), ('-', 77), ('▁under', 76), ('▁as', 76), ('\t', 75), ('▁branded', 74), ('▁really', 73)]
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 24, Total edges in adj: 35
+Graph stats: 24 nodes, 24 edges
+Top 10 hubs: [('\n', 5), ('▁exists', 5), ('<bos>', 4), ('I', 4), ('▁just', 4), ('\n', 4), ("'", 3), ('ve', 3), ('▁as', 3), ('▁spent', 2)]
+
+=== Sample 5 ===
+True: sci.med | Pred: sci.med
+Num nodes: 512, Total edges in adj: 11046
+Graph stats: 512 nodes, 10986 edges
+Top 10 hubs: [(',', 87), ('\n', 74), ('e', 72), (',', 71), ('▁covers', 71), ('▁was', 70), (',', 70), ('▁dispute', 69), ('ida', 69), ('▁and', 68)]
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 34, Total edges in adj: 72
+Graph stats: 34 nodes, 58 edges
+Top 10 hubs: [('est', 8), ('1', 8), ('les', 7), ('▁', 7), ('<bos>', 5), ('Dish', 5), ('on', 5), ('▁money', 5), ('▁makes', 5), ('it', 5)]
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: comp.os.ms-windows.misc
+Num nodes: 143, Total edges in adj: 776
+Graph stats: 143 nodes, 807 edges
+Top 10 hubs: [('A', 26), ('▁a', 24), ('.', 23), ('<bos>', 20), ('und', 20), ('\n', 19), ('▁distributors', 19), ('▁me', 19), ('\t', 19), ('▁computer', 18)]
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 63, Total edges in adj: 198
+Graph stats: 63 nodes, 207 edges
+Top 10 hubs: [('▁proper', 17), ('▁display', 15), ('▁associated', 14), ('▁problems', 13), ('▁at', 11), ('▁only', 11), ('▁the', 11), ('▁a', 11), ('▁there', 10), ('▁display', 10)]
+
+=== Sample 9 ===
+True: comp.graphics | Pred: comp.graphics
+Num nodes: 161, Total edges in adj: 1086
+Graph stats: 161 nodes, 1052 edges
+Top 10 hubs: [('▁it', 24), ('\n', 24), ('<bos>', 23), ('(', 23), ('.', 22), ('▁than', 22), ('▁that', 21), ('▁into', 21), ('▁', 21), ('\n', 20)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n561
+Job ID: 3036586
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:39
+CPU Efficiency: 4.00% of 00:16:16 core-walltime
+Job Wall-clock time: 00:01:01
+Memory Utilized: 25.19 GB
+Memory Efficiency: 20.23% of 124.51 GB (124.51 GB/node)

@@ -1,0 +1,113 @@
+Loading 20newsgroups test data...
+Processing document 0/7532...
+Processing document 500/7532...
+Processing document 1000/7532...
+Processing document 1500/7532...
+Processing document 2000/7532...
+Processing document 2500/7532...
+Processing document 3000/7532...
+Processing document 3500/7532...
+Processing document 4000/7532...
+Processing document 4500/7532...
+Processing document 5000/7532...
+Processing document 5500/7532...
+Processing document 6000/7532...
+Processing document 6500/7532...
+Processing document 7000/7532...
+Processing document 7500/7532...
+Saving to cache: ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+
+=== Sample 0 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 123
+Adjacency stats: min=0.000, max=1.000, mean=0.984
+Graph stats: 123 nodes, 7381 edges (threshold=0.5)
+Top 10 hubs: [('<bos>', 121), ('I', 121), ('▁am', 121), ('▁a', 121), ('▁little', 121), ('▁confused', 121), ('▁on', 121), ('▁all', 121), ('▁of', 121), ('▁the', 121)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample0.png
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 174
+Adjacency stats: min=0.000, max=1.000, mean=0.989
+Graph stats: 174 nodes, 14878 edges (threshold=0.5)
+Top 10 hubs: [('<bos>', 172), ('I', 172), ("'", 172), ('m', 172), ('▁not', 172), ('▁familiar', 172), ('▁at', 172), ('▁all', 172), ('▁with', 172), ('▁the', 172)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample1.png
+
+=== Sample 2 ===
+True: alt.atheism | Pred: talk.politics.mideast
+Num nodes: 10
+Adjacency stats: min=0.000, max=1.000, mean=0.540
+Graph stats: 10 nodes, 22 edges (threshold=0.5)
+Top 10 hubs: [('\n', 6), ('In', 6), ('▁a', 6), ('▁word', 6), (',', 6), ('.', 6), ('\n', 6), ('<bos>', 1), ('<eos>', 1), ('▁yes', 0)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample2.png
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 512
+Adjacency stats: min=0.000, max=1.000, mean=0.981
+Graph stats: 512 nodes, 128281 edges (threshold=0.5)
+Top 10 hubs: [(',', 507), ('▁guys', 507), ('ess', 507), ("'", 507), ('▁the', 507), ('▁', 507), (')', 507), ('ess', 507), ('<bos>', 506), ('\n', 506)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample3.png
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 24
+Adjacency stats: min=0.000, max=1.000, mean=0.708
+Graph stats: 24 nodes, 192 edges (threshold=0.5)
+Top 10 hubs: [('\n', 20), ('ve', 20), ('▁thing', 20), ('<bos>', 19), ('I', 19), ('▁just', 19), ('▁spent', 19), ('▁solid', 19), ('▁that', 19), ('▁no', 19)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample4.png
+
+=== Sample 5 ===
+True: sci.med | Pred: sci.med
+Num nodes: 512
+Adjacency stats: min=0.000, max=1.000, mean=0.879
+Graph stats: 512 nodes, 114970 edges (threshold=0.5)
+Top 10 hubs: [('".', 481), (',', 481), ('s', 481), ('.', 481), ('▁species', 481), (',', 481), ('▁candid', 481), (')', 481), ('▁a', 481), ('itic', 481)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample5.png
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 34
+Adjacency stats: min=0.000, max=1.000, mean=0.888
+Graph stats: 34 nodes, 496 edges (threshold=0.5)
+Top 10 hubs: [('<bos>', 31), ('Dish', 31), ('on', 31), ('est', 31), ('▁money', 31), ('▁dwind', 31), ('les', 31), ('▁away', 31), ('▁but', 31), ('▁he', 31)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample6.png
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: sci.crypt
+Num nodes: 143
+Adjacency stats: min=0.000, max=1.000, mean=0.945
+Graph stats: 143 nodes, 9594 edges (threshold=0.5)
+Top 10 hubs: [('<bos>', 138), ('A', 138), ('▁friend', 138), ('▁of', 138), ('▁mine', 138), ('▁managed', 138), ('▁to', 138), ('▁get', 138), ('▁a', 138), ('▁copy', 138)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample7.png
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 63
+Adjacency stats: min=0.000, max=1.000, mean=0.969
+Graph stats: 63 nodes, 1891 edges (threshold=0.5)
+Top 10 hubs: [('<bos>', 61), ('Hi', 61), (',', 61), ('\n\n', 61), ('▁▁▁', 61), ('We', 61), ('▁have', 61), ('▁a', 61), ('▁requirement', 61), ('▁for', 61)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample8.png
+
+=== Sample 9 ===
+True: comp.graphics | Pred: sci.crypt
+Num nodes: 161
+Adjacency stats: min=0.000, max=1.000, mean=0.926
+Graph stats: 161 nodes, 11919 edges (threshold=0.5)
+Top 10 hubs: [('-', 156), ('▁used', 156), (':', 154), ('▁▁', 154), ('\n', 154), (':', 154), ('▁well', 154), (',', 154), ('▁i', 154), ('▁have', 154)]
+Saved visualization to ../logs/cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_9/visualizations/cdgm_sample9.png
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n565
+Job ID: 3064540
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:05:19
+CPU Efficiency: 5.03% of 01:45:36 core-walltime
+Job Wall-clock time: 00:06:36
+Memory Utilized: 23.07 GB
+Memory Efficiency: 18.53% of 124.51 GB (124.51 GB/node)

@@ -1,0 +1,6 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 136, in <module>
+    visualize_dgm_graphs(test_data, dgm_model, num_samples=10, show_errors=True)
+TypeError: visualize_dgm_graphs() got an unexpected keyword argument 'show_errors'
+srun: error: uc2n562: task 0: Exited with exit code 1

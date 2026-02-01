@@ -1,0 +1,7 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 123, in <module>
+    f'{prefix_dir}{version}/checkpoints/{checkpoint}')
+                                         ^^^^^^^^^^
+NameError: name 'checkpoint' is not defined. Did you mean: 'breakpoint'?
+srun: error: uc2n572: task 0: Exited with exit code 1

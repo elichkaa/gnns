@@ -1,0 +1,24 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 127, in <module>
+    cdgm_model = cDGM_GNN.load_from_checkpoint(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/model_helpers.py", line 130, in wrapper
+    return self.method(cls_type, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1781, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/core/saving.py", line 93, in _load_from_checkpoint
+    model = _load_state(cls, checkpoint, strict=strict, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/core/saving.py", line 189, in _load_state
+    keys = obj.load_state_dict(checkpoint["state_dict"], strict=strict)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib64/python3.11/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for cDGM_GNN:
+	Unexpected key(s) in state_dict: "classifier.6.weight", "classifier.6.bias". 
+	size mismatch for classifier.3.weight: copying a param with shape torch.Size([32, 64]) from checkpoint, the shape in current model is torch.Size([20, 64]).
+	size mismatch for classifier.3.bias: copying a param with shape torch.Size([32]) from checkpoint, the shape in current model is torch.Size([20]).
+srun: error: uc2n567: task 0: Exited with exit code 1

@@ -1,0 +1,16 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 95, in __init__
+    pickle.dump({
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 172, in <module>
+    test_data = NewsGroupsGraphDataset(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 94, in __init__
+    with open(cache_file, 'wb') as f:
+OSError: [Errno 122] Disk quota exceeded
+srun: error: uc2n562: task 0: Exited with exit code 1

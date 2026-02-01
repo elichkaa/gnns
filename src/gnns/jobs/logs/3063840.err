@@ -1,0 +1,14 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 245, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 116, in run_training_process
+    model = cDGM_GNN(args)
+            ^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/cdgm.py", line 136, in __init__
+    cDGM(dgm_dim[0], dgm_dim[1], use_input_graph=False)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/cdgm.py", line 30, in __init__
+    self.dropout = nn.Dropout(dropout)
+                              ^^^^^^^
+NameError: name 'dropout' is not defined
+srun: error: uc3n082: task 0: Exited with exit code 1

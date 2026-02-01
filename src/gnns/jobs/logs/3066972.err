@@ -1,0 +1,12 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 250, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 59, in run_training_process
+    train_data = MRDGraphDataset(split='train', **dataset_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 180, in __init__
+    self.data_split = data_split
+                      ^^^^^^^^^^
+NameError: name 'data_split' is not defined. Did you mean: 'val_split'?
+srun: error: uc3n082: task 0: Exited with exit code 1

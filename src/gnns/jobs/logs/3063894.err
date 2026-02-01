@@ -1,0 +1,49 @@
+GpuFreq=control_disabled
+💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+You are using a CUDA device ('NVIDIA H100') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name              | Type             | Params | Mode  | FLOPs
+-----------------------------------------------------------------------
+0 | dropout           | Dropout          | 0      | train | 0    
+1 | graph_modules     | ModuleList       | 229 K  | train | 0    
+2 | diffusion_modules | ModuleList       | 82.3 K | train | 0    
+3 | classifier        | Sequential       | 38.2 K | train | 0    
+4 | criterion         | CrossEntropyLoss | 0      | train | 0    
+-----------------------------------------------------------------------
+350 K     Trainable params
+0         Non-trainable params
+350 K     Total params
+1.401     Total estimated model params size (MB)
+29        Modules in train mode
+0         Modules in eval mode
+0         Total Flops
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 16. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 7. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+Metric val_acc improved. New best score: 19.885
+Metric val_acc improved by 18.383 >= min_delta = 0.001. New best score: 38.268
+Metric val_acc improved by 6.761 >= min_delta = 0.001. New best score: 45.029
+Metric val_acc improved by 5.612 >= min_delta = 0.001. New best score: 50.641
+Metric val_acc improved by 6.717 >= min_delta = 0.001. New best score: 57.357
+Metric val_acc improved by 3.270 >= min_delta = 0.001. New best score: 60.627
+Metric val_acc improved by 3.535 >= min_delta = 0.001. New best score: 64.163
+Metric val_acc improved by 0.088 >= min_delta = 0.001. New best score: 64.251
+Metric val_acc improved by 0.442 >= min_delta = 0.001. New best score: 64.693
+Metric val_acc improved by 2.519 >= min_delta = 0.001. New best score: 67.212
+Metric val_acc improved by 1.281 >= min_delta = 0.001. New best score: 68.493
+Metric val_acc improved by 0.840 >= min_delta = 0.001. New best score: 69.333
+Metric val_acc improved by 0.840 >= min_delta = 0.001. New best score: 70.172
+Metric val_acc improved by 2.342 >= min_delta = 0.001. New best score: 72.514
+Metric val_acc improved by 0.354 >= min_delta = 0.001. New best score: 72.868
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 73.089
+Metric val_acc improved by 0.619 >= min_delta = 0.001. New best score: 73.707
+Metric val_acc improved by 0.442 >= min_delta = 0.001. New best score: 74.149
+Metric val_acc improved by 0.177 >= min_delta = 0.001. New best score: 74.326
+Metric val_acc improved by 0.619 >= min_delta = 0.001. New best score: 74.945
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 3063894 ON uc3n082 CANCELLED AT 2026-01-31T17:07:51 ***
+slurmstepd: error: *** STEP 3063894.0 ON uc3n082 CANCELLED AT 2026-01-31T17:07:51 ***

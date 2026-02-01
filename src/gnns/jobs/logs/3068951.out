@@ -1,0 +1,15 @@
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n561
+Job ID: 3068951
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:07
+CPU Efficiency: 0.86% of 00:13:36 core-walltime
+Job Wall-clock time: 00:00:51
+Memory Utilized: 431.55 MB
+Memory Efficiency: 0.34% of 124.51 GB (124.51 GB/node)

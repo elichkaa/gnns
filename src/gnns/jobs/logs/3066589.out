@@ -1,0 +1,16 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n572
+Job ID: 3066589
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:11
+CPU Efficiency: 2.46% of 00:07:28 core-walltime
+Job Wall-clock time: 00:00:28
+Memory Utilized: 547.71 MB
+Memory Efficiency: 0.43% of 124.51 GB (124.51 GB/node)

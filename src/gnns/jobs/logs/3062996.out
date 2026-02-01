@@ -1,0 +1,48 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_train_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_val_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+LOGGING
+Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking: |          | 0/? [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]Sanity Checking DataLoader 0:  50%|█████     | 1/2 [00:02<00:02,  0.35it/s]Sanity Checking DataLoader 0: 100%|██████████| 2/2 [00:03<00:00,  0.63it/s]                                                                           Training: |          | 0/? [00:00<?, ?it/s]Training: |          | 0/? [00:00<?, ?it/s]Epoch 0:   0%|          | 0/566 [00:00<?, ?it/s]Distance - min: 0.0000, max: 3.0456, mean: 1.3915
+Distance - min: 0.0000, max: 1.9378, mean: 0.4533
+Edge probs - min: 0.0005, max: 1.0000, mean: 0.3590
+
+============================================================
+Batch 0 - Gradient Check
+============================================================
+Layer 0 temp: 1.0000, grad: -0.5412647128105164
+Layer 1 temp: 1.0000, grad: -0.2530363202095032
+Params with gradients: 18/18
+============================================================
+
+Distance - min: 0.0000, max: 3.0456, mean: 1.3915
+Distance - min: 0.0000, max: 1.8883, mean: 0.4422
+
+Graph Stats:
+  Density: 0.0293
+  Avg degree: 15.00
+  Expected: 15
+  Edge prob std: 0.2533
+  Edge prob entropy: 0.5288
+Layer 0 - raw temp: 1.0000, exp(temp): 2.7183
+Layer 1 - raw temp: 1.0000, exp(temp): 2.7183
+Distances - min: 0.0000, max: 2.8313, mean: 0.5696
+Correct: 0.00%, Reward magnitude: 0.5000
+Epoch 0:   0%|          | 0/566 [00:02<?, ?it/s]
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n561
+Job ID: 3062996
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:12
+CPU Efficiency: 3.02% of 00:39:44 core-walltime
+Job Wall-clock time: 00:02:29
+Memory Utilized: 40.65 GB
+Memory Efficiency: 32.65% of 124.51 GB (124.51 GB/node)

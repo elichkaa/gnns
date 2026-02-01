@@ -1,0 +1,15 @@
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n567
+Job ID: 3065901
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:13
+CPU Efficiency: 1.03% of 00:21:04 core-walltime
+Job Wall-clock time: 00:01:19
+Memory Utilized: 627.83 MB
+Memory Efficiency: 0.49% of 124.51 GB (124.51 GB/node)

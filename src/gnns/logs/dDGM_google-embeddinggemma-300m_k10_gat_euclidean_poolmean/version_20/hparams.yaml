@@ -1,0 +1,41 @@
+batch_size: 32
+conv_layers:
+- - 768
+  - 512
+- - 512
+  - 384
+dgm_layers:
+- - 768
+  - 384
+  - 128
+- []
+distance: euclidean
+dropout: 0.4
+encoder_name: google/embeddinggemma-300m
+fc_layers:
+- 384
+- 256
+- 20
+ffun: gcn
+freeze_encoder: false
+gfun: gat
+k: 10
+lambda_connect: 0.0001
+lambda_entropy: 0.03
+lambda_locality: 0.05
+lambda_smooth: 0.08
+lambda_sparse: 0.1
+lr: 0.0003
+max_epochs: 50
+max_length: 512
+model_type: dgm
+num_workers: 4
+patience: 20
+pooling: mean
+pre_fc: []
+remove_punctualization: false
+resume_from_checkpoint: null
+test_eval: 5
+use_continuous_dgm: false
+val_split: 0.2
+weight_decay: 0.02

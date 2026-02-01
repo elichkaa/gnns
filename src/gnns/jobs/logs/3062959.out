@@ -1,0 +1,278 @@
+[KeOps] Warning : CUDA libraries not found or could not be loaded; Switching to CPU only.
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 0 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 123, Total edges in adj: 1216
+Graph stats: 123 nodes, 1244 edges
+Top 10 hubs: [('▁words', 30), ('.', 29), ('▁much', 29), ('▁the', 29), ('▁pref', 28), ('ably', 28), ('less', 28), ('▁I', 28), ('▁L', 27), ('▁far', 27)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 174, Total edges in adj: 2022
+Graph stats: 174 nodes, 1986 edges
+Top 10 hubs: [('?', 36), ('-', 35), ('▁to', 33), ('m', 33), ('-', 32), ('▁probably', 32), ('▁own', 31), ('s', 31), ('▁any', 31), ('▁your', 31)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 2 ===
+True: alt.atheism | Pred: alt.atheism
+Num nodes: 10, Total edges in adj: 32
+Graph stats: 10 nodes, 27 edges
+Top 10 hubs: [('▁a', 7), ('▁word', 7), (',', 7), ('.', 7), ('\n', 7), ('<eos>', 7), ('In', 6), ('\n', 4), ('<bos>', 2), ('▁yes', 0)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: talk.politics.mideast
+Num nodes: 512, Total edges in adj: 17300
+Graph stats: 512 nodes, 16791 edges
+Top 10 hubs: [('omatic', 96), (',', 95), ('▁rule', 93), ('▁▁', 92), ('▁besides', 91), ('are', 91), ('▁who', 91), ('-', 91), ('▁enough', 90), ('▁on', 90)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 24, Total edges in adj: 150
+Graph stats: 24 nodes, 134 edges
+Top 10 hubs: [('.', 17), ('\n', 15), ('▁such', 15), ('\n', 15), ('▁system', 15), ('I', 14), ('▁just', 14), ('▁spent', 13), ('▁thing', 13), ('ve', 12)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 5 ===
+True: sci.med | Pred: sci.med
+Num nodes: 512, Total edges in adj: 17602
+Graph stats: 512 nodes, 17659 edges
+Top 10 hubs: [('▁cavity', 95), ('".', 95), ('▁▁', 95), (',', 93), ('▁was', 93), (',', 91), ('▁biochem', 91), ('.', 91), ('▁was', 90), ('cure', 90)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 34, Total edges in adj: 114
+Graph stats: 34 nodes, 104 edges
+Top 10 hubs: [('it', 11), ('▁away', 9), ('▁makes', 9), ('▁', 9), ('Pro', 9), ('1', 9), ('on', 8), ('▁little', 8), ('▁', 8), ('est', 7)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 143, Total edges in adj: 1369
+Graph stats: 143 nodes, 1318 edges
+Top 10 hubs: [('\n', 32), ('mann', 32), ('und', 30), ('\n', 29), ('@', 28), ('▁if', 27), ('▁I', 25), ('mann', 25), ('\t', 25), ('ac', 25)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 63, Total edges in adj: 305
+Graph stats: 63 nodes, 277 edges
+Top 10 hubs: [('▁manner', 14), ('▁done', 14), ('\n', 14), (',', 13), ('▁application', 13), ('.', 13), ('<bos>', 12), ('We', 12), ('▁an', 12), ('\n', 12)]
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+Graph embedding norm: 1.0000
+Temperature: 7.3891
+
+=== Sample 9 ===
+True: comp.graphics | Pred: comp.graphics
+Num nodes: 161, Total edges in adj: 1840
+Graph stats: 161 nodes, 1798 edges
+Top 10 hubs: [('▁to', 38), ('\n', 37), ('▁gave', 37), ('▁me', 35), ('▁it', 33), ('\n', 32), (',', 31), ('▁or', 31), ('▁and', 31), ('▁better', 31)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n564
+Job ID: 3062959
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:56
+CPU Efficiency: 2.24% of 00:41:36 core-walltime
+Job Wall-clock time: 00:02:36
+Memory Utilized: 25.50 GB
+Memory Efficiency: 20.48% of 124.51 GB (124.51 GB/node)

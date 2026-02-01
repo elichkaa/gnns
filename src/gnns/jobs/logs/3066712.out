@@ -1,0 +1,17 @@
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen512_valsplit0.2_google_embeddinggemma-300m.pkl
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n567
+Job ID: 3066712
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:35
+CPU Efficiency: 2.12% of 00:27:28 core-walltime
+Job Wall-clock time: 00:01:43
+Memory Utilized: 25.35 GB
+Memory Efficiency: 20.36% of 124.51 GB (124.51 GB/node)

@@ -9,13 +9,14 @@ class SimpleBERTClassifier(pl.LightningModule):
         super(SimpleBERTClassifier, self).__init__()
         if type(hparams) is not Namespace:
             hparams = Namespace(**hparams)
-
         self.save_hyperparameters(hparams)
 
         input_dim = getattr(hparams, 'input_dim', 768)
 
-        # classifier
+        self.task = getattr(hparams, 'task', 'classification')
+
         fc_dims = [input_dim] + hparams.fc_layers
+        print(fc_dims)
         fc_layers = []
         for i in range(len(fc_dims) - 1):
             fc_layers.append(nn.Linear(fc_dims[i], fc_dims[i+1]))
@@ -23,8 +24,8 @@ class SimpleBERTClassifier(pl.LightningModule):
                 fc_layers.append(nn.LeakyReLU(0.1))
                 if hparams.dropout > 0:
                     fc_layers.append(nn.Dropout(hparams.dropout))
-        self.classifier = nn.Sequential(*fc_layers)
 
+        self.classifier = nn.Sequential(*fc_layers)
         self.pooling = hparams.pooling if hasattr(
             hparams, 'pooling') else 'mean'
 
@@ -34,33 +35,20 @@ class SimpleBERTClassifier(pl.LightningModule):
             sum_embeddings = (x * mask_expanded).sum(dim=1)
             sum_mask = mask_expanded.sum(dim=1).clamp(min=1e-9)
             pooled = sum_embeddings / sum_mask
-
         elif self.pooling == 'max':
             mask_expanded = attention_mask.unsqueeze(-1).float()
             x_masked = x.masked_fill(mask_expanded == 0, float('-inf'))
             pooled = x_masked.max(dim=1)[0]
-
         elif self.pooling == 'cls':
             pooled = x[:, 0, :]
-
         elif self.pooling == 'sum':
             mask_expanded = attention_mask.unsqueeze(-1).float()
             pooled = (x * mask_expanded).sum(dim=1)
-
         else:
             raise ValueError(f"Unknown pooling: {self.pooling}")
-
         return pooled
 
     def forward(self, x, attention_mask):
-        """
-        Args:
-            x: [batch, seq_len, input_dim] - token embeddings
-            attention_mask: [batch, seq_len]
-
-        Returns:
-            logits: [batch_size, num_classes]
-        """
         x_pooled = self.global_pooling(x, attention_mask)
         logits = self.classifier(x_pooled)
         return logits
@@ -69,7 +57,6 @@ class SimpleBERTClassifier(pl.LightningModule):
         optimizer = torch.optim.Adam(
             self.parameters(), 
             lr=self.hparams.lr,
-            # removed because very bad results with it
             weight_decay=self.hparams.weight_decay
         )
         return optimizer
@@ -80,12 +67,19 @@ class SimpleBERTClassifier(pl.LightningModule):
         attention_mask = batch['attention_mask']
 
         logits = self(X, attention_mask)
-        loss = nn.functional.cross_entropy(logits, labels)
 
-        acc = (logits.argmax(-1) == labels).float().mean()
+        if self.task == 'classification':
+            loss = nn.functional.cross_entropy(logits, labels)
+            acc = (logits.argmax(-1) == labels).float().mean()
+            self.log('train_loss', loss)
+            self.log('train_acc', 100 * acc)
+        else:  # regression
+            preds = logits.squeeze(-1)
+            loss = nn.functional.mse_loss(preds, labels)
 
-        self.log('train_loss', loss)
-        self.log('train_acc', 100 * acc)
+            mae = torch.abs(preds - labels).mean()
+            self.log('train_loss', loss)
+            self.log('train_mae', mae)
 
         return loss
 
@@ -95,12 +89,24 @@ class SimpleBERTClassifier(pl.LightningModule):
         attention_mask = batch['attention_mask']
 
         logits = self(X, attention_mask)
-        loss = nn.functional.cross_entropy(logits, labels)
 
-        acc = (logits.argmax(-1) == labels).float().mean()
+        if self.task == 'classification':
+            loss = nn.functional.cross_entropy(logits, labels)
+            acc = (logits.argmax(-1) == labels).float().mean()
+            self.log('val_loss', loss)
+            self.log('val_acc', 100 * acc)
+        else:  # regression
+            preds = logits.squeeze(-1)
+            loss = nn.functional.mse_loss(preds, labels)
+            mae = torch.abs(preds - labels).mean()
 
-        self.log('val_loss', loss)
-        self.log('val_acc', 100 * acc)
+            ss_res = ((labels - preds) ** 2).sum()
+            ss_tot = ((labels - labels.mean()) ** 2).sum()
+            r2 = 1 - ss_res / (ss_tot + 1e-8)
+
+            self.log('val_loss', loss)
+            self.log('val_mae', mae)
+            self.log('val_r2', r2)
 
         return loss
 
@@ -110,11 +116,23 @@ class SimpleBERTClassifier(pl.LightningModule):
         attention_mask = batch['attention_mask']
 
         logits = self(X, attention_mask)
-        loss = nn.functional.cross_entropy(logits, labels)
 
-        acc = (logits.argmax(-1) == labels).float().mean()
+        if self.task == 'classification':
+            loss = nn.functional.cross_entropy(logits, labels)
+            acc = (logits.argmax(-1) == labels).float().mean()
+            self.log('test_loss', loss)
+            self.log('test_acc', 100 * acc)
+        else:  # regression
+            preds = logits.squeeze(-1)
+            loss = nn.functional.mse_loss(preds, labels)
+            mae = torch.abs(preds - labels).mean()
 
-        self.log('test_loss', loss)
-        self.log('test_acc', 100 * acc)
+            ss_res = ((labels - preds) ** 2).sum()
+            ss_tot = ((labels - labels.mean()) ** 2).sum()
+            r2 = 1 - ss_res / (ss_tot + 1e-8)
+
+            self.log('test_loss', loss)
+            self.log('test_mae', mae)
+            self.log('test_r2', r2)
 
         return loss

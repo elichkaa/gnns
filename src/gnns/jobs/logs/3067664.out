@@ -1,0 +1,212 @@
+Loading 20newsgroups test data...
+Processing document 0/7532...
+Processing document 500/7532...
+Processing document 1000/7532...
+Processing document 1500/7532...
+Processing document 2000/7532...
+Processing document 2500/7532...
+Processing document 3000/7532...
+Processing document 3500/7532...
+Processing document 4000/7532...
+Processing document 4500/7532...
+Processing document 5000/7532...
+Processing document 5500/7532...
+Processing document 6000/7532...
+Processing document 6500/7532...
+Processing document 7000/7532...
+Processing document 7500/7532...
+
+=== Sample 0 ===
+True: rec.autos | Pred: alt.atheism
+Num nodes: 123, Total edges in adj: 607
+Graph stats: 123 nodes, 546 edges
+Top 10 hubs: [('▁words', 24), ('▁or', 21), ('▁pref', 21), ('▁of', 20), ('▁the', 20), ('▁of', 19), ('▁than', 19), ('▁that', 19), ('early', 19), ('▁how', 17)]
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: alt.atheism
+Num nodes: 174, Total edges in adj: 1065
+Graph stats: 174 nodes, 978 edges
+Top 10 hubs: [('▁seem', 45), ('▁probably', 38), ('ve', 36), ('▁my', 34), ('▁in', 33), ('▁any', 29), ('I', 28), ('▁the', 27), ('I', 26), ('▁(', 25)]
+
+=== Sample 2 ===
+True: alt.atheism | Pred: alt.atheism
+Num nodes: 10, Total edges in adj: 19
+Graph stats: 10 nodes, 14 edges
+Top 10 hubs: [('\n', 5), (',', 5), ('.', 5), ('\n', 5), ('▁a', 4), ('In', 2), ('<bos>', 1), ('<eos>', 1), ('▁word', 0), ('▁yes', 0)]
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 256, Total edges in adj: 1828
+Graph stats: 256 nodes, 1700 edges
+Top 10 hubs: [('▁was', 47), ('▁them', 42), ('▁indeed', 42), ('▁just', 42), ('\n', 41), ('▁any', 40), ('the', 38), ('\n', 38), ('▁to', 37), ('\n', 35)]
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 24, Total edges in adj: 69
+Graph stats: 24 nodes, 57 edges
+Top 10 hubs: [('▁just', 8), ('▁such', 8), ('▁as', 7), ('<bos>', 6), ('I', 6), ('ve', 6), ('▁no', 6), ('▁an', 6), ('▁exists', 6), ('▁spent', 5)]
+
+=== Sample 5 ===
+True: sci.med | Pred: alt.atheism
+Num nodes: 256, Total edges in adj: 1793
+Graph stats: 256 nodes, 1665 edges
+Top 10 hubs: [('▁and', 50), ('▁of', 47), ('th', 44), ('\n', 43), ('Indeed', 42), ('▁the', 41), ('▁so', 41), ('What', 37), ('▁', 34), ('.', 32)]
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: alt.atheism
+Num nodes: 34, Total edges in adj: 78
+Graph stats: 34 nodes, 61 edges
+Top 10 hubs: [('▁but', 8), ('\n', 8), ('▁who', 7), ('it', 7), ('verbs', 6), ('<bos>', 5), ('les', 5), (',', 5), ('▁gathers', 5), ('▁by', 5)]
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: alt.atheism
+Num nodes: 143, Total edges in adj: 757
+Graph stats: 143 nodes, 686 edges
+Top 10 hubs: [('za', 37), ('That', 32), ('\n', 27), ('▁', 25), ('▁of', 24), ('▁and', 23), ('▁called', 22), ('.', 21), ('▁one', 20), ('▁is', 20)]
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: alt.atheism
+Num nodes: 63, Total edges in adj: 250
+Graph stats: 63 nodes, 219 edges
+Top 10 hubs: [('that', 18), ('▁is', 18), ('▁during', 17), ('▁done', 15), ('▁is', 14), ('▁▁▁', 14), ('\n', 13), ('\n', 12), ('▁a', 12), ('we', 12)]
+
+=== Sample 9 ===
+True: comp.graphics | Pred: alt.atheism
+Num nodes: 161, Total edges in adj: 942
+Graph stats: 161 nodes, 862 edges
+Top 10 hubs: [('▁it', 40), ('a', 37), ('▁(', 36), ('\n', 31), ('▁and', 30), ('▁into', 27), ('▁how', 27), ('▁I', 27), ('\n', 24), ('▁than', 23)]
+
+=== Sample 10 ===
+True: comp.os.ms-windows.misc | Pred: alt.atheism
+Num nodes: 73, Total edges in adj: 252
+Graph stats: 73 nodes, 216 edges
+Top 10 hubs: [('.', 12), ('/', 11), ('/', 11), ('I', 11), ('Line', 11), ('▁the', 10), ('▁to', 10), ('\n', 10), ('▁as', 10), ('▁from', 10)]
+
+=== Sample 11 ===
+True: comp.windows.x | Pred: alt.atheism
+Num nodes: 141, Total edges in adj: 881
+Graph stats: 141 nodes, 811 edges
+Top 10 hubs: [(',', 33), ('y', 31), (',', 31), (',', 30), ('x', 29), ('1', 28), (',', 28), ('(', 28), ('▁like', 27), ('color', 27)]
+
+=== Sample 12 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 131, Total edges in adj: 727
+Graph stats: 131 nodes, 662 edges
+Top 10 hubs: [('▁as', 29), ('*', 27), ('▁see', 25), ('*', 24), ('▁What', 23), ('of', 23), ('▁not', 22), ('▁"', 22), ('▁*', 21), ('▁(*', 20)]
+
+=== Sample 13 ===
+True: rec.motorcycles | Pred: alt.atheism
+Num nodes: 52, Total edges in adj: 195
+Graph stats: 52 nodes, 169 edges
+Top 10 hubs: [('\n', 16), ('▁a', 15), ('(', 13), ('a', 12), ('▁did', 11), ('▁and', 11), ('.', 10), ('▁▁', 9), ('I', 9), ('▁I', 9)]
+
+=== Sample 14 ===
+True: alt.atheism | Pred: alt.atheism
+Num nodes: 256, Total edges in adj: 2019
+Graph stats: 256 nodes, 1891 edges
+Top 10 hubs: [('▁it', 52), ('▁fact', 51), ('very', 49), ('▁fact', 49), ('particularly', 47), ('▁and', 46), ('▁is', 43), ('This', 43), ('▁that', 42), ('\n', 41)]
+
+=== Sample 15 ===
+True: comp.os.ms-windows.misc | Pred: alt.atheism
+Num nodes: 256, Total edges in adj: 1655
+Graph stats: 256 nodes, 1527 edges
+Top 10 hubs: [('▁the', 39), (',', 38), ('\n', 37), ('▁also', 37), ('▁the', 36), ('\n', 36), ('▁▁▁▁▁▁▁▁', 33), ('▁to', 33), ('2', 33), ('▁data', 32)]
+
+=== Sample 16 ===
+True: comp.sys.mac.hardware | Pred: alt.atheism
+Num nodes: 125, Total edges in adj: 681
+Graph stats: 125 nodes, 619 edges
+Top 10 hubs: [(',', 24), ('▁of', 23), ('▁in', 23), ('\n', 23), ('▁a', 22), ('t', 22), ('\n', 22), ('▁different', 22), ('\n\n', 21), ('▁am', 20)]
+
+=== Sample 17 ===
+True: comp.graphics | Pred: alt.atheism
+Num nodes: 33, Total edges in adj: 105
+Graph stats: 33 nodes, 89 edges
+Top 10 hubs: [('\n', 11), ('\n', 10), ('\n', 10), ('\n', 9), ('Could', 9), ('.', 9), ('.', 8), ('m', 7), ('▁also', 7), ('▁me', 7)]
+
+=== Sample 18 ===
+True: misc.forsale | Pred: alt.atheism
+Num nodes: 213, Total edges in adj: 1351
+Graph stats: 213 nodes, 1245 edges
+Top 10 hubs: [('che', 44), ('▁set', 40), (',', 37), ('▁-', 36), ('\n', 33), ('▁&', 33), ('▁it', 31), ('▁no', 31), ('\n', 30), ('▁the', 30)]
+
+=== Sample 19 ===
+True: talk.politics.guns | Pred: alt.atheism
+Num nodes: 47, Total edges in adj: 148
+Graph stats: 47 nodes, 125 edges
+Top 10 hubs: [('▁in', 11), ('that', 10), ('▁', 10), ('▁those', 10), ('.', 10), ('▁found', 9), ('▁(', 9), ('▁is', 9), ('▁legislative', 8), ('▁for', 8)]
+
+=== Sample 20 ===
+True: comp.graphics | Pred: alt.atheism
+Num nodes: 256, Total edges in adj: 1829
+Graph stats: 256 nodes, 1701 edges
+Top 10 hubs: [('▁(', 42), ('into', 41), ('-', 40), ('1', 40), (':', 39), ('▁bringing', 38), ('▁This', 38), ('▁see', 35), ('1', 35), ('-', 34)]
+
+=== Sample 21 ===
+True: misc.forsale | Pred: alt.atheism
+Num nodes: 72, Total edges in adj: 258
+Graph stats: 72 nodes, 222 edges
+Top 10 hubs: [('▁this', 20), ('.', 17), ('▁it', 15), ('-', 14), ('\n', 14), ('.', 13), ('please', 11), ('*****', 10), ('I', 10), ('▁of', 10)]
+
+=== Sample 22 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 256, Total edges in adj: 1660
+Graph stats: 256 nodes, 1532 edges
+Top 10 hubs: [('▁have', 45), ('and', 42), ('So', 41), (':', 40), ('▁here', 38), ('"', 35), ('▁even', 33), ('▁carry', 33), ('▁as', 31), ('▁a', 30)]
+
+=== Sample 23 ===
+True: sci.space | Pred: alt.atheism
+Num nodes: 61, Total edges in adj: 185
+Graph stats: 61 nodes, 155 edges
+Top 10 hubs: [('▁the', 14), ('▁is', 11), ('▁them', 9), ('▁▁', 9), ('▁use', 9), ('▁not', 8), ('▁▁', 8), ('just', 8), ('▁with', 8), ('▁to', 8)]
+
+=== Sample 24 ===
+True: comp.sys.ibm.pc.hardware | Pred: alt.atheism
+Num nodes: 78, Total edges in adj: 265
+Graph stats: 78 nodes, 226 edges
+Top 10 hubs: [('▁to', 13), ('▁very', 12), ('▁can', 12), ('▁am', 11), ('!', 10), ('\n\n\n', 9), ('▁I', 9), ('▁and', 9), ('1', 9), ('▁and', 9)]
+
+=== Sample 25 ===
+True: sci.med | Pred: alt.atheism
+Num nodes: 195, Total edges in adj: 1271
+Graph stats: 195 nodes, 1174 edges
+Top 10 hubs: [('.', 43), ('I', 43), ('▁and', 39), ('▁and', 38), ('\n', 37), ('▁me', 34), ('▁having', 33), ('▁this', 30), ('▁from', 30), ('▁provide', 30)]
+
+=== Sample 26 ===
+True: sci.crypt | Pred: alt.atheism
+Num nodes: 194, Total edges in adj: 1283
+Graph stats: 194 nodes, 1186 edges
+Top 10 hubs: [('▁it', 40), ('▁first', 39), ('\n', 36), ('without', 36), ('▁far', 34), ('▁a', 33), ('▁hands', 32), ('▁very', 32), ('▁question', 30), ('--', 28)]
+
+=== Sample 27 ===
+True: rec.autos | Pred: alt.atheism
+Num nodes: 132, Total edges in adj: 661
+Graph stats: 132 nodes, 595 edges
+Top 10 hubs: [('▁asked', 25), ('▁since', 22), ('▁the', 22), ('▁went', 21), ('▁would', 19), ('\n', 19), ('▁me', 19), ('▁or', 18), ('▁▁', 17), ('▁but', 16)]
+
+=== Sample 28 ===
+True: rec.autos | Pred: alt.atheism
+Num nodes: 256, Total edges in adj: 1829
+Graph stats: 256 nodes, 1701 edges
+Top 10 hubs: [('.', 47), ('▁the', 44), ('The', 42), ('▁▁▁', 42), ('▁', 40), ('▁able', 39), ('▁▁▁▁▁▁', 37), ('▁about', 36), ('▁was', 36), ('▁to', 35)]
+
+=== Sample 29 ===
+True: comp.sys.ibm.pc.hardware | Pred: alt.atheism
+Num nodes: 49, Total edges in adj: 159
+Graph stats: 49 nodes, 135 edges
+Top 10 hubs: [('t', 11), ('▁have', 11), (',', 10), ('▁but', 10), ('▁have', 9), ('Another', 9), ('▁Qu', 8), ('▁they', 8), ('\n', 8), ('▁and', 8)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n082
+Job ID: 3067664
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:03:13
+CPU Efficiency: 5.56% of 00:57:52 core-walltime
+Job Wall-clock time: 00:03:37
+Memory Utilized: 7.20 GB
+Memory Efficiency: 5.78% of 124.51 GB (124.51 GB/node)

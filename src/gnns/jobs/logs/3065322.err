@@ -1,0 +1,28 @@
+2026-02-01 00:33:22.636390: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-02-01 00:33:26.931327: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-01 00:33:33.173745: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+/opt/bwhpc/common/jupyter/ai/2025-08-05/lib/python3.11/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train.py --model_type cdgm --encoder_name google/emb ...
+💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 245, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train.py", line 156, in run_training_process
+    trainer.fit(model, datamodule=MyDataModule())
+  File "/opt/bwhpc/common/jupyter/ai/2025-08-05/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 560, in fit
+    call._call_and_handle_interrupt(
+  File "/opt/bwhpc/common/jupyter/ai/2025-08-05/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bwhpc/common/jupyter/ai/2025-08-05/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 598, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/bwhpc/common/jupyter/ai/2025-08-05/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 961, in _run
+    _verify_loop_configurations(self)
+  File "/opt/bwhpc/common/jupyter/ai/2025-08-05/lib/python3.11/site-packages/pytorch_lightning/trainer/configuration_validator.py", line 36, in _verify_loop_configurations
+    __verify_train_val_loop_configuration(trainer, model)
+  File "/opt/bwhpc/common/jupyter/ai/2025-08-05/lib/python3.11/site-packages/pytorch_lightning/trainer/configuration_validator.py", line 59, in __verify_train_val_loop_configuration
+    raise MisconfigurationException(
+lightning_fabric.utilities.exceptions.MisconfigurationException: No `configure_optimizers()` method defined. Lightning `Trainer` expects as minimum a `training_step()`, `train_dataloader()` and `configure_optimizers()` to be defined.

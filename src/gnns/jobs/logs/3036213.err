@@ -1,0 +1,10 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 172, in <module>
+    test_data = NewsGroupsGraphDataset(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/datasets.py", line 85, in __init__
+    cache_data = pickle.load(f)
+                 ^^^^^^^^^^^^^^
+_pickle.UnpicklingError: invalid load key, '\x00'.
+srun: error: uc2n561: task 0: Exited with exit code 1

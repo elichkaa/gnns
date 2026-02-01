@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 250, in <module>
+    run_training_process(args)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 86, in run_training_process
+    final_val = 1 if run_params.task == "regression" else train_data.num_classes
+                                                          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MRDGraphDataset' object has no attribute 'num_classes'
+srun: error: uc3n082: task 0: Exited with exit code 1

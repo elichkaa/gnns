@@ -1,0 +1,6 @@
+GpuFreq=control_disabled
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis.py", line 82
+    print(f"Top 10 edges: {[f'{tokens[u] if u < len(tokens) else \"[UNK]\"}↔{tokens[v] if v < len(tokens) else \"[UNK]\"} ({w:.3f})' for (u, v), w in top_edges]}")
+                                                                                                                                                                    ^
+SyntaxError: f-string expression part cannot include a backslash
+srun: error: uc2n561: task 0: Exited with exit code 1

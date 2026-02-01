@@ -1,0 +1,22 @@
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_train_maxlen256_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups train data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_val_maxlen256_valsplit0.2_google_embeddinggemma-300m.pkl
+Loading 20newsgroups test data...
+Loading cached embeddings from ../data/newsgroups_cache/newsgroups_test_maxlen256_valsplit0.2_google_embeddinggemma-300m.pkl
+LOGGING
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n561
+Job ID: 3065303
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:41
+CPU Efficiency: 3.77% of 00:18:08 core-walltime
+Job Wall-clock time: 00:01:08
+Memory Utilized: 19.09 GB
+Memory Efficiency: 15.33% of 124.51 GB (124.51 GB/node)

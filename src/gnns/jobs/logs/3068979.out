@@ -1,0 +1,84 @@
+Loading MRD test data...
+[ Max seq length: 2603 ]
+[ Min seq length: 9 ]
+[ Mean seq length: 429 ]
+[ Train: 3003, Dev: 1001, Test: 1002 ]
+Loaded 1002 test instances
+Processing document 0/1002...
+Processing document 500/1002...
+Processing document 1000/1002...
+Graph stats: 512 nodes, 13291 edges
+Top 10 hubs: [('aspect', 98), ('audience', 98), ('imp', 98), ('in', 97), ('i', 93), ('a', 93), ('can', 90), ('town', 89), ('na', 89), ('likely', 89)]
+Graph stats: 512 nodes, 12133 edges
+Top 10 hubs: [('no', 107), ('trying', 103), ('##ing', 95), (';', 95), ('analyze', 93), ('an', 93), ('about', 92), ('##y', 91), ('special', 90), ('telling', 90)]
+Graph stats: 512 nodes, 13368 edges
+Top 10 hubs: [('of', 99), ("'", 97), ('the', 97), ('an', 95), ('chance', 95), ('of', 94), ('an', 93), ('the', 93), ('have', 92), ('another', 92)]
+Graph stats: 285 nodes, 4705 edges
+Top 10 hubs: [('are', 61), ('for', 61), ('today', 60), ('a', 59), ('time', 58), ('people', 57), ('will', 56), ('the', 56), ('names', 56), ('without', 55)]
+Graph stats: 437 nodes, 8836 edges
+Top 10 hubs: [('##o', 86), ('i', 83), ('##usions', 81), ('live', 80), ('one', 80), (')', 79), ('-', 78), ('was', 77), ('##ly', 76), ('as', 76)]
+Graph stats: 177 nodes, 2086 edges
+Top 10 hubs: [('center', 44), ('in', 44), ('it', 43), ('part', 41), ('to', 41), ('than', 40), ('have', 40), ('take', 39), ('t', 39), ('it', 38)]
+Graph stats: 512 nodes, 11764 edges
+Top 10 hubs: [('bog', 105), ('##ism', 96), ('part', 95), ('easy', 94), ('?', 94), ('presence', 93), ('the', 93), ('much', 91), ('[SEP]', 91), (',', 90)]
+Graph stats: 249 nodes, 3643 edges
+Top 10 hubs: [('their', 55), ('love', 54), ('and', 52), ('t', 52), ('##s', 51), ('eyes', 50), ('being', 50), ('of', 49), ('itself', 49), ('great', 48)]
+Graph stats: 497 nodes, 11834 edges
+Top 10 hubs: [('sutherland', 99), ('##ing', 98), ('than', 98), ('a', 97), ('in', 96), ('us', 96), ('plot', 95), ('when', 95), ('in', 93), ('those', 92)]
+Graph stats: 447 nodes, 9256 edges
+Top 10 hubs: [('add', 85), ('tv', 82), ('show', 82), ('else', 80), ('?', 79), ('trait', 79), ('water', 79), ('one', 78), ('all', 76), ('laugh', 76)]
+Graph stats: 512 nodes, 9183 edges
+Top 10 hubs: [('that', 75), ('he', 73), ('campaigns', 71), ('are', 70), ('occurring', 69), ('##fle', 67), ('"', 67), ('wa', 66), ('message', 66), ('clearly', 66)]
+Graph stats: 451 nodes, 10484 edges
+Top 10 hubs: [('no', 90), ('a', 89), ('t', 88), ('no', 88), ('new', 87), ('binds', 86), ("'", 85), ('while', 85), ('especially', 83), ('##ed', 83)]
+Graph stats: 512 nodes, 12895 edges
+Top 10 hubs: [('the', 99), ('they', 98), ('hip', 95), ('in', 94), ('casting', 92), ('with', 91), ('##s', 89), ('re', 89), ('##hing', 89), ('for', 88)]
+Graph stats: 512 nodes, 11187 edges
+Top 10 hubs: [(',', 93), ('always', 93), ('##es', 92), ('a', 91), ('##dis', 91), ('about', 90), ('little', 89), ('be', 88), ('pitches', 88), ('believe', 88)]
+Graph stats: 189 nodes, 2786 edges
+Top 10 hubs: [('he', 57), ('character', 53), ('for', 53), ('could', 53), ('sense', 52), ('a', 51), ('##ves', 51), ('blind', 51), ('of', 51), ('-', 50)]
+Graph stats: 458 nodes, 11354 edges
+Top 10 hubs: [('what', 96), ('should', 94), ('of', 91), ('##s', 91), (';', 91), ('aware', 89), ('ar', 89), ('(', 88), ('performing', 87), ('sending', 87)]
+Graph stats: 512 nodes, 12234 edges
+Top 10 hubs: [('impaired', 101), ('kids', 98), ('##es', 98), ('between', 94), ('i', 93), ('thousand', 92), ('kids', 92), ('then', 92), ('never', 92), ('character', 91)]
+Graph stats: 512 nodes, 13243 edges
+Top 10 hubs: [('sex', 108), ('their', 104), ('budget', 103), ('hasn', 101), ('t', 101), ('on', 100), ('doesn', 100), ('the', 99), ('and', 98), ('lovers', 98)]
+Graph stats: 512 nodes, 13751 edges
+Top 10 hubs: [('pg', 116), ('fascinated', 109), ('with', 106), ('a', 105), ('based', 104), ('to', 104), ('all', 103), ('##act', 103), ('it', 103), ('performance', 101)]
+Graph stats: 88 nodes, 647 edges
+Top 10 hubs: [('-', 35), ('as', 32), ('a', 32), ('is', 31), ('is', 30), ('##te', 29), ('the', 28), ('a', 27), ('that', 27), ('all', 27)]
+Graph stats: 496 nodes, 10776 edges
+Top 10 hubs: [('##cial', 106), ('##ani', 101), ('##y', 94), ('resolve', 89), ('was', 87), ('der', 86), ('ladies', 86), ('t', 86), ('sometimes', 85), ('third', 85)]
+Graph stats: 512 nodes, 11969 edges
+Top 10 hubs: [('reminder', 99), ('who', 98), ('allow', 97), ('adult', 96), ('by', 95), ('(', 94), ('##rac', 92), ('there', 91), ('human', 89), ('re', 88)]
+Graph stats: 421 nodes, 8303 edges
+Top 10 hubs: [('other', 83), ('viewer', 79), ('described', 78), ('t', 78), ('sometimes', 76), ('an', 74), ('can', 74), (',', 73), ('s', 73), ("'", 73)]
+Graph stats: 512 nodes, 10316 edges
+Top 10 hubs: [('##ts', 87), ('##ed', 83), ('##g', 81), ('out', 81), ('##ts', 80), ('i', 79), ('but', 79), ('t', 77), ('95', 75), ('far', 74)]
+Graph stats: 162 nodes, 1725 edges
+Top 10 hubs: [('##w', 39), ('men', 34), ('"', 33), ('of', 33), ('get', 32), ('have', 32), ('routine', 31), ('four', 31), ('-', 31), ('##11', 30)]
+Graph stats: 512 nodes, 11112 edges
+Top 10 hubs: [('of', 98), ('his', 96), ('of', 94), ('playing', 93), ('her', 93), ('the', 91), ('about', 90), ('scene', 89), ('whose', 88), ('##q', 87)]
+Graph stats: 184 nodes, 2516 edges
+Top 10 hubs: [('##ko', 52), ('usual', 52), ('taken', 51), ('at', 51), ('im', 51), ('really', 50), ('w', 50), ('##izing', 50), ('and', 49), ('the', 48)]
+Graph stats: 411 nodes, 8703 edges
+Top 10 hubs: [('li', 89), ('ra', 86), ('chew', 86), ('s', 86), ('this', 82), ('to', 81), ('be', 80), ('in', 79), ('approach', 78), ('when', 77)]
+Graph stats: 512 nodes, 10060 edges
+Top 10 hubs: [("'", 86), ('than', 82), ('by', 76), ('of', 76), ('through', 75), ('##er', 75), ('media', 74), ('-', 73), ('giving', 73), ('guise', 72)]
+Graph stats: 512 nodes, 11334 edges
+Top 10 hubs: [(')', 94), ('have', 91), ('make', 89), ('featuring', 88), ('one', 85), ('when', 83), ('thoughts', 83), ('heroine', 82), ('to', 82), ('because', 81)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n082
+Job ID: 3068979
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:27
+CPU Efficiency: 3.44% of 00:13:04 core-walltime
+Job Wall-clock time: 00:00:49
+Memory Utilized: 2.95 GB
+Memory Efficiency: 2.37% of 124.51 GB (124.51 GB/node)

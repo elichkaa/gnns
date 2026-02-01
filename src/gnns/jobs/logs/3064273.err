@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 130, in <module>
+    cdgm_model.hparams = Namespace(**cdgm_model.hparams)
+    ^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib64/python3.11/site-packages/torch/nn/modules/module.py", line 2072, in __setattr__
+    super().__setattr__(name, value)
+AttributeError: property 'hparams' of 'cDGM_GNN' object has no setter
+srun: error: uc2n562: task 0: Exited with exit code 1

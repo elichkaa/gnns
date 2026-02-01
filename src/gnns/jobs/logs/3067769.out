@@ -1,0 +1,84 @@
+Loading MRD test data...
+[ Max seq length: 2603 ]
+[ Min seq length: 9 ]
+[ Mean seq length: 429 ]
+[ Train: 3003, Dev: 1001, Test: 1002 ]
+Loaded 1002 test instances
+Processing document 0/1002...
+Processing document 500/1002...
+Processing document 1000/1002...
+Graph stats: 635 nodes, 5155 edges
+Top 10 hubs: [('▁some', 77), ('▁is', 74), ('▁a', 70), ('▁such', 63), ('▁gives', 61), ('▁a', 61), ('▁could', 61), ('▁for', 60), ('s', 59), ('and', 59)]
+Graph stats: 695 nodes, 6471 edges
+Top 10 hubs: [('▁didn', 72), ('▁it', 66), ('▁is', 65), ('▁an', 63), ('▁but', 62), ('▁which', 62), ('▁the', 62), ('▁from', 60), ('▁the', 59), ('▁kind', 59)]
+Graph stats: 704 nodes, 5943 edges
+Top 10 hubs: [('▁into', 76), ('▁and', 69), ('▁as', 67), ('▁though', 65), ('▁another', 65), ('▁for', 63), ('▁the', 62), ('▁,', 59), ('t', 58), ('▁for', 57)]
+Graph stats: 284 nodes, 1716 edges
+Top 10 hubs: [('▁that', 55), ('▁and', 50), ('▁which', 45), ('▁make', 43), ('▁have', 42), ('▁takes', 38), ('▁them', 37), ('▁manages', 36), ('▁and', 36), ('▁were', 36)]
+Graph stats: 431 nodes, 2596 edges
+Top 10 hubs: [('▁,', 43), ('▁,', 43), ('▁the', 43), ('▁,', 43), ('▁,', 42), ('▁to', 41), ('▁,', 40), ('▁by', 39), ('▁that', 38), ('▁,', 37)]
+Graph stats: 173 nodes, 777 edges
+Top 10 hubs: [('▁and', 34), ('▁is', 32), ('▁has', 30), ('▁to', 30), ('▁based', 28), ('▁to', 26), ('▁have', 24), ('▁so', 24), ('▁clear', 24), ('▁,', 22)]
+Graph stats: 912 nodes, 8365 edges
+Top 10 hubs: [('▁the', 73), ('▁,', 72), ('▁.', 70), ('▁.', 69), ('▁and', 67), ('▁sort', 67), ('▁like', 65), ('s', 64), ('▁just', 63), ('▁a', 63)]
+Graph stats: 247 nodes, 1308 edges
+Top 10 hubs: [('▁is', 37), ('▁through', 35), ('▁is', 35), ('▁by', 33), ('▁very', 33), ('▁as', 31), ('▁,', 30), ('▁indeed', 29), ('▁but', 29), ('▁one', 29)]
+Graph stats: 491 nodes, 3433 edges
+Top 10 hubs: [('--', 60), ('than', 59), ('▁like', 52), ('▁that', 50), ('▁,', 48), ('▁as', 48), ('▁that', 47), ('▁the', 46), ('▁the', 46), ('▁of', 46)]
+Graph stats: 433 nodes, 3170 edges
+Top 10 hubs: [('▁that', 55), ('▁it', 54), ('▁after', 53), ('▁but', 51), ('▁as', 51), ('▁is', 50), ('▁few', 49), ('sh', 49), ('▁though', 48), ('▁to', 48)]
+Graph stats: 766 nodes, 6322 edges
+Top 10 hubs: [('▁who', 78), ('▁,', 73), ('▁,', 72), ('/', 67), ('▁it', 67), ('▁on', 63), ('▁as', 62), ('▁it', 61), ('▁,', 60), ('▁?', 60)]
+Graph stats: 432 nodes, 3108 edges
+Top 10 hubs: [('▁of', 69), ('▁is', 55), ('▁is', 53), ('▁of', 52), ('▁for', 51), ('▁particular', 51), ('▁paying', 49), ('▁what', 47), ('▁,', 43), ('▁such', 43)]
+Graph stats: 617 nodes, 5145 edges
+Top 10 hubs: [('▁when', 66), ('▁and', 62), ('▁very', 62), ('▁but', 60), ('▁what', 59), ('▁by', 58), ('▁it', 58), ('▁in', 57), ('▁making', 56), ('▁gave', 55)]
+Graph stats: 652 nodes, 5248 edges
+Top 10 hubs: [('▁that', 70), ('▁by', 68), ('▁where', 64), ('▁kind', 63), ('▁from', 62), ('▁on', 62), ('▁isn', 61), ('▁what', 60), ('▁with', 60), ('▁,', 60)]
+Graph stats: 187 nodes, 916 edges
+Top 10 hubs: [('▁of', 36), ('▁,', 34), ('▁this', 33), ('▁and', 30), ('▁for', 30), ('▁the', 30), ('▁making', 27), ('▁,', 26), ('▁this', 26), ('▁for', 25)]
+Graph stats: 449 nodes, 3496 edges
+Top 10 hubs: [('▁to', 64), ('▁as', 57), ('▁i', 56), ('▁that', 56), ('▁with', 54), ('▁through', 52), ('▁of', 50), ('▁is', 50), ('▁and', 50), ('▁several', 50)]
+Graph stats: 532 nodes, 3896 edges
+Top 10 hubs: [('▁the', 63), ('s', 60), ('▁"', 59), ('▁,', 59), ('▁his', 57), ('▁and', 57), ('▁was', 56), ('▁.', 54), ('▁it', 54), ('▁there', 53)]
+Graph stats: 646 nodes, 5436 edges
+Top 10 hubs: [('▁doesn', 82), ('▁although', 73), ('▁,', 66), ('▁significant', 66), ('▁requiring', 66), ('▁who', 63), ('▁this', 59), ('▁for', 58), ('▁where', 58), ('▁,', 58)]
+Graph stats: 623 nodes, 4927 edges
+Top 10 hubs: [('▁if', 64), ('s', 60), ('▁so', 58), ('▁of', 58), ('▁couldn', 55), ('▁turning', 55), ('▁each', 55), ('▁other', 55), ('▁even', 53), ('s', 53)]
+Graph stats: 84 nodes, 219 edges
+Top 10 hubs: [('▁sense', 14), ('▁are', 12), ('▁the', 11), ('▁share', 9), ('▁by', 9), ('▁habits', 9), ('ished', 9), ('▁is', 8), ('▁of', 8), ('▁also', 8)]
+Graph stats: 494 nodes, 3575 edges
+Top 10 hubs: [('▁with', 63), ('▁the', 62), ('▁more', 58), ('▁her', 57), ('▁,', 56), ('▁others', 53), ('▁which', 50), ('s', 50), ('t', 50), ('▁the', 50)]
+Graph stats: 601 nodes, 4737 edges
+Top 10 hubs: [('▁the', 69), ('▁as', 69), ('▁from', 65), ('▁as', 62), ('▁that', 62), ('▁somehow', 61), ('s', 60), ('▁to', 59), ('▁and', 59), ('▁in', 57)]
+Graph stats: 416 nodes, 3129 edges
+Top 10 hubs: [('ically', 62), ('s', 54), ('▁to', 53), ('▁still', 52), ('▁of', 50), ('▁him', 50), ('▁up', 50), ('▁because', 49), ('▁one', 48), ('▁on', 47)]
+Graph stats: 532 nodes, 3966 edges
+Top 10 hubs: [('▁though', 59), ('▁even', 58), ('▁who', 55), ('▁has', 55), ('▁particular', 53), ('▁but', 53), ('▁enough', 51), ('▁just', 50), ('▁which', 49), ('▁this', 49)]
+Graph stats: 166 nodes, 654 edges
+Top 10 hubs: [('▁the', 31), ('▁it', 25), ('▁are', 24), ('▁,', 24), ('▁"', 22), ('▁of', 18), ('▁a', 16), ('▁the', 16), ('▁though', 15), ('▁,', 15)]
+Graph stats: 706 nodes, 5269 edges
+Top 10 hubs: [('colored', 72), ('▁it', 68), ('▁better', 68), ('▁whose', 67), ('▁of', 67), ('▁its', 65), ('▁make', 59), ('▁as', 59), ('▁such', 56), ('▁with', 56)]
+Graph stats: 177 nodes, 728 edges
+Top 10 hubs: [('▁only', 30), ('▁its', 26), ('▁from', 25), ('▁taken', 23), ('▁being', 23), ('▁are', 22), ('▁thing', 21), ('▁"', 21), ('▁,', 20), ('▁.', 19)]
+Graph stats: 405 nodes, 2703 edges
+Top 10 hubs: [('▁and', 60), ('▁in', 54), ('aw', 53), ('▁and', 52), ('▁,', 50), ('▁into', 49), ('▁,', 48), ('▁,', 48), ('▁which', 47), ('▁all', 47)]
+Graph stats: 823 nodes, 6609 edges
+Top 10 hubs: [('▁the', 76), ('▁"', 73), ('▁and', 63), ('▁this', 62), ('▁of', 61), ('▁the', 61), ('▁does', 61), ('▁of', 60), ('▁to', 60), ('▁of', 60)]
+Graph stats: 692 nodes, 5382 edges
+Top 10 hubs: [('▁into', 71), ('▁with', 69), ('▁with', 69), ('▁is', 66), ('▁had', 64), ('▁--', 60), ('▁and', 58), ('▁nature', 57), ('▁who', 56), ('-', 55)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n082
+Job ID: 3067769
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:48
+CPU Efficiency: 4.17% of 00:19:12 core-walltime
+Job Wall-clock time: 00:01:12
+Memory Utilized: 3.81 GB
+Memory Efficiency: 3.06% of 124.51 GB (124.51 GB/node)
