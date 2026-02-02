@@ -5,7 +5,7 @@ import os
 # log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolmean/version_6"
 # log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolcls/version_0"
 # log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolmean/version_4"
-log_dir = "../logs_mrd/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0"
+log_dir = "../logs_mrd/cDGM_google-embeddinggemma-300m_k15_gcn_euclidean_poolmean/version_0"
 reader = SummaryReader(log_dir)
 df = reader.scalars
 

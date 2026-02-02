@@ -36,7 +36,6 @@ def visualize_cdgm_graphs(dataset, model, num_samples=5, save_dir=save_dir):
             logits, adjacencies = model(node_features, attention_mask)
             pred_label = logits.argmax(-1).item()
             
-            # Get adjacency from last DGM layer
             adj_matrix = adjacencies[-1]  # [batch, num_nodes, num_nodes]
         
         encoded = tokenizer(text, max_length=dataset.max_length, truncation=True)
@@ -50,12 +49,10 @@ def visualize_cdgm_graphs(dataset, model, num_samples=5, save_dir=save_dir):
         print(f"Num nodes: {num_nodes}")
         print(f"Adjacency stats: min={adj.min():.3f}, max={adj.max():.3f}, mean={adj.mean():.3f}")
         
-        # Build graph from continuous adjacency
         G = nx.Graph()
         for i in range(num_nodes):
             G.add_node(i, label=tokens[i])
         
-        # Threshold for edges (continuous DGM gives probabilities)
         threshold = 0.5
         for i in range(num_nodes):
             for j in range(i+1, num_nodes):
@@ -75,10 +72,8 @@ def visualize_cdgm_graphs(dataset, model, num_samples=5, save_dir=save_dir):
             top_edges = sorted(zip(edges, weights), key=lambda x: x[1], reverse=True)[:10]
             # print(f"Top 10 edges: {[f'{tokens[u] if u < len(tokens) else \"[UNK]\"}↔{tokens[v] if v < len(tokens) else \"[UNK]\"} ({w:.3f})' for (u, v), w in top_edges]}")
         
-        # Visualization
         fig, axes = plt.subplots(1, len(adjacencies) + 1, figsize=(6 * (len(adjacencies) + 1), 6))
         
-        # Plot adjacency from each DGM layer
         for layer_idx, adj_layer in enumerate(adjacencies):
             ax = axes[layer_idx]
             adj_viz = adj_layer[0, :num_nodes, :num_nodes].cpu().numpy()
@@ -94,7 +89,6 @@ def visualize_cdgm_graphs(dataset, model, num_samples=5, save_dir=save_dir):
                               fontsize=6)
             plt.colorbar(im, ax=ax)
         
-        # Plot graph structure
         ax = axes[-1]
         if len(top_hubs) > 0:
             top_node_ids = [i for i, _ in top_hubs[:min(30, len(top_hubs))]]
@@ -125,13 +119,11 @@ def visualize_cdgm_graphs(dataset, model, num_samples=5, save_dir=save_dir):
         print(f"Saved visualization to {save_dir}/cdgm_sample{idx}.png")
 
 
-# Load cDGM model
 cdgm_model = cDGM_GNN.load_from_checkpoint(
     f'{prefix_dir}{version}/checkpoints/{checkpoint}')
 cdgm_model = cdgm_model.cuda()
 cdgm_model.eval()
 
-# Load test data
 test_data = NewsGroupsGraphDataset(
     split='test', 
     max_length=256, 

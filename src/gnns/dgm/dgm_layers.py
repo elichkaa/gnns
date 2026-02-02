@@ -95,7 +95,7 @@ class cDGM(nn.Module):
         X_norm = (X_tilde - centroid) * scale
 
         # distances
-        D = self.distance(X_norm)
+        D = pairwise_euclidean_distances(X_norm)
 
         # adjacency matrix A using sigmoid thresholding
         # a_ij = σ(t * (T - d_ij²))
@@ -133,7 +133,7 @@ class dDGM(nn.Module):
         batch_size, num_nodes, feature_dim = X_tilde.shape
 
         # distances
-        D = self.distance(X_tilde)
+        D = pairwise_euclidean_distances(X_tilde)
 
         edge_index, logprobs = self._sample_knn_graph(D, batch_size, num_nodes)
 

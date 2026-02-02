@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=graph_gnn
-#SBATCH --partition=dev_gpu_h100
+#SBATCH --partition=gpu_a100_short
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=127500mb
@@ -21,16 +21,17 @@ cd ~/project/gnns/src/gnns
 srun python train_v2.py \
      --model_type dgm \
      --use_continuous_dgm \
-     --encoder_name distilbert-base-uncased \
+     --encoder_name google/embeddinggemma-300m \
      --dataset mrd \
      --task regression \
-     --gfun gat \
+     --gfun gcn \
      --k 15 \
-     --batch_size 32 \
-     --dgm_layers "[[768, 32], [544, 32], [288, 32]]" \
-     --conv_layers "[[768, 512], [512, 256], [256, 128]]" \
-     --fc_layers "[128, 64, 1]" \
-     --pre_fc "[]"
+     --batch_size 32
+     
+# --dgm_layers "[[768, 32], [544, 32], [288, 32]]" \
+# --conv_layers "[[768, 512], [512, 256], [256, 128]]" \
+# --fc_layers "[128, 64, 1]" \
+# --pre_fc "[]"
 
 # --fc_layers "[512, 1]" \
 #      --dgm_layers "[[768, 512]]" \
