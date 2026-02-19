@@ -1,0 +1,62 @@
+GpuFreq=control_disabled
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+You are using a CUDA device ('NVIDIA A100-PCIE-40GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name    | Type       | Params | Mode  | FLOPs
+-------------------------------------------------------
+0 | graph_f | ModuleList | 656 K  | train | 0    
+1 | node_g  | ModuleList | 658 K  | train | 0    
+2 | fc      | MLP        | 10.3 K | train | 0    
+-------------------------------------------------------
+1.3 M     Trainable params
+2         Non-trainable params
+1.3 M     Total params
+5.300     Total estimated model params size (MB)
+19        Modules in train mode
+0         Modules in eval mode
+0         Total Flops
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 32. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 23. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+Metric val_acc improved. New best score: 52.055
+Epoch 0, global step 283: 'val_loss' reached 1.46028 (best 1.46028), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=0-step=283.ckpt' as top 1
+Metric val_acc improved by 1.723 >= min_delta = 0.001. New best score: 53.778
+Epoch 1, global step 566: 'val_loss' reached 1.42124 (best 1.42124), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=1-step=566.ckpt' as top 1
+Metric val_acc improved by 1.679 >= min_delta = 0.001. New best score: 55.457
+Epoch 2, global step 849: 'val_loss' reached 1.33613 (best 1.33613), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=2-step=849.ckpt' as top 1
+Metric val_acc improved by 1.105 >= min_delta = 0.001. New best score: 56.562
+Epoch 3, global step 1132: 'val_loss' was not in top 1
+Metric val_acc improved by 0.928 >= min_delta = 0.001. New best score: 57.490
+Epoch 4, global step 1415: 'val_loss' was not in top 1
+Epoch 5, global step 1698: 'val_loss' was not in top 1
+Metric val_acc improved by 0.486 >= min_delta = 0.001. New best score: 57.976
+Epoch 6, global step 1981: 'val_loss' reached 1.30331 (best 1.30331), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=6-step=1981.ckpt' as top 1
+Metric val_acc improved by 1.414 >= min_delta = 0.001. New best score: 59.390
+Epoch 7, global step 2264: 'val_loss' reached 1.29388 (best 1.29388), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=7-step=2264.ckpt' as top 1
+Metric val_acc improved by 0.751 >= min_delta = 0.001. New best score: 60.141
+Epoch 8, global step 2547: 'val_loss' reached 1.29058 (best 1.29058), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=8-step=2547.ckpt' as top 1
+Epoch 9, global step 2830: 'val_loss' reached 1.27782 (best 1.27782), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=9-step=2830.ckpt' as top 1
+Epoch 10, global step 3113: 'val_loss' was not in top 1
+Metric val_acc improved by 1.105 >= min_delta = 0.001. New best score: 61.246
+Epoch 11, global step 3396: 'val_loss' reached 1.26088 (best 1.26088), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=11-step=3396.ckpt' as top 1
+Epoch 12, global step 3679: 'val_loss' was not in top 1
+Epoch 13, global step 3962: 'val_loss' was not in top 1
+Metric val_acc improved by 0.398 >= min_delta = 0.001. New best score: 61.644
+Epoch 14, global step 4245: 'val_loss' reached 1.22278 (best 1.22278), saving model to './logs_20news/cDGM_distilbert-base-uncased_k15_gat_euclidean_poolmean/version_0/checkpoints/epoch=14-step=4245.ckpt' as top 1
+Epoch 15, global step 4528: 'val_loss' was not in top 1
+Epoch 16, global step 4811: 'val_loss' was not in top 1
+Epoch 17, global step 5094: 'val_loss' was not in top 1
+Epoch 18, global step 5377: 'val_loss' was not in top 1
+Epoch 19, global step 5660: 'val_loss' was not in top 1
+Epoch 20, global step 5943: 'val_loss' was not in top 1
+Epoch 21, global step 6226: 'val_loss' was not in top 1
+Epoch 22, global step 6509: 'val_loss' was not in top 1
+Epoch 23, global step 6792: 'val_loss' was not in top 1
+Monitored metric val_acc did not improve in the last 10 records. Best score: 61.644. Signaling Trainer to stop.
+Epoch 24, global step 7075: 'val_loss' was not in top 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 12. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.

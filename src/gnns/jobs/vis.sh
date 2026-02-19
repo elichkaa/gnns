@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=vis
-#SBATCH --partition=dev_gpu_h100
+#SBATCH --partition=gpu_a100_short
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=127500mb

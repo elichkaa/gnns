@@ -60,49 +60,40 @@ class MLP(nn.Module):
 class cDGM(nn.Module):
     def __init__(self, embed_f, distance="euclidean"):
         super(cDGM, self).__init__()
-
         # f_θ
         self.embed_f = embed_f
         if distance == "euclidean":
             self.distance = pairwise_euclidean_distances
         else:
             self.distance = pairwise_poincare_distances
-
         # temperature t controls sharpness of connections
         self.t = nn.Parameter(torch.tensor(
             1.0 if distance == "hyperbolic" else 4.0))
-
         # threshold T controls connection radius
         self.T = nn.Parameter(torch.tensor(0.5))
-
         # normalization
         self.scale = nn.Parameter(torch.tensor(-1.0), requires_grad=False)
         self.centroid = None
-
+    
     def forward(self, X: torch.Tensor, A_0=None):
         # X̃ = f_θ(X)
         X_tilde = self.embed_f(X, A_0)
-
         # [batch, num_nodes, feature_dim]
         if X_tilde.dim() == 2:
             X_tilde = X_tilde.unsqueeze(0)
-
-        batch_size, num_nodes, feature_dim = X_tilde.shape
-
-        centroid = X_tilde.mean(dim=(0, 1), keepdim=True)  # [1, 1, F]
-        scale = 0.9 / (X_tilde - centroid).abs().amax().clamp(min=1e-6)
         
-        X_norm = (X_tilde - centroid) * scale
-
+        if self.scale < 0 or self.centroid is None:
+            self.centroid = X_tilde.mean(dim=(0, 1), keepdim=True).detach()
+            self.scale.data = (0.9 / (X_tilde - self.centroid).abs().max()).detach()
+        
+        X_norm = (X_tilde - self.centroid) * self.scale
         # distances
-        D = pairwise_euclidean_distances(X_norm)
-
+        D = self.distance(X_norm)
         # adjacency matrix A using sigmoid thresholding
         # a_ij = σ(t * (T - d_ij²))
         temp = torch.clamp(self.t, -5, 5)
         A = torch.sigmoid(temp * (self.T.abs() - D))
-
-        return X_tilde, A.squeeze(0) if batch_size == 1 else A, None
+        return X_tilde, A.squeeze(0) if X_tilde.size(0) == 1 else A, None
 
 
 class dDGM(nn.Module):

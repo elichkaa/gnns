@@ -5,7 +5,15 @@ import os
 # log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolmean/version_6"
 # log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolcls/version_0"
 # log_dir = "../logs_mrd/baseline_google-embeddinggemma-300m_poolmean/version_4"
-log_dir = "../logs_mrd/cDGM_google-embeddinggemma-300m_k15_gcn_euclidean_poolmean/version_0"
+# log_dir = "../logs_mrd/cDGM_google-embeddinggemma-300m_k15_gcn_euclidean_poolmean/version_0"
+# baseline_distilbert-base-uncased_poolmean
+# cdgm_google-embeddinggemma-300m_k5_gat_euclidean_poolmean
+# dDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean
+# dDGM_google-embeddinggemma-300m_k5_gat_euclidean_poolmean
+# "../logs_20news/dDGM_distilbert-base-uncased_k10_gat_euclidean_poolmean/version_21"
+# "../logs_20news/cDGM_distilbert-base-uncased_k15_gcn_euclidean_poolmean/version_1"
+# "../logs_20news/dDGM_google-embeddinggemma-300m_k5_gat_euclidean_poolmean/version_4"
+log_dir = "../logs_20news/dDGM_google-embeddinggemma-300m_k10_gat_euclidean_poolmean/version_2"
 reader = SummaryReader(log_dir)
 df = reader.scalars
 

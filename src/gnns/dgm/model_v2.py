@@ -75,60 +75,85 @@ class DGM_Model(pl.LightningModule):
     def forward(self, X, edge_index=None, batch_size=None, return_adj=False):
         if self.pre_fc is not None:
             X = self.pre_fc(X)
-
+        
         if X.dim() == 2:
             X = X.unsqueeze(0)
-
+        
         batch_sz, num_nodes, feature_dim = X.shape
-
+        X_original = X
         graph_x = X.detach()
         logprobs_list = []
-
+        adjacency_list = []
+        
         for dgm, gnn in zip(self.graph_f, self.node_g):
+            X_residual = X
             graph_x, A_or_edge_index, logprobs = dgm(graph_x, edge_index)
-
+            
             if self.hparams.dgm_type == "continuous":
                 A = A_or_edge_index
-        
+                adjacency_list.append(A)
+                
                 if A is not None:
                     if A.dim() == 2:
                         A = A.unsqueeze(0)
-        
+                    
                     edge_index_list = []
+                    edge_weight_list = []
+                    
                     for b in range(A.size(0)):
-                        src, tgt = torch.nonzero(A[b] > 0.5, as_tuple=True)
+                        k_total = min(self.hparams.k * num_nodes, num_nodes * num_nodes)
+                        weights_flat = A[b].view(-1)
+                        topk_vals, topk_idx = torch.topk(weights_flat, k_total)
+                        
+                        src = topk_idx // num_nodes
+                        tgt = topk_idx % num_nodes
+                        
                         ei = torch.stack([src, tgt], dim=0)
                         ei += b * num_nodes
                         edge_index_list.append(ei)
-        
+                        edge_weight_list.append(topk_vals)
+                    
                     edge_index = torch.cat(edge_index_list, dim=1)
+                    edge_weight = torch.cat(edge_weight_list, dim=0)
                 else:
                     edge_index = None
+                    edge_weight = None
             else:
                 edge_index = A_or_edge_index
-
+                edge_weight = None
+            
             X_flat = X.view(-1, X.shape[-1])
-            X_out = F.relu(gnn(
-                F.dropout(X_flat, p=self.hparams.dropout,
-                          training=self.training),
-                edge_index
-            ))
+            
+            if self.hparams.dgm_type == "continuous" and edge_weight is not None and self.hparams.gfun == 'gcn':
+                X_out = F.relu(gnn(
+                    F.dropout(X_flat, p=self.hparams.dropout, training=self.training),
+                    edge_index,
+                    edge_weight=edge_weight
+                ))
+            else:
+                X_out = F.relu(gnn(
+                    F.dropout(X_flat, p=self.hparams.dropout, training=self.training),
+                    edge_index
+                ))
+            
             X = X_out.view(batch_sz, num_nodes, -1)
-
-            graph_x = torch.cat([graph_x, X.detach()], dim=-1)
-
+            
+            if X.shape[-1] == X_residual.shape[-1]:
+                X = X + X_residual
+            
+            graph_x = X.detach()
+            
             if logprobs is not None:
                 logprobs_list.append(logprobs)
-
+        
         logits = self.fc(X)
-
-        logprobs_stacked = torch.stack(
-            logprobs_list, dim=-1) if len(logprobs_list) > 0 else None
-
+        
+        if logits.shape[-1] == X_original.shape[-1]:
+            logits = logits + X_original
+        
         if return_adj:
             if self.hparams.dgm_type == 'continuous':
-                _, A, _ = self.graph_f[0](X.detach(), edge_index)
-                return logits, A
+                return logits, adjacency_list[0] if len(adjacency_list) > 0 else None
             else:
                 adj = torch.zeros(batch_sz, num_nodes, num_nodes, device=X.device)
                 if edge_index is not None:
@@ -137,7 +162,7 @@ class DGM_Model(pl.LightningModule):
                     adj[:, src, tgt] = 1.0
                     adj[:, tgt, src] = 1.0
                 return logits, adj
-
+        
         return logits, logprobs_list
 
     def training_step(self, batch, batch_idx):
@@ -176,35 +201,30 @@ class DGM_Model(pl.LightningModule):
             self.log('train_loss', cls_loss.detach())
             self.log('train_mae', mae.mean())
 
-        # backward cls loss
-        
-        # predictions = pooled_logits.argmax(dim=-1)
-        # correct = (predictions == labels).float()
-        # train_acc = correct.mean().item()
-
         # NOTE: only for ddgm
         if logprobs is not None and len(logprobs) > 0 and self.hparams.dgm_type != 'continuous':
-            logprobs_tensor = torch.stack(logprobs, dim=-1)  # [batch, num_nodes, k, num_layers]
+            logprobs_tensor = torch.stack(logprobs, dim=-1)
             
             if self.avg_accuracy is None or self.avg_accuracy.size(0) != batch_size:
                 self.avg_accuracy = torch.ones(batch_size, device=correct.device) * 0.5
             
-            reward = self.avg_accuracy.to(correct.device) - correct
+            reward = correct - self.avg_accuracy.to(correct.device)
             
-            graph_loss = (reward.view(batch_size, 1, 1, 1) *
-                          logprobs_tensor.mean(dim=[1, 2])).mean()
+            mask_expanded = attention_mask.unsqueeze(-1).unsqueeze(-1)
+            masked_logprobs = logprobs_tensor * mask_expanded
             
-            # self.manual_backward(graph_loss)
+            # REINFORCE: maximize log-prob for correct, minimize for incorrect
+            # Negative sign because we're doing gradient descent (minimization)
+            graph_loss = -(reward.view(batch_size, 1, 1, 1) * 
+                           masked_logprobs.mean(dim=[1, 2, 3])).mean()
             
-            self.avg_accuracy = self.avg_accuracy.to(
-                correct.device) * 0.95 + 0.05 * correct
+            self.manual_backward(graph_loss)
+            
+            self.avg_accuracy = self.avg_accuracy.to(correct.device) * 0.95 + 0.05 * correct
             
             self.log('train_graph_loss', graph_loss.detach())
 
         optimizer.step()
-
-        # self.log('train_loss', cls_loss.detach())
-        # self.log('train_acc', train_acc * 100)
 
         return cls_loss
 
@@ -254,15 +274,13 @@ class DGM_Model(pl.LightningModule):
             self.log(f'{prefix}_mae', mae)
             self.log(f'{prefix}_r2', r2)
         
-        # self.log(f'{prefix}_loss', loss)
-        # self.log(f'{prefix}_acc', accuracy * 100)
-        
         return loss
 
     def configure_optimizers(self):
         """Configure Adam optimizer."""
         optimizer = torch.optim.Adam(
             self.parameters(),
-            lr=self.hparams.lr
+            lr=self.hparams.lr,
+            weight_decay=self.hparams.weight_decay
         )
         return optimizer

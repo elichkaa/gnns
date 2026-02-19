@@ -1,0 +1,212 @@
+Loading 20newsgroups test data...
+Processing document 0/7532...
+Processing document 500/7532...
+Processing document 1000/7532...
+Processing document 1500/7532...
+Processing document 2000/7532...
+Processing document 2500/7532...
+Processing document 3000/7532...
+Processing document 3500/7532...
+Processing document 4000/7532...
+Processing document 4500/7532...
+Processing document 5000/7532...
+Processing document 5500/7532...
+Processing document 6000/7532...
+Processing document 6500/7532...
+Processing document 7000/7532...
+Processing document 7500/7532...
+
+=== Sample 0 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 123, Total edges in adj: 1948
+Graph stats: 123 nodes, 1891 edges
+Top 10 hubs: [('▁curious', 50), ('▁how', 49), ('▁this', 49), ('▁that', 49), ('▁usually', 48), ('.', 48), ('▁to', 48), ('▁heard', 47), ('▁the', 47), ('know', 46)]
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 174, Total edges in adj: 4045
+Graph stats: 174 nodes, 3970 edges
+Top 10 hubs: [(':"', 81), ('▁*', 78), ('▁now', 77), (":'", 77), ('...', 76), ('▁some', 75), ('▁(', 75), ('▁(', 75), ('?', 75), ('▁in', 74)]
+
+=== Sample 2 ===
+True: alt.atheism | Pred: alt.atheism
+Num nodes: 10, Total edges in adj: 30
+Graph stats: 10 nodes, 25 edges
+Top 10 hubs: [('In', 7), ('▁a', 7), ('▁word', 7), ('\n', 6), ('.', 6), ('<eos>', 6), (',', 5), ('\n', 4), ('▁yes', 2), ('<bos>', 0)]
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 512, Total edges in adj: 21530
+Graph stats: 512 nodes, 21332 edges
+Top 10 hubs: [('▁(', 146), ('\n', 145), ('▁some', 144), ('▁were', 143), ('▁for', 143), ('▁', 142), ('\n', 141), ('▁who', 141), ('▁them', 140), ('▁not', 140)]
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 24, Total edges in adj: 101
+Graph stats: 24 nodes, 90 edges
+Top 10 hubs: [('▁as', 13), ('▁two', 12), ('I', 11), ('▁exists', 11), ('\n', 10), ('▁spent', 10), ('▁no', 10), ('▁an', 10), ('▁system', 10), ('.', 10)]
+
+=== Sample 5 ===
+True: sci.med | Pred: sci.med
+Num nodes: 512, Total edges in adj: 20692
+Graph stats: 512 nodes, 20489 edges
+Top 10 hubs: [('▁persistent', 140), ('s', 140), ('both', 140), ('ize', 139), ('\n', 139), ('▁▁', 138), ('(', 137), (',', 136), ('▁"', 136), ('▁to', 136)]
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 34, Total edges in adj: 198
+Graph stats: 34 nodes, 184 edges
+Top 10 hubs: [('Pro', 21), ('.', 20), ('▁little', 18), ('▁but', 17), ('▁by', 16), ('3', 16), ('▁money', 15), ('▁grow', 15), ('Dish', 13), ('on', 13)]
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 143, Total edges in adj: 1656
+Graph stats: 143 nodes, 1597 edges
+Top 10 hubs: [('▁and', 41), ('▁tell', 41), ('\t', 39), ('▁▁▁▁▁', 39), ('und', 39), ('za', 39), ('▁not', 38), ('▁', 37), ('▁(', 37), ('▁able', 37)]
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 63, Total edges in adj: 547
+Graph stats: 63 nodes, 521 edges
+Top 10 hubs: [('▁with', 26), ('▁and', 25), ('▁one', 25), ('▁within', 24), ('we', 24), ('▁have', 23), ('different', 23), ('\n', 23), ('\n\n', 22), ('\n', 22)]
+
+=== Sample 9 ===
+True: comp.graphics | Pred: comp.graphics
+Num nodes: 161, Total edges in adj: 2306
+Graph stats: 161 nodes, 2243 edges
+Top 10 hubs: [('▁utter', 45), ('▁white', 43), ('image', 42), ('▁for', 41), ('▁in', 40), ('\n', 40), ('It', 40), ('▁with', 39), ('▁▁', 39), ('▁negative', 39)]
+
+=== Sample 10 ===
+True: comp.os.ms-windows.misc | Pred: comp.os.ms-windows.misc
+Num nodes: 73, Total edges in adj: 579
+Graph stats: 73 nodes, 544 edges
+Top 10 hubs: [('▁the', 26), ('▁it', 26), ('/', 25), ('.', 23), ('▁of', 23), ('pub', 22), ('Line', 22), ('.', 22), ('▁the', 21), ('/', 20)]
+
+=== Sample 11 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 141, Total edges in adj: 2178
+Graph stats: 141 nodes, 2117 edges
+Top 10 hubs: [('▁being', 54), ('2', 53), ('\n', 52), ('y', 52), ('▁or', 52), ('(', 52), ('▁on', 52), ('x', 51), (',', 51), ('▁Draw', 50)]
+
+=== Sample 12 ===
+True: talk.politics.mideast | Pred: talk.politics.mideast
+Num nodes: 131, Total edges in adj: 1752
+Graph stats: 131 nodes, 1700 edges
+Top 10 hubs: [('▁mentioned', 44), ('▁see', 41), ('▁way', 41), ('▁of', 41), ('▁the', 41), (',', 40), ('▁of', 39), ('▁as', 39), ('istically', 39), ('▁by', 39)]
+
+=== Sample 13 ===
+True: rec.motorcycles | Pred: rec.motorcycles
+Num nodes: 52, Total edges in adj: 515
+Graph stats: 52 nodes, 491 edges
+Top 10 hubs: [(',', 33), ('▁we', 32), ('▁it', 30), ('I', 30), ('▁a', 29), ('▁', 29), ('?', 28), ('▁thought', 27), ('I', 27), ('1', 26)]
+
+=== Sample 14 ===
+True: alt.atheism | Pred: talk.religion.misc
+Num nodes: 512, Total edges in adj: 22087
+Graph stats: 512 nodes, 21892 edges
+Top 10 hubs: [('.', 149), ('▁since', 147), ('*', 146), ('\n', 145), ('There', 145), ('▁would', 143), ('was', 142), ('▁anything', 142), ('▁to', 141), ('\n', 140)]
+
+=== Sample 15 ===
+True: comp.os.ms-windows.misc | Pred: comp.sys.ibm.pc.hardware
+Num nodes: 323, Total edges in adj: 8622
+Graph stats: 323 nodes, 8502 edges
+Top 10 hubs: [('\n', 89), ('\n', 87), ('3', 87), ('\n', 87), ('▁much', 86), ('▁as', 85), ('\n', 85), ('▁data', 85), ('better', 85), ('world', 83)]
+
+=== Sample 16 ===
+True: comp.sys.mac.hardware | Pred: comp.os.ms-windows.misc
+Num nodes: 125, Total edges in adj: 1475
+Graph stats: 125 nodes, 1428 edges
+Top 10 hubs: [('▁get', 37), ('▁happen', 35), ('▁a', 34), ('▁a', 34), ('▁', 33), ('2', 33), ('▁trying', 32), ('▁is', 32), ('▁with', 31), ('\n\n', 31)]
+
+=== Sample 17 ===
+True: comp.graphics | Pred: sci.electronics
+Num nodes: 33, Total edges in adj: 154
+Graph stats: 33 nodes, 144 edges
+Top 10 hubs: [('.', 18), ('--', 15), ('Hello', 14), ('.', 14), (',', 13), ('i', 13), ("'", 12), ('▁interested', 12), ('\n', 11), ('.', 11)]
+
+=== Sample 18 ===
+True: misc.forsale | Pred: misc.forsale
+Num nodes: 213, Total edges in adj: 4514
+Graph stats: 213 nodes, 4418 edges
+Top 10 hubs: [('▁-', 77), ('2', 72), ('▁the', 71), ('\n', 71), ('any', 71), ('▁on', 71), ('\n', 71), ('▁style', 69), (',', 68), ('▁live', 68)]
+
+=== Sample 19 ===
+True: talk.politics.guns | Pred: talk.politics.guns
+Num nodes: 47, Total edges in adj: 403
+Graph stats: 47 nodes, 382 edges
+Top 10 hubs: [('▁calls', 28), ('.', 28), ('▁called', 26), ('aryl', 26), ('7', 25), ('▁(', 25), ('▁phone', 25), ("'", 24), ('▁bill', 24), ('▁HB', 24)]
+
+=== Sample 20 ===
+True: comp.graphics | Pred: comp.graphics
+Num nodes: 512, Total edges in adj: 23502
+Graph stats: 512 nodes, 23316 edges
+Top 10 hubs: [('.', 152), ('On', 152), ('▁and', 151), ('▁concerned', 149), ('▁from', 149), ('▁mentioned', 148), ('▁other', 148), ('▁so', 147), ('▁very', 147), (':', 146)]
+
+=== Sample 21 ===
+True: misc.forsale | Pred: misc.forsale
+Num nodes: 72, Total edges in adj: 529
+Graph stats: 72 nodes, 496 edges
+Top 10 hubs: [('0', 22), ('originally', 21), ('▁e', 21), ('-', 20), ('▁like', 20), ('.', 20), ('*****', 19), ('.', 19), ('▁an', 18), ('▁of', 18)]
+
+=== Sample 22 ===
+True: talk.politics.mideast | Pred: talk.politics.mideast
+Num nodes: 512, Total edges in adj: 20655
+Graph stats: 512 nodes, 20458 edges
+Top 10 hubs: [(',', 154), ('▁the', 148), ('▁January', 147), ('In', 145), ('▁(', 144), ('\n', 144), ('1', 143), ('▁is', 142), (':', 141), ('▁like', 140)]
+
+=== Sample 23 ===
+True: sci.space | Pred: sci.space
+Num nodes: 61, Total edges in adj: 477
+Graph stats: 61 nodes, 452 edges
+Top 10 hubs: [(',', 26), ('▁the', 25), ('▁them', 25), ('▁the', 24), ('.', 24), ('▁shuttle', 23), ('▁arrays', 22), ('▁is', 21), ('▁fit', 21), ('▁the', 21)]
+
+=== Sample 24 ===
+True: comp.sys.ibm.pc.hardware | Pred: comp.sys.ibm.pc.hardware
+Num nodes: 78, Total edges in adj: 706
+Graph stats: 78 nodes, 670 edges
+Top 10 hubs: [('▁it', 29), ('▁I', 29), ('▁both', 29), ('▁to', 29), ('▁an', 27), ('▁with', 27), ('▁both', 27), ('▁and', 27), ('▁', 26), ('▁happy', 26)]
+
+=== Sample 25 ===
+True: sci.med | Pred: sci.med
+Num nodes: 195, Total edges in adj: 3436
+Graph stats: 195 nodes, 3359 edges
+Top 10 hubs: [('difficulty', 59), ('in', 59), ('▁having', 57), ('▁at', 54), ('▁is', 54), ('\n', 54), ('▁this', 53), ('▁a', 53), ('...', 53), ('▁lives', 52)]
+
+=== Sample 26 ===
+True: sci.crypt | Pred: sci.electronics
+Num nodes: 194, Total edges in adj: 3629
+Graph stats: 194 nodes, 3551 edges
+Top 10 hubs: [('--', 67), ('▁succeeded', 65), ('▁form', 62), ('▁question', 62), ('\n', 62), ('▁However', 61), ('▁heard', 61), ('▁not', 61), ('▁said', 60), ('\n', 60)]
+
+=== Sample 27 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 132, Total edges in adj: 1734
+Graph stats: 132 nodes, 1686 edges
+Top 10 hubs: [('▁have', 46), ('▁wanted', 44), ('black', 44), ('▁year', 43), ('▁the', 42), ('▁be', 42), ('▁it', 42), ('▁one', 42), ('▁bought', 41), ('▁not', 41)]
+
+=== Sample 28 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 512, Total edges in adj: 23927
+Graph stats: 512 nodes, 23747 edges
+Top 10 hubs: [('▁shifter', 159), ('-', 153), ('▁were', 150), ('3', 149), ('while', 148), ('▁o', 148), ('▁(', 147), ('▁in', 147), ('except', 147), ('▁this', 147)]
+
+=== Sample 29 ===
+True: comp.sys.ibm.pc.hardware | Pred: comp.sys.mac.hardware
+Num nodes: 49, Total edges in adj: 408
+Graph stats: 49 nodes, 387 edges
+Top 10 hubs: [('▁in', 27), ('I', 25), ('▁about', 24), ('▁they', 24), ('.', 23), ('\n\n', 22), ('▁work', 22), ('▁New', 21), ('▁service', 21), (',', 20)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n564
+Job ID: 3143929
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:05:04
+CPU Efficiency: 5.52% of 01:31:44 core-walltime
+Job Wall-clock time: 00:05:44
+Memory Utilized: 12.45 GB
+Memory Efficiency: 10.00% of 124.51 GB (124.51 GB/node)

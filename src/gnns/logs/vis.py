@@ -10,9 +10,9 @@ from transformers import AutoTokenizer, AutoModel
 
 # dDGM_distilbert-base-uncased_k10_gat_euclidean_poolmean
 # dDGM_google-embeddinggemma-300m_k10_gat_euclidean_poolmean
-prefix_dir = "../logs_mrd/dDGM_google-embeddinggemma-300m_k25_gat_euclidean_poolmean/"
-version = "version_1"
-task = "regression"
+prefix_dir = "../logs_20news/dDGM_google-embeddinggemma-300m_k15_gat_euclidean_poolmean/"
+version = "version_3"
+task = "classification"
 save_dir = f"{prefix_dir}{version}/visualizations"
 # encoder_name = 'distilbert-base-uncased'
 encoder_name = 'google/embeddinggemma-300m'
@@ -23,7 +23,7 @@ encoder_name = 'google/embeddinggemma-300m'
 # epoch=99-step=56600.ckpt
 # epoch=29-step=16980.ckpt
 # checkpoint = "epoch=17-step=1692.ckpt"
-checkpoint = "epoch=18-step=1786.ckpt"
+checkpoint = "epoch=17-step=5094.ckpt"
 
 
 def visualize_dgm_graphs(dataset, model, num_samples=5, save_dir=save_dir, show_errors=False):
@@ -67,9 +67,9 @@ def visualize_dgm_graphs(dataset, model, num_samples=5, save_dir=save_dir, show_
         
         adj = adj_matrix[0, :num_nodes, :num_nodes].cpu().numpy()
         
-        # print(f"\n=== Sample {idx} ===")
-        # print(f"True: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}")
-        # print(f"Num nodes: {num_nodes}, Total edges in adj: {(adj > 0.1).sum() // 2}")
+        print(f"\n=== Sample {idx} ===")
+        print(f"True: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}")
+        print(f"Num nodes: {num_nodes}, Total edges in adj: {(adj > 0.1).sum() // 2}")
         
         G = nx.Graph()
         for i in range(num_nodes):
@@ -122,7 +122,7 @@ def visualize_dgm_graphs(dataset, model, num_samples=5, save_dir=save_dir, show_
                     nx.draw_networkx_edges(G_sub, pos, width=[w*2 for w in weights_sub],
                                            alpha=0.6, edge_color='gray', ax=ax2)
         
-        ax2.set_title(f'True: {true_label} | Pred: {pred_label}')
+        ax2.set_title(f'True: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}')
         ax2.axis('off')
         
         plt.tight_layout()
@@ -134,9 +134,9 @@ dgm_model = DGM_Model.load_from_checkpoint(
     f'{prefix_dir}{version}/checkpoints/{checkpoint}')
 dgm_model = dgm_model.cuda()
 
-# test_data = NewsGroupsGraphDataset(
-#     split='test', max_length=256, device='cuda', use_cache=False, encoder_name=encoder_name)
+test_data = NewsGroupsGraphDataset(
+    split='test', max_length=512, device='cuda', use_cache=False, encoder_name=encoder_name)
 
-test_data = MRDGraphDataset(split='test', device='cuda', file_path="../../data/mrd/mrd.txt", max_length=512, use_cache=False, encoder_name=encoder_name)
+# test_data = MRDGraphDataset(split='test', device='cuda', file_path="../../data/mrd/mrd.txt", max_length=512, use_cache=False, encoder_name=encoder_name)
 
 visualize_dgm_graphs(test_data, dgm_model, num_samples=30, show_errors=False)

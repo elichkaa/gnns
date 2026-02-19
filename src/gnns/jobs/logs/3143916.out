@@ -1,0 +1,102 @@
+Loading 20newsgroups test data...
+Processing document 0/7532...
+Processing document 500/7532...
+Processing document 1000/7532...
+Processing document 1500/7532...
+Processing document 2000/7532...
+Processing document 2500/7532...
+Processing document 3000/7532...
+Processing document 3500/7532...
+Processing document 4000/7532...
+Processing document 4500/7532...
+Processing document 5000/7532...
+Processing document 5500/7532...
+Processing document 6000/7532...
+Processing document 6500/7532...
+Processing document 7000/7532...
+Processing document 7500/7532...
+
+=== Sample 0 ===
+True: rec.autos | Pred: rec.autos
+Num nodes: 123
+Adjacency stats: min=0.000, max=0.881, mean=0.189
+Graph: 123 nodes, 1464 edges (threshold=0.5)
+Top hubs: [('▁how', 63), ('▁the', 62), ('▁usually', 60), ('▁And', 59), ('.', 59), ('▁how', 58), ('.', 57), ('.', 56), ('▁are', 56), ('▁this', 56)]
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 174
+Adjacency stats: min=0.000, max=0.881, mean=0.219
+Graph: 174 nodes, 3630 edges (threshold=0.5)
+Top hubs: [('▁the', 94), ('I', 91), ('▁I', 91), ('▁I', 91), ('m', 90), ('▁(', 90), ('maybe', 90), ('▁my', 90), ('▁(', 90), ('▁"', 90)]
+
+=== Sample 2 ===
+True: alt.atheism | Pred: rec.sport.baseball
+Num nodes: 10
+Adjacency stats: min=0.000, max=0.881, mean=0.199
+Graph: 10 nodes, 4 edges (threshold=0.5)
+Top hubs: [('▁a', 3), ('In', 2), (',', 2), ('.', 1), ('<bos>', 0), ('\n', 0), ('▁word', 0), ('▁yes', 0), ('\n', 0), ('<eos>', 0)]
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.263
+Graph: 512 nodes, 37578 edges (threshold=0.5)
+Top hubs: [('▁at', 301), ('▁the', 301), ('▁have', 300), ('▁of', 299), ('▁that', 297), ('▁them', 296), ('▁that', 295), ('▁were', 293), ('▁not', 293), ('▁who', 293)]
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 24
+Adjacency stats: min=0.000, max=0.881, mean=0.097
+Graph: 24 nodes, 13 edges (threshold=0.5)
+Top hubs: [('ve', 5), ('▁such', 4), ('▁thing', 4), ('\n', 4), ('▁just', 3), ('▁solid', 2), ('\n', 1), ('▁spent', 1), ('▁as', 1), ('▁an', 1)]
+
+=== Sample 5 ===
+True: sci.med | Pred: sci.med
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.222
+Graph: 512 nodes, 32056 edges (threshold=0.5)
+Top hubs: [('▁of', 280), ('s', 279), ('I', 279), ('▁and', 278), (',', 277), ('.', 276), (':', 276), ('▁of', 276), ('▁I', 276), ('.', 275)]
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: soc.religion.christian
+Num nodes: 34
+Adjacency stats: min=0.000, max=0.881, mean=0.130
+Graph: 34 nodes, 59 edges (threshold=0.5)
+Top hubs: [('▁he', 11), ('▁by', 11), ('▁makes', 11), ('1', 11), ('▁but', 10), ('▁who', 10), ('▁', 10), ('1', 10), ('Dish', 9), ('▁away', 9)]
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: comp.os.ms-windows.misc
+Num nodes: 143
+Adjacency stats: min=0.000, max=0.881, mean=0.172
+Graph: 143 nodes, 1965 edges (threshold=0.5)
+Top hubs: [('has', 70), ('▁me', 68), ('My', 67), ('▁managed', 66), ('▁not', 66), ('▁called', 65), ('▁(', 65), ('That', 65), ('▁and', 65), ('▁one', 65)]
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: comp.windows.x
+Num nodes: 63
+Adjacency stats: min=0.000, max=0.881, mean=0.196
+Graph: 63 nodes, 370 edges (threshold=0.5)
+Top hubs: [('▁is', 31), ('that', 29), (',', 27), ('▁only', 27), ('\n\n', 27), ('▁should', 27), ('\n', 26), ('▁manner', 26), ('\n', 26), ('▁proper', 26)]
+
+=== Sample 9 ===
+True: comp.graphics | Pred: comp.graphics
+Num nodes: 161
+Adjacency stats: min=0.000, max=0.881, mean=0.204
+Graph: 161 nodes, 2870 edges (threshold=0.5)
+Top hubs: [('.', 83), ('\n', 82), (':', 82), ('▁(', 82), ('\n\n', 82), (':', 82), ('▁gave', 82), ('▁how', 81), ('a', 81), ('(', 80)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n565
+Job ID: 3143916
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:05:04
+CPU Efficiency: 5.05% of 01:40:16 core-walltime
+Job Wall-clock time: 00:06:16
+Memory Utilized: 12.67 GB
+Memory Efficiency: 10.17% of 124.51 GB (124.51 GB/node)

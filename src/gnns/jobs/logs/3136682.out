@@ -1,0 +1,84 @@
+Loading MRD test data...
+[ Max seq length: 2603 ]
+[ Min seq length: 9 ]
+[ Mean seq length: 429 ]
+[ Train: 3003, Dev: 1001, Test: 1002 ]
+Loaded 1002 test instances
+Processing document 0/1002...
+Processing document 500/1002...
+Processing document 1000/1002...
+Graph stats: 512 nodes, 19310 edges
+Top 10 hubs: [('▁as', 153), ('▁perhaps', 153), ('▁is', 153), ('▁such', 151), ('▁have', 149), ('▁director', 148), ('▁do', 148), ('▁who', 146), ('▁like', 146), ('▁to', 145)]
+Graph stats: 512 nodes, 17689 edges
+Top 10 hubs: [('▁extensive', 157), ('▁exemplified', 151), ('▁about', 148), ('▁not', 142), ('▁as', 142), ('▁such', 139), ('▁the', 137), ('▁still', 134), ('▁comes', 130), ('▁these', 129)]
+Graph stats: 512 nodes, 21147 edges
+Top 10 hubs: [('▁as', 183), ('▁all', 160), ('▁flashing', 157), ('▁going', 153), ('▁keen', 153), ('▁to', 150), ('▁and', 150), ('▁unresolved', 150), ('▁getting', 148), ('s', 148)]
+Graph stats: 284 nodes, 7283 edges
+Top 10 hubs: [('▁believe', 113), ('▁all', 102), ('▁of', 97), ('▁are', 95), ('▁number', 93), ('▁uncountable', 89), ('▁.', 89), ('▁looking', 85), ('▁from', 84), ('▁hard', 82)]
+Graph stats: 431 nodes, 12913 edges
+Top 10 hubs: [('▁caro', 158), ('▁over', 148), ('▁when', 146), ('▁visited', 123), ('▁the', 122), ('▁the', 120), ('▁the', 120), ('▁and', 119), ('▁could', 119), ('▁with', 118)]
+Graph stats: 173 nodes, 3511 edges
+Top 10 hubs: [('▁picture', 81), ('▁reasonably', 80), ('▁and', 79), ('ars', 78), ('▁the', 78), ('▁good', 77), ('▁how', 75), ('▁the', 72), ('▁,', 72), ('▁accepted', 71)]
+Graph stats: 512 nodes, 21500 edges
+Top 10 hubs: [('▁is', 171), ('▁hand', 169), ('▁in', 167), ('▁is', 165), ('▁a', 162), ('▁he', 162), ('▁are', 161), ('▁first', 159), ('▁guy', 159), ('▁finally', 159)]
+Graph stats: 247 nodes, 6542 edges
+Top 10 hubs: [('s', 114), ('▁that', 110), ('▁.', 107), ('▁say', 105), ('y', 103), ('▁made', 103), ('▁rather', 103), ('▁,', 102), ('▁,', 101), ('▁,', 101)]
+Graph stats: 491 nodes, 17244 edges
+Top 10 hubs: [('▁is', 161), ('▁over', 157), ('▁doses', 153), ('▁the', 141), ('▁no', 139), ('▁so', 139), ('▁reveals', 138), ('▁quite', 138), ('▁not', 137), ('▁one', 135)]
+Graph stats: 433 nodes, 14803 edges
+Top 10 hubs: [('▁for', 148), ('▁place', 142), ('▁as', 129), ('▁to', 127), ('▁spend', 126), ('▁else', 124), ('▁,', 124), ('s', 122), ('▁for', 122), ('▁.', 122)]
+Graph stats: 512 nodes, 16556 edges
+Top 10 hubs: [('▁bounds', 148), ('▁ones', 147), ('▁are', 142), ('▁both', 141), ('inson', 129), ('▁pictures', 129), ('▁.', 119), ('▁a', 119), ('▁.', 118), ('▁to', 118)]
+Graph stats: 432 nodes, 13732 edges
+Top 10 hubs: [('▁take', 141), ('▁are', 139), ('▁really', 136), ('▁point', 120), ('▁but', 116), ('▁examination', 113), ('▁.', 111), ('▁a', 110), ('▁like', 108), ('▁kind', 107)]
+Graph stats: 512 nodes, 22666 edges
+Top 10 hubs: [('▁film', 191), ('▁"', 188), ('▁in', 168), ('▁out', 163), ('▁that', 161), ('▁do', 160), ('▁was', 159), ('▁and', 159), ('▁.', 158), ('▁really', 158)]
+Graph stats: 512 nodes, 19090 edges
+Top 10 hubs: [('▁hear', 149), ('usement', 147), ('▁on', 143), ('▁just', 141), ('▁m', 139), ('▁makes', 139), ('spir', 139), ('▁who', 138), ('▁bem', 137), ('▁he', 136)]
+Graph stats: 187 nodes, 5049 edges
+Top 10 hubs: [('▁out', 103), ('▁well', 103), ('▁for', 100), ('▁being', 96), ('s', 95), ('▁,', 93), ('▁,', 92), ('--', 88), ("'", 86), ('▁to', 86)]
+Graph stats: 449 nodes, 16948 edges
+Top 10 hubs: [('▁reveals', 156), ('▁clever', 152), ('▁bit', 149), ('▁less', 149), ('▁(', 148), ('▁the', 145), ('▁the', 145), ('▁this', 144), ('▁isn', 144), ('▁to', 143)]
+Graph stats: 512 nodes, 18515 edges
+Top 10 hubs: [('▁the', 170), ('▁seen', 148), ('▁m', 147), ('▁he', 147), ('▁runs', 146), ('▁doses', 145), ('s', 144), ('▁paul', 143), ('▁then', 142), ('▁quite', 142)]
+Graph stats: 512 nodes, 18536 edges
+Top 10 hubs: [('▁another', 148), ('▁with', 144), ('▁,', 143), ('▁in', 141), ('▁either', 141), ('▁has', 141), ('▁one', 140), ('▁the', 140), ('▁so', 140), ('▁in', 140)]
+Graph stats: 512 nodes, 21776 edges
+Top 10 hubs: [('▁such', 173), ('▁single', 171), ('▁on', 170), ('▁the', 167), ("'", 166), ('▁the', 165), ('s', 165), ('▁job', 164), ('▁:', 163), ('s', 163)]
+Graph stats: 84 nodes, 1276 edges
+Top 10 hubs: [('▁the', 62), ('▁a', 53), ('▁share', 50), ('▁is', 46), ('-', 45), ('▁the', 45), ('ished', 45), ('▁the', 44), ('▁a', 44), ('▁sense', 43)]
+Graph stats: 494 nodes, 19672 edges
+Top 10 hubs: [('▁acer', 170), ('t', 167), ('▁mildly', 157), ('▁of', 148), ('▁times', 145), ('▁elicit', 144), ('▁more', 140), ('▁to', 138), ('▁the', 138), ('▁turn', 136)]
+Graph stats: 512 nodes, 22239 edges
+Top 10 hubs: [('▁own', 179), ('▁a', 175), ('▁one', 173), ('s', 173), ('▁years', 171), ('▁pleasant', 169), ('est', 166), ('▁the', 164), ('▁self', 163), ('▁the', 163)]
+Graph stats: 416 nodes, 15016 edges
+Top 10 hubs: [('▁up', 148), ('▁matter', 146), ('▁and', 146), ('▁throws', 142), ('▁rather', 142), ('▁he', 142), ('▁its', 140), ('▁wants', 137), ('▁has', 137), ('more', 136)]
+Graph stats: 512 nodes, 20351 edges
+Top 10 hubs: [('▁for', 169), ('▁anything', 167), ('▁be', 164), ('s', 164), ('▁become', 164), ('▁even', 163), ('▁leaves', 163), ('▁rolls', 163), ('▁*', 162), ('▁that', 162)]
+Graph stats: 166 nodes, 4268 edges
+Top 10 hubs: [('3', 93), ('▁in', 87), ('men', 86), ('▁eye', 84), ('▁.', 83), ('▁the', 83), ('▁.', 83), ('▁,', 82), ('▁,', 82), ('▁a', 82)]
+Graph stats: 512 nodes, 20232 edges
+Top 10 hubs: [('▁release', 172), ('▁the', 164), ('▁of', 162), ('▁this', 161), ('▁the', 160), ('ion', 158), ('▁one', 157), ('▁without', 156), ('▁shots', 153), ('▁a', 153)]
+Graph stats: 177 nodes, 4168 edges
+Top 10 hubs: [('▁as', 110), ('▁,', 81), ('▁.', 81), ('▁.', 80), ('▁and', 80), ('orn', 79), ('▁involved', 79), ('▁"', 77), ('▁do', 77), ('▁these', 76)]
+Graph stats: 405 nodes, 14156 edges
+Top 10 hubs: [('▁become', 147), ('▁feels', 139), ('▁in', 134), ('▁his', 127), ('▁no', 124), ('▁.', 122), ('▁to', 121), ('▁not', 120), ('▁.', 120), ('▁films', 119)]
+Graph stats: 512 nodes, 19516 edges
+Top 10 hubs: [('▁than', 169), ('▁that', 160), ('▁of', 157), ('▁yet', 157), ('▁shown', 157), ('▁richly', 156), ('▁with', 156), ('▁and', 156), ('▁those', 155), ('▁of', 155)]
+Graph stats: 512 nodes, 19956 edges
+Top 10 hubs: [('▁when', 166), ('▁is', 150), ('▁sympath', 148), ('▁is', 147), ('▁.', 147), ('▁that', 147), ('▁minute', 147), ('▁no', 145), ('▁so', 144), ('▁and', 143)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n561
+Job ID: 3136682
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:10
+CPU Efficiency: 4.81% of 00:24:16 core-walltime
+Job Wall-clock time: 00:01:31
+Memory Utilized: 3.05 GB
+Memory Efficiency: 2.45% of 124.51 GB (124.51 GB/node)

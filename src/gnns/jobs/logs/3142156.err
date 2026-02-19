@@ -1,0 +1,10 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 9, in <module>
+    from gnns.dgm.model_v2 import DGM_Model
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/dgm/model_v2.py", line 125
+    if self.hparams.dgm_type == "continuous" and edge_weight is not None and self.hparams.gfun == 'gcn'::
+                                                                                                        ^
+SyntaxError: invalid syntax
+srun: error: uc2n562: task 0: Exited with exit code 1
+/var/spool/slurmd/job3142156/slurm_script: line 27: --lr: command not found

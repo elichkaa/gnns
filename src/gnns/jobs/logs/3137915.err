@@ -1,0 +1,33 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 258, in <module>
+    args = parser.parse_args()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/argparse.py", line 1869, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/argparse.py", line 1902, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/argparse.py", line 2114, in _parse_known_args
+    start_index = consume_optional(start_index)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/argparse.py", line 2054, in consume_optional
+    take_action(action, args, option_string)
+  File "/usr/lib64/python3.11/argparse.py", line 1962, in take_action
+    argument_values = self._get_values(action, argument_strings)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/argparse.py", line 2496, in _get_values
+    value = self._get_value(action, arg_string)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/argparse.py", line 2529, in _get_value
+    result = type_func(arg_string)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/train_v2.py", line 211, in <lambda>
+    parser.add_argument("--pre_fc", type=lambda x: eval(x),
+                                                   ^^^^^^^
+  File "<string>", line 1
+    [768,
+    ^
+SyntaxError: '[' was never closed
+srun: error: uc2n564: task 0: Exited with exit code 1

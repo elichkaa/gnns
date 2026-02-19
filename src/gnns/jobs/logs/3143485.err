@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 119, in <module>
+    visualize_cdgm_graphs(test_data, cdgm_model, num_samples=10)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 43, in visualize_cdgm_graphs
+    if adj.dim() == 2:
+       ^^^^^^^
+AttributeError: 'list' object has no attribute 'dim'
+srun: error: uc2n564: task 0: Exited with exit code 1

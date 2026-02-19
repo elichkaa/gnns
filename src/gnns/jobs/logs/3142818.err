@@ -1,0 +1,4 @@
+GpuFreq=control_disabled
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 3142818.0 ON uc2n564 CANCELLED AT 2026-02-08T20:47:32 ***
+slurmstepd: error: *** JOB 3142818 ON uc2n564 CANCELLED AT 2026-02-08T20:47:32 ***

@@ -16,18 +16,48 @@ source /home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.1
 
 cd ~/project/gnns/src/gnns
 
+# srun python train_v2.py \
+#      --model_type dgm \
+#      --k 10 \
+#      --encoder_name distilbert-base-uncased \
+#      --dataset 20news \
+#      --task classification \
+#      --batch_size 32 \
+#      --use_continuous_dgm \
+#      --lr 1e-3 \
+#      --dropout 0.3 \
+#      --weight_decay 0.01 \
+#      --dgm_layers "[[768, 768]]" \
+#      --conv_layers "[[768, 768]]" \
+#      --fc_layers "[768, 20]" \
+#      --pre_fc "[]"
+
 # distilbert-base-uncased
 
 srun python train_v2.py \
      --model_type dgm \
-     --use_continuous_dgm \
-     --encoder_name google/embeddinggemma-300m \
-     --dataset mrd \
-     --task regression \
-     --gfun gcn \
      --k 15 \
-     --batch_size 32
-     
+     --encoder_name google/embeddinggemma-300m \
+     --dataset 20news \
+     --task classification \
+     --batch_size 32 \
+     --lr 1e-3 \
+     --dropout 0.3 \
+     --weight_decay 0.01 \
+     --dgm_layers "[[512, 512]]" \
+     --conv_layers "[[512, 512]]" \
+     --fc_layers "[512, 20]" \
+     --pre_fc "[768, 512]" \
+     --use_continuous_dgm \
+     --resume_from_checkpoint "./logs_20news/cDGM_google-embeddinggemma-300m_k15_gat_euclidean_poolmean/version_1/checkpoints/last.ckpt"
+
+# --pre_fc "[]" \
+     # --dgm_layers "[[768, 256], [1024, 256]]" \
+     # --conv_layers "[[256, 256], [256, 512]]" \
+     # --fc_layers "[512, 256, 20]" \
+
+# --fc_layers "[512, 256, 20]" \
+# --fc_layers "[512, 20]" \
 # --dgm_layers "[[768, 32], [544, 32], [288, 32]]" \
 # --conv_layers "[[768, 512], [512, 256], [256, 128]]" \
 # --fc_layers "[128, 64, 1]" \

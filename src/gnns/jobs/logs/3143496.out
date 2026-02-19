@@ -1,0 +1,102 @@
+Loading 20newsgroups test data...
+Processing document 0/7532...
+Processing document 500/7532...
+Processing document 1000/7532...
+Processing document 1500/7532...
+Processing document 2000/7532...
+Processing document 2500/7532...
+Processing document 3000/7532...
+Processing document 3500/7532...
+Processing document 4000/7532...
+Processing document 4500/7532...
+Processing document 5000/7532...
+Processing document 5500/7532...
+Processing document 6000/7532...
+Processing document 6500/7532...
+Processing document 7000/7532...
+Processing document 7500/7532...
+
+=== Sample 0 ===
+True: rec.autos | Pred: alt.atheism
+Num nodes: 123
+Adjacency stats: min=0.000, max=0.881, mean=0.610
+Graph: 123 nodes, 5471 edges (threshold=0.5)
+Top hubs: [('\n', 106), ('▁model', 106), ('▁am', 105), ('▁of', 105), ('▁the', 105), ('▁of', 105), ('-', 105), ('I', 105), ('▁of', 105), ('▁the', 105)]
+
+=== Sample 1 ===
+True: comp.windows.x | Pred: alt.atheism
+Num nodes: 174
+Adjacency stats: min=0.000, max=0.881, mean=0.659
+Graph: 174 nodes, 11719 edges (threshold=0.5)
+Top hubs: [('▁box', 156), ('▁with', 155), ('▁them', 155), ('ones', 155), ('know', 155), ('▁these', 154), ('▁"', 154), ('-', 154), ('▁thing', 154), ('▁folks', 154)]
+
+=== Sample 2 ===
+True: alt.atheism | Pred: alt.atheism
+Num nodes: 10
+Adjacency stats: min=0.015, max=0.881, mean=0.525
+Graph: 10 nodes, 28 edges (threshold=0.5)
+Top hubs: [('<bos>', 7), ('\n', 7), ('In', 7), ('▁a', 7), ('▁word', 7), (',', 7), ('.', 7), ('\n', 7), ('▁yes', 0), ('<eos>', 0)]
+
+=== Sample 3 ===
+True: talk.politics.mideast | Pred: alt.atheism
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.720
+Graph: 512 nodes, 111853 edges (threshold=0.5)
+Top hubs: [('▁the', 477), ('▁of', 476), ('▁his', 476), ('▁of', 476), ('0', 476), ('omatic', 476), ('▁drive', 475), ('▁have', 475), ('▁business', 475), ('▁country', 475)]
+
+=== Sample 4 ===
+True: talk.religion.misc | Pred: alt.atheism
+Num nodes: 24
+Adjacency stats: min=0.001, max=0.881, mean=0.521
+Graph: 24 nodes, 155 edges (threshold=0.5)
+Top hubs: [('I', 18), ('ve', 18), ('▁solid', 18), ('▁as', 18), ('.', 18), ('\n', 17), ('▁just', 17), ('▁that', 17), ('▁no', 17), ('▁thing', 17)]
+
+=== Sample 5 ===
+True: sci.med | Pred: alt.atheism
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.673
+Graph: 512 nodes, 103937 edges (threshold=0.5)
+Top hubs: [('▁role', 463), ('▁neutrophils', 463), ('▁systemic', 463), ('▁I', 462), ('▁assessment', 462), ('iasis', 462), ('▁teach', 462), ('▁ever', 461), ('▁a', 461), ('▁of', 461)]
+
+=== Sample 6 ===
+True: soc.religion.christian | Pred: alt.atheism
+Num nodes: 34
+Adjacency stats: min=0.001, max=0.881, mean=0.691
+Graph: 34 nodes, 489 edges (threshold=0.5)
+Top hubs: [('Dish', 31), ('on', 31), ('est', 31), ('les', 31), ('▁away', 31), (',', 31), ('▁but', 31), ('▁he', 31), ('▁who', 31), ('▁money', 31)]
+
+=== Sample 7 ===
+True: soc.religion.christian | Pred: alt.atheism
+Num nodes: 143
+Adjacency stats: min=0.000, max=0.881, mean=0.639
+Graph: 143 nodes, 7458 edges (threshold=0.5)
+Top hubs: [('▁the', 124), ('▁out', 124), ('▁the', 124), ('▁would', 124), ('▁if', 124), ('.', 124), ('fort', 124), ('.', 124), ('▁get', 123), (').', 123)]
+
+=== Sample 8 ===
+True: comp.windows.x | Pred: alt.atheism
+Num nodes: 63
+Adjacency stats: min=0.000, max=0.881, mean=0.623
+Graph: 63 nodes, 1385 edges (threshold=0.5)
+Top hubs: [('▁requirement', 53), ('▁within', 53), ('▁such', 53), ('▁any', 53), ('▁there', 53), ('▁only', 53), ('▁display', 53), ('▁the', 53), ('Ass', 53), ('ming', 53)]
+
+=== Sample 9 ===
+True: comp.graphics | Pred: alt.atheism
+Num nodes: 161
+Adjacency stats: min=0.000, max=0.881, mean=0.629
+Graph: 161 nodes, 9399 edges (threshold=0.5)
+Top hubs: [('▁is', 140), ('▁lots', 139), ('▁can', 139), ('▁black', 139), ('I', 139), ('▁▁', 139), ('▁used', 139), (':', 138), ('▁have', 138), ('▁in', 138)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n564
+Job ID: 3143496
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:05:02
+CPU Efficiency: 5.55% of 01:30:40 core-walltime
+Job Wall-clock time: 00:05:40
+Memory Utilized: 12.49 GB
+Memory Efficiency: 10.03% of 124.51 GB (124.51 GB/node)

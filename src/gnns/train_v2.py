@@ -1,5 +1,5 @@
 from pytorch_lightning.loggers import TensorBoardLogger
-from pytorch_lightning.callbacks import EarlyStopping
+from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 from argparse import ArgumentParser
 import pytorch_lightning as pl
 from gnns.bert_classifier import SimpleBERTClassifier
@@ -28,11 +28,7 @@ def collate_fn(batch):
 def get_encoder_dim(encoder_name):
     dim_map = {
         'distilbert-base-uncased': 768,
-        'google/embeddinggemma-300m': 768,
-        'bert-base-uncased': 768,
-        'bert-large-uncased': 1024,
-        'roberta-base': 768,
-        'roberta-large': 1024,
+        'google/embeddinggemma-300m': 768
     }
     return dim_map.get(encoder_name, 768)
 
@@ -115,6 +111,14 @@ def run_training_process(run_params):
     else:
         raise ValueError(f"Unknown model type: {args.model_type}")
 
+    checkpoint_callback = ModelCheckpoint(
+        save_last=True,
+        save_top_k=1,
+        verbose=True,
+        monitor='val_loss',
+        mode='min'
+    )
+
     if run_params.task == 'regression':
         early_stop_callback = EarlyStopping(
             monitor='val_loss',
@@ -129,9 +133,9 @@ def run_training_process(run_params):
             min_delta=0.001,
             patience=args.patience,
             verbose=True,
-            mode='max'  # Maximize accuracy
+            mode='max'
         )
-    callbacks = [early_stop_callback]
+    callbacks = [early_stop_callback, checkpoint_callback]
 
     if val_data == test_data:
         callbacks = None
@@ -236,6 +240,7 @@ if __name__ == "__main__":
                         help="Edge entropy regularization weight")
     parser.add_argument("--lambda_locality", type=float, default=0.01,
                         help="Locality regularization weight")
+    parser.add_argument("--graph_loss_weight", type=float, default=0.01)
 
     # Training
     parser.add_argument("--pooling", type=str, default='mean',

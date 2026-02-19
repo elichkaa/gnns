@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 122, in <module>
+    visualize_cdgm_graphs(test_data, cdgm_model, num_samples=10)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 54, in visualize_cdgm_graphs
+    print(f"True: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]}")
+                   ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MRDGraphDataset' object has no attribute 'target_names'
+srun: error: uc2n564: task 0: Exited with exit code 1

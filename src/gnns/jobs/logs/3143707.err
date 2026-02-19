@@ -1,0 +1,9 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 125, in <module>
+    visualize_cdgm_graphs(test_data, cdgm_model, num_samples=10)
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 101, in visualize_cdgm_graphs
+    ax2.set_title(f'Graph (top 30 hubs)\nTrue: {dataset.target_names[true_label]} | Pred: {dataset.target_names[pred_label]} {correct}')
+                                                                                                                              ^^^^^^^
+NameError: name 'correct' is not defined
+srun: error: uc2n564: task 0: Exited with exit code 1

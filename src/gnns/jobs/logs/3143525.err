@@ -1,0 +1,7 @@
+GpuFreq=control_disabled
+Traceback (most recent call last):
+  File "/pfs/data6/home/ka/ka_stud/ka_ufszm/project/gnns/src/gnns/jobs/../logs/vis_cdgm.py", line 120, in <module>
+    test_data = MRDGraphDataset(split='test', device='cuda', file_path="../../data/mrd/mrd.txt", max_length=512, use_cache=False, encoder_name=encoder_name)
+                ^^^^^^^^^^^^^^^
+NameError: name 'MRDGraphDataset' is not defined
+srun: error: uc2n561: task 0: Exited with exit code 1

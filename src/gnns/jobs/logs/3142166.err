@@ -1,0 +1,87 @@
+GpuFreq=control_disabled
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+You are using a CUDA device ('NVIDIA A100-PCIE-40GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name    | Type       | Params | Mode  | FLOPs
+-------------------------------------------------------
+0 | pre_fc  | MLP        | 196 K  | train | 0    
+1 | graph_f | ModuleList | 41.2 K | train | 0    
+2 | node_g  | ModuleList | 33.2 K | train | 0    
+3 | fc      | MLP        | 9.6 K  | train | 0    
+-------------------------------------------------------
+280 K     Trainable params
+65        Non-trainable params
+280 K     Total params
+1.123     Total estimated model params size (MB)
+20        Modules in train mode
+0         Modules in eval mode
+0         Total Flops
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 32. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 23. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+Metric val_acc improved. New best score: 31.595
+Epoch 0, global step 283: 'val_loss' reached 1.88813 (best 1.88813), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=0-step=283.ckpt' as top 1
+Metric val_acc improved by 4.375 >= min_delta = 0.001. New best score: 35.970
+Epoch 1, global step 566: 'val_loss' reached 1.79671 (best 1.79671), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=1-step=566.ckpt' as top 1
+Metric val_acc improved by 4.065 >= min_delta = 0.001. New best score: 40.035
+Epoch 2, global step 849: 'val_loss' reached 1.72832 (best 1.72832), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=2-step=849.ckpt' as top 1
+Metric val_acc improved by 2.740 >= min_delta = 0.001. New best score: 42.775
+Epoch 3, global step 1132: 'val_loss' reached 1.69279 (best 1.69279), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=3-step=1132.ckpt' as top 1
+Metric val_acc improved by 2.475 >= min_delta = 0.001. New best score: 45.250
+Epoch 4, global step 1415: 'val_loss' reached 1.61757 (best 1.61757), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=4-step=1415.ckpt' as top 1
+Metric val_acc improved by 0.619 >= min_delta = 0.001. New best score: 45.868
+Epoch 5, global step 1698: 'val_loss' reached 1.60604 (best 1.60604), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=5-step=1698.ckpt' as top 1
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 46.089
+Epoch 6, global step 1981: 'val_loss' reached 1.56772 (best 1.56772), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=6-step=1981.ckpt' as top 1
+Metric val_acc improved by 1.193 >= min_delta = 0.001. New best score: 47.282
+Epoch 7, global step 2264: 'val_loss' reached 1.54182 (best 1.54182), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=7-step=2264.ckpt' as top 1
+Metric val_acc improved by 4.110 >= min_delta = 0.001. New best score: 51.392
+Epoch 8, global step 2547: 'val_loss' reached 1.45463 (best 1.45463), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=8-step=2547.ckpt' as top 1
+Epoch 9, global step 2830: 'val_loss' was not in top 1
+Epoch 10, global step 3113: 'val_loss' reached 1.45120 (best 1.45120), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=10-step=3113.ckpt' as top 1
+Epoch 11, global step 3396: 'val_loss' was not in top 1
+Epoch 12, global step 3679: 'val_loss' was not in top 1
+Metric val_acc improved by 0.663 >= min_delta = 0.001. New best score: 52.055
+Epoch 13, global step 3962: 'val_loss' reached 1.42504 (best 1.42504), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=13-step=3962.ckpt' as top 1
+Metric val_acc improved by 0.398 >= min_delta = 0.001. New best score: 52.452
+Epoch 14, global step 4245: 'val_loss' reached 1.40370 (best 1.40370), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=14-step=4245.ckpt' as top 1
+Epoch 15, global step 4528: 'val_loss' was not in top 1
+Metric val_acc improved by 0.840 >= min_delta = 0.001. New best score: 53.292
+Epoch 16, global step 4811: 'val_loss' reached 1.37440 (best 1.37440), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=16-step=4811.ckpt' as top 1
+Metric val_acc improved by 0.221 >= min_delta = 0.001. New best score: 53.513
+Epoch 17, global step 5094: 'val_loss' was not in top 1
+Epoch 18, global step 5377: 'val_loss' was not in top 1
+Metric val_acc improved by 2.121 >= min_delta = 0.001. New best score: 55.634
+Epoch 19, global step 5660: 'val_loss' reached 1.37434 (best 1.37434), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=19-step=5660.ckpt' as top 1
+Epoch 20, global step 5943: 'val_loss' was not in top 1
+Epoch 21, global step 6226: 'val_loss' was not in top 1
+Epoch 22, global step 6509: 'val_loss' was not in top 1
+Metric val_acc improved by 0.707 >= min_delta = 0.001. New best score: 56.341
+Epoch 23, global step 6792: 'val_loss' reached 1.36577 (best 1.36577), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=23-step=6792.ckpt' as top 1
+Epoch 24, global step 7075: 'val_loss' was not in top 1
+Epoch 25, global step 7358: 'val_loss' reached 1.34075 (best 1.34075), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=25-step=7358.ckpt' as top 1
+Epoch 26, global step 7641: 'val_loss' was not in top 1
+Epoch 27, global step 7924: 'val_loss' was not in top 1
+Epoch 28, global step 8207: 'val_loss' was not in top 1
+Metric val_acc improved by 0.663 >= min_delta = 0.001. New best score: 57.004
+Epoch 29, global step 8490: 'val_loss' was not in top 1
+Metric val_acc improved by 0.972 >= min_delta = 0.001. New best score: 57.976
+Epoch 30, global step 8773: 'val_loss' reached 1.33185 (best 1.33185), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=30-step=8773.ckpt' as top 1
+Epoch 31, global step 9056: 'val_loss' reached 1.32842 (best 1.32842), saving model to './logs_20news/cDGM_distilbert-base-uncased_k5_gat_euclidean_poolmean/version_6/checkpoints/epoch=31-step=9056.ckpt' as top 1
+Epoch 32, global step 9339: 'val_loss' was not in top 1
+Epoch 33, global step 9622: 'val_loss' was not in top 1
+Epoch 34, global step 9905: 'val_loss' was not in top 1
+Epoch 35, global step 10188: 'val_loss' was not in top 1
+Epoch 36, global step 10471: 'val_loss' was not in top 1
+Epoch 37, global step 10754: 'val_loss' was not in top 1
+Epoch 38, global step 11037: 'val_loss' was not in top 1
+Epoch 39, global step 11320: 'val_loss' was not in top 1
+Monitored metric val_acc did not improve in the last 10 records. Best score: 57.976. Signaling Trainer to stop.
+Epoch 40, global step 11603: 'val_loss' was not in top 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+/pfs/data6/home/ka/ka_stud/ka_ufszm/.cache/pypoetry/virtualenvs/gnns-tZ7_1okr-py3.11/lib/python3.11/site-packages/pytorch_lightning/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 12. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+/var/spool/slurmd/job3142166/slurm_script: line 27: --lr: command not found

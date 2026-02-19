@@ -1,0 +1,97 @@
+dgm_type: continuous
+Task: regression
+FC layers: [128, 64, 1]
+Loading MRD test data...
+[ Max seq length: 2603 ]
+[ Min seq length: 9 ]
+[ Mean seq length: 429 ]
+[ Train: 3003, Dev: 1001, Test: 1002 ]
+Loaded 1002 test instances
+Processing document 0/1002...
+Processing document 500/1002...
+Processing document 1000/1002...
+
+=== Sample 0 ===
+True: 0.5 | Pred: 0.5345869660377502
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.675
+Graph: 512 nodes, 103305 edges (threshold=0.5)
+Top hubs: [('▁he', 463), ('▁his', 463), ('▁i', 462), ('▁classic', 462), ('▁world', 462), ('▁team', 461), ('▁,', 461), ('▁see', 461), ('▁part', 460), ('▁his', 460)]
+
+=== Sample 1 ===
+True: 0.30000001192092896 | Pred: 0.5566374659538269
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.708
+Graph: 512 nodes, 110861 edges (threshold=0.5)
+Top hubs: [('▁was', 474), ('▁nothing', 474), ('▁basically', 474), ('▁just', 474), ('▁didn', 474), ('▁traditional', 473), ('▁analyzes', 473), ('▁mart', 473), ('▁high', 473), ('▁attitude', 473)]
+
+=== Sample 2 ===
+True: 0.699999988079071 | Pred: 0.5704411864280701
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.666
+Graph: 512 nodes, 102392 edges (threshold=0.5)
+Top hubs: [('▁.', 459), ('▁images', 459), ('▁stream', 459), ('▁.', 458), ('▁only', 458), ('-', 458), ("'", 458), ('▁--', 457), ('▁has', 457), ('▁plenty', 457)]
+
+=== Sample 3 ===
+True: 0.30000001192092896 | Pred: 0.46530184149742126
+Num nodes: 284
+Adjacency stats: min=0.000, max=0.881, mean=0.619
+Graph: 284 nodes, 28485 edges (threshold=0.5)
+Top hubs: [('▁many', 241), ('▁moment', 241), ('▁an', 241), ('▁many', 241), ('▁if', 241), ('▁alive', 241), ('▁today', 241), ('▁exactly', 240), ('▁people', 240), ('▁they', 240)]
+
+=== Sample 4 ===
+True: 0.75 | Pred: 0.7325051426887512
+Num nodes: 431
+Adjacency stats: min=0.000, max=0.881, mean=0.646
+Graph: 431 nodes, 70890 edges (threshold=0.5)
+Top hubs: [('▁crisp', 384), ('▁completely', 383), ('▁primary', 382), ('-', 382), ('▁city', 382), ('▁decision', 382), ('over', 381), ('▁but', 381), ('▁written', 381), ('▁makers', 381)]
+
+=== Sample 5 ===
+True: 0.5 | Pred: 0.5364026427268982
+Num nodes: 173
+Adjacency stats: min=0.000, max=0.881, mean=0.649
+Graph: 173 nodes, 11604 edges (threshold=0.5)
+Top hubs: [('▁it', 154), ('▁is', 154), ('▁time', 154), ('▁bogged', 154), ('▁down', 154), ('▁predictable', 154), ('▁be', 154), ('▁felt', 153), ('▁than', 153), ('▁based', 153)]
+
+=== Sample 6 ===
+True: 0.699999988079071 | Pred: 0.6248000860214233
+Num nodes: 512
+Adjacency stats: min=0.000, max=0.881, mean=0.693
+Graph: 512 nodes, 107957 edges (threshold=0.5)
+Top hubs: [('▁hand', 470), ('▁the', 470), ('▁the', 469), ('▁over', 469), ('acted', 469), ('▁a', 469), ('▁does', 468), ('▁be', 468), ('▁a', 468), ('▁a', 468)]
+
+=== Sample 7 ===
+True: 0.800000011920929 | Pred: 0.857599675655365
+Num nodes: 247
+Adjacency stats: min=0.000, max=0.881, mean=0.599
+Graph: 247 nodes, 21528 edges (threshold=0.5)
+Top hubs: [('▁brilliant', 211), ('▁a', 210), ('▁eyes', 210), ('▁odd', 210), ('▁just', 210), ('▁being', 210), ('▁and', 210), ('▁more', 210), ('▁everything', 210), ('▁the', 210)]
+
+=== Sample 8 ===
+True: 0.6899999976158142 | Pred: 0.6060630083084106
+Num nodes: 491
+Adjacency stats: min=0.000, max=0.881, mean=0.651
+Graph: 491 nodes, 92913 edges (threshold=0.5)
+Top hubs: [('▁home', 437), ('▁light', 437), ('▁a', 436), ("'", 436), ('▁piece', 436), ('ove', 436), ('▁most', 436), ('▁a', 436), ('▁need', 435), ('▁restricted', 435)]
+
+=== Sample 9 ===
+True: 0.30000001192092896 | Pred: 0.44641774892807007
+Num nodes: 433
+Adjacency stats: min=0.000, max=0.881, mean=0.642
+Graph: 433 nodes, 70819 edges (threshold=0.5)
+Top hubs: [('▁pretty', 381), ('▁nearly', 381), ('▁all', 381), ('▁see', 380), ('▁they', 380), ('▁marks', 380), ('▁lots', 380), ('▁number', 380), ('▁perfectly', 380), ('▁wait', 380)]
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n562
+Job ID: 3143670
+Cluster: uc3
+User/Group: ka_ufszm/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:01:00
+CPU Efficiency: 2.93% of 00:34:08 core-walltime
+Job Wall-clock time: 00:02:08
+Memory Utilized: 3.03 GB
+Memory Efficiency: 2.43% of 124.51 GB (124.51 GB/node)
