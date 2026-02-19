@@ -208,7 +208,7 @@ __marimo__/
 
 # CUSTOM
 .DS_Store
-src/gnns/logs/**/checkpoints/
+**/checkpoints/
 src/gnns/data/
 src/gnns/glove/glove.840B.300d.txt
 src/gnns/keops/
